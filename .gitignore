@@ -54,3 +54,6 @@
 *.iml
 out
 gen
+
+# doc temporary backup file
+~*

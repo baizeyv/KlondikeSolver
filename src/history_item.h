@@ -11,12 +11,16 @@ struct history_item {
   uint16_t packed = 0;
 
   // * getters
+  [[nodiscard]]
   int8_t get_from() const;
 
+  [[nodiscard]]
   int8_t get_to() const;
 
+  [[nodiscard]]
   int8_t get_count() const;
 
+  [[nodiscard]]
   bool get_collection() const;
 
   // * setters
