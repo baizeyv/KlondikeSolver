@@ -15,6 +15,10 @@ add_executable(KlondikeSolver main.cpp
         src/state.cpp
         src/solver.h
         src/solver.cpp
+        mode/base_mode.h
+        mode/test_mode.h
+        mode/test_mode.cpp
+        helper/cxxopts.h
         helper/helper.h
         helper/helper.cpp
 )

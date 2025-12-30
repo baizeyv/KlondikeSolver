@@ -59,7 +59,14 @@ char card::get_char() const {
 }
 
 std::string card::to_string() const {
-	return get_suit_string() + get_value_string();
+	std::string ret;
+	ret += "\033[";
+	if (suit == 0 || suit == 3) {
+		ret += "31m";
+	} else {
+		ret += "32m";
+	}
+	return ret + get_suit_string() + get_value_string() + "\033[0m";
 }
 
 std::string card::get_suit_string() const {

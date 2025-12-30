@@ -21,7 +21,7 @@ public:
 	/**
 	 * * 牌堆
 	 */
-	std::vector<card> cards;
+	std::vector<card> cards{};
 
 	explicit poker(const std::string &seed);
 };

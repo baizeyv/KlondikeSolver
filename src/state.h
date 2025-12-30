@@ -12,26 +12,31 @@
 #include "poker.h"
 
 class state {
+	/**
+	 * * -9999代表还没有进行估值,其他值为真正的估值
+	 */
+	int valuation = -9999;
+
 public:
 	/**
 	 * * 右上角的牌堆
 	 */
-	std::vector<card *> deck_cards{};
+	std::vector<card *> waste_cards{};
 
 	/**
 	 * * 每一列的隐藏的牌
 	 */
-	std::vector<std::vector<card *> > hidden_cards{};
+	std::vector<std::vector<card *> > hidden_tableau_cards{};
 
 	/**
 	 * * 每一列的可见的牌
 	 */
-	std::vector<std::vector<card *> > visible_cards{};
+	std::vector<std::vector<card *> > visible_tableau_cards{};
 
 	/**
 	 * * 左上角已经收集的牌 (size: 4)
 	 */
-	std::vector<std::vector<card *> > collected_cards{};
+	std::vector<std::vector<card *> > foundation_cards{};
 
 	/**
 	 * * 历史记录
@@ -59,16 +64,24 @@ public:
 	 * * 这个constructor用于走步骤的时候创建新的状态
 	 * @param previous_state
 	 */
-	explicit state(const state* previous_state);
+	explicit state(const state *previous_state);
 
 	[[nodiscard]]
 	std::string to_string() const;
 
 	/**
+	 * * 是否完成了 (所有隐藏牌都翻开了)
+	 * @return
+	 */
+	[[nodiscard]]
+	bool is_completed() const;
+
+	/**
 	 * * 找到所有可以移动到的新的状态
 	 * @return
 	 */
-	std::vector<state *> find_movable();
+	[[nodiscard]]
+	std::vector<state *> find_movable() const;
 
 	/**
 	 * * 移动牌
@@ -77,6 +90,12 @@ public:
 	 * @param to to column index
 	 */
 	void move_card(int from, int count, int to);
+
+	/**
+	 * * 计算及获取一次估值
+	 * @return
+	 */
+	int get_valuation();
 
 	[[nodiscard]]
 	std::string to_serialized() const;
@@ -87,7 +106,6 @@ public:
 	~state();
 
 private:
-
 	/**
 	 * * 隐藏牌的字符串显示
 	 * @param row 第几行

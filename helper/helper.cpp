@@ -8,6 +8,7 @@
 #include <filesystem>
 #include <fstream>
 #include <string>
+#include <windows.h>
 
 std::vector<std::string> helper::split(const std::string &str,
                                        const std::string &delimiter) {
@@ -75,4 +76,9 @@ std::string helper::get_current_timestamp_millis() {
           std::chrono::system_clock::now().time_since_epoch())
           .count();
   return std::to_string(timestamp);
+}
+
+void helper::trim_memory() {
+  // -1 表示让系统自动决定新的最小/最大工作集，效果是释放尽量多的物理内存
+  SetProcessWorkingSetSize(GetCurrentProcess(), -1, -1);
 }
