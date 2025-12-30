@@ -143,7 +143,8 @@ std::vector<state *> state::find_movable() const {
 							// # 这个情况是移动后,最长序列变短了
 							// * 判断是不是可以收牌,否则就不需要移动这一步
 							if (!new_state->visible_tableau_cards[column].empty()) {
-								const auto last = new_state->visible_tableau_cards[column][new_state->visible_tableau_cards[column].size() - 1];
+								const auto last = new_state->visible_tableau_cards[column][
+									new_state->visible_tableau_cards[column].size() - 1];
 								const auto suit = last->get_suit();
 								const auto val = last->get_value();
 								if (foundation_cards[suit].size() == val - 1) {
@@ -360,11 +361,11 @@ void state::move_card(const int from, const int count, const int to) {
 			visible_tableau_cards[to].emplace_back(visible_tableau_cards[from][i]);
 		}
 		visible_tableau_cards[from].erase(visible_tableau_cards[from].begin() + from_total_count - tmp_count,
-		                          visible_tableau_cards[from].end());
+		                                  visible_tableau_cards[from].end());
 		// # 来源列没有可见牌的时候要翻开来源列的隐藏的牌
 		if (visible_tableau_cards[from].empty() && !hidden_tableau_cards[from].empty()) {
 			visible_tableau_cards[from].insert(visible_tableau_cards[from].end(), hidden_tableau_cards[from].end() - 1,
-			                           hidden_tableau_cards[from].end());
+			                                   hidden_tableau_cards[from].end());
 			hidden_tableau_cards[from].erase(hidden_tableau_cards[from].end() - 1, hidden_tableau_cards[from].end());
 		}
 	}
@@ -382,20 +383,13 @@ int state::get_valuation() {
 		return valuation;
 
 	int value = 0; // todo:
-	for (size_t i = 0; i < hidden_tableau_cards.size(); ++ i) {
-		// # 没有翻开的牌值: -10, -9, -8, -7, -6, -5
-		// # 未翻开牌减分机制
-		int num = 10;
-		for (auto &_ : hidden_tableau_cards[i]) {
-			value -= num;
-			num --;
-		}
-		int tmp = value;
-		if (!visible_tableau_cards[i].empty()) {
-			// # i_index列的可见的牌的数量
-			const int visible_count = visible_tableau_cards[i].size();
-		}
-	}
+
+	// # 1. 已经翻开的牌的数量
+	// * revealed = 已经翻开的 tableau 牌的数量
+	const int revealed = calculate_revealed_value();
+	// todo:
+
+
 	return valuation;
 	// todo:
 }
@@ -433,6 +427,49 @@ state::~state() {
 	visible_tableau_cards.clear();
 	foundation_cards.clear();
 	history.clear();
+}
+
+int state::calculate_revealed_value() const {
+	// * 隐藏牌数量的最大值
+	constexpr int max_hidden_cards_count = 1 + 2 + 3 + 4 + 5 + 6;
+
+	// # 当前局面中的隐藏牌的数量
+	int total_hidden_cards_count = 0;
+	for (size_t i = 0; i < hidden_tableau_cards.size(); ++i) {
+		total_hidden_cards_count += hidden_tableau_cards[i].size();
+	}
+
+	// # 1. 已经翻开的牌的数量
+	// * revealed = 已经翻开的 tableau 牌的数量
+	const int revealed = (max_hidden_cards_count - total_hidden_cards_count) * 100;
+	// 这里的100是一个权重值,可以进行调试, (100是W1, weight-1)
+	return revealed;
+}
+
+int state::calculate_mobility_value() const {
+	// # 2. 可移动性加权值计算
+
+	int value = 0;
+	// todo:
+
+	return value;
+}
+
+int state::calculate_empty_column_value() const {
+	// # 3. tableau 结构质量 (比foundation更重要)
+	int value = 0;
+
+	// # 空列的数量
+	int empty_column_count = 0;
+	for (int i = 0; i < 7; ++i) {
+		if (hidden_tableau_cards[i].empty() && visible_tableau_cards[i].empty()) {
+			empty_column_count++;
+		}
+	}
+	value += empty_column_count * 80; // # 这里的80是一个权重值,可以进行调试
+
+	// todo: 添加长序列的 ( maybe )
+	return value;
 }
 
 std::string state::hidden_string(const int row, const int max) const {

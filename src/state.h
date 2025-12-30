@@ -107,6 +107,31 @@ public:
 
 private:
 	/**
+	 * * 计算已经翻开的牌的数量的加权值
+	 * # importance: 1.
+	 * @return
+	 */
+	int calculate_revealed_value() const;
+
+	/**
+	 * * 计算衡量当前局面允许多少 "合法且有意义的移动" 的加权值
+	 * @return
+	 */
+	int calculate_mobility_value() const;
+
+	/**
+	 * * 计算空列数的加权值
+	 * @return
+	 */
+	int calculate_empty_column_value() const;
+
+	/**
+	 * * 计算 waste 牌堆的状态质量
+	 * @return
+	 */
+	int calculate_waste_playable_value() const;
+
+	/**
 	 * * 隐藏牌的字符串显示
 	 * @param row 第几行
 	 * @param max 隐藏牌最大数量
