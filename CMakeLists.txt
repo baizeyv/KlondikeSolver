@@ -21,4 +21,6 @@ add_executable(KlondikeSolver main.cpp
         helper/cxxopts.h
         helper/helper.h
         helper/helper.cpp
+        struct/pile.h
+        struct/pile.cpp
 )

@@ -25,30 +25,30 @@ state::state(poker *pkr) : previous(nullptr) {
 		// # 一共7列
 		for (int j = 0; j < i; ++j) {
 			// # 隐藏的
-			hidden_tableau_cards[i].emplace_back(&(pkr->cards[idx++]));
+			hidden_tableau_cards[i].push_back(&(pkr->cards[idx++]));
 		}
-		visible_tableau_cards[i].emplace_back(&(pkr->cards[idx++]));
+		visible_tableau_cards[i].push_back(&(pkr->cards[idx++]));
 	}
 	for (size_t i = idx; i < pkr->cards.size(); ++i) {
-		waste_cards.emplace_back(&(pkr->cards[idx++]));
+		waste_cards.push_back(&(pkr->cards[idx++]));
 	}
 	deck_index = -1;
 }
 
 state::state(const state *previous_state) {
-	std::vector<std::vector<card *> > new_visible_cards;
-	std::vector<std::vector<card *> > new_hidden_cards;
-	std::vector<std::vector<card *> > new_collected_cards;
-	const std::vector new_deck_cards(previous_state->waste_cards.begin(), previous_state->waste_cards.end());
+	pile_vec new_visible_cards;
+	pile_vec new_hidden_cards;
+	pile_vec new_collected_cards;
+	const pile new_deck_cards(previous_state->waste_cards);
 	const std::vector new_history(previous_state->history.begin(), previous_state->history.end());
 	for (int i = 0; i < 7; ++i) {
-		std::vector x(previous_state->visible_tableau_cards[i].begin(), previous_state->visible_tableau_cards[i].end());
+		pile x(previous_state->visible_tableau_cards[i]);
 		new_visible_cards.emplace_back(x);
-		std::vector y(previous_state->hidden_tableau_cards[i].begin(), previous_state->hidden_tableau_cards[i].end());
+		pile y(previous_state->hidden_tableau_cards[i]);
 		new_hidden_cards.emplace_back(y);
 	}
 	for (int i = 0; i < 4; ++i) {
-		std::vector x(previous_state->foundation_cards[i].begin(), previous_state->foundation_cards[i].end());
+		pile x(previous_state->foundation_cards[i]);
 		new_collected_cards.emplace_back(x);
 	}
 	visible_tableau_cards = new_visible_cards;
@@ -241,18 +241,41 @@ std::vector<state *> state::find_movable() const {
 	}
 
 	// # 添加点击右上角牌堆
-	// todo: 这个选项应该是在没有可以任何可以移动的情况下才添加 (maybe)
-	if (!waste_cards.empty()) {
-		auto ns = new state(this);
-		ns->move_card(8, 8, 8);
-		result.emplace_back(ns);
+	// ? 这个选项应该是在没有可以任何可以移动的情况下才添加 (maybe)
+	// if (!waste_cards.empty()) {
+	// 	auto ns = new state(this);
+	// 	ns->move_card(8, 8, 8);
+	// 	result.emplace_back(ns);
+	// }
+	// # 将点击右上角牌堆直接换为跳到最合适的deck_index,而不是每一步都去点
+	auto func = [this, &result](const int i) {
+		const auto cd = waste_cards[i];
+		for (int x = 0; x < visible_tableau_cards.size(); ++x) {
+			if (visible_tableau_cards[x].back()->can_move_to_me(cd)) {
+				auto new_state = new state(this);
+				new_state->move_card(10, i, x);
+				result.emplace_back(new_state);
+			}
+		}
+	};
+	if (deck_index < 0) {
+		for (int i = 0; i < waste_cards.size(); ++ i) {
+			func(i);
+		}
+	} else {
+		for (int i = deck_index; i < waste_cards.size(); ++i) {
+			func(i);
+		}
+		for (int i = 0; i < deck_index; ++i) {
+			func(i);
+		}
 	}
 
 	// # 添加从左上角移动牌到下边
 	for (int i = 0; i < 7; ++i) {
 		if (visible_tableau_cards[i].empty())
 			continue;
-		const auto vis_last_card = visible_tableau_cards[i][visible_tableau_cards[i].size() - 1];
+		const auto vis_last_card = visible_tableau_cards[i].back();
 		if (vis_last_card->get_value() > 2) {
 			const auto suit = vis_last_card->get_suit();
 			if (suit == 0 || suit == 3) {
@@ -317,8 +340,7 @@ void state::move_card(const int from, const int count, const int to) {
 	} else if (from == 8 && count == 8) {
 		// # 88N (N是0-6), 代表从右上角取一张牌到to_index这一列的最后
 		if (deck_index >= 0) {
-			visible_tableau_cards[to].emplace_back(waste_cards[deck_index]);
-			waste_cards.erase(waste_cards.begin() + deck_index);
+			visible_tableau_cards[to].push_back(waste_cards.pop(deck_index));
 			deck_index--;
 		} else {
 			// # deck_index 的< 0 d情况是不能从右上角取牌的
@@ -327,20 +349,17 @@ void state::move_card(const int from, const int count, const int to) {
 	} else if (count == 8 && to == 8) {
 		// # N88 (N是0-6), 代表从当前状态收集from_index列的最后一张到左上角
 		const int i = visible_tableau_cards[from][visible_tableau_cards[from].size() - 1]->get_suit();
-		foundation_cards[i].emplace_back(visible_tableau_cards[from][visible_tableau_cards[from].size() - 1]);
-		visible_tableau_cards[from].erase(visible_tableau_cards[from].end() - 1, visible_tableau_cards[from].end());
+		foundation_cards[i].push_back(visible_tableau_cards[from].pop_back());
 		// # 判断是否为空了
 		if (visible_tableau_cards[from].empty() && !hidden_tableau_cards[from].empty()) {
 			// # 翻开隐藏的牌
-			visible_tableau_cards[from].emplace_back(hidden_tableau_cards[from][hidden_tableau_cards[from].size() - 1]);
-			hidden_tableau_cards[from].erase(hidden_tableau_cards[from].end() - 1, hidden_tableau_cards[from].end());
+			visible_tableau_cards[from].push_back(hidden_tableau_cards[from].pop_back());
 		}
 	} else if (from == 9 && count == 9 && to == 9) {
 		// # 999代表从右上角移动到左上角
 		if (deck_index >= 0) {
 			const auto suit = waste_cards[deck_index]->get_suit();
-			foundation_cards[suit].emplace_back(waste_cards[deck_index]);
-			waste_cards.erase(waste_cards.begin() + deck_index);
+			foundation_cards[suit].push_back(waste_cards.pop(deck_index));
 			deck_index--;
 		} else {
 			throw std::runtime_error("index error.");
@@ -349,24 +368,22 @@ void state::move_card(const int from, const int count, const int to) {
 		// # N9N 代表从左上角count(index:0,1,2,3)移动到下边指定的to_index
 		// # 这里的count 代表的是from_index
 		if (!foundation_cards[count].empty()) {
-			visible_tableau_cards[to].emplace_back(foundation_cards[count][foundation_cards[count].size() - 1]);
-			foundation_cards[count].erase(foundation_cards[count].begin() + foundation_cards[count].size() - 1);
+			visible_tableau_cards[to].push_back(foundation_cards[count].pop_back());
 		} else {
 			throw std::runtime_error("count index error.");
 		}
+	} else if (from == 10) {
+		// # 这个情况直接将waste中的这个deck_index中放到对应的位置,deck_index也需要回退一个位置
+		// # to_index 是从waste移动到的那一列的index
+		// # count 代表的是这个新的 deck_index
+		visible_tableau_cards[to].push_back(waste_cards.pop(count));
+		deck_index = count - 1;
 	} else {
 		const size_t tmp_count = std::min<size_t>(count, visible_tableau_cards[from].size());
-		const size_t from_total_count = visible_tableau_cards[from].size();
-		for (size_t i = from_total_count - tmp_count; i < from_total_count; ++i) {
-			visible_tableau_cards[to].emplace_back(visible_tableau_cards[from][i]);
-		}
-		visible_tableau_cards[from].erase(visible_tableau_cards[from].begin() + from_total_count - tmp_count,
-		                                  visible_tableau_cards[from].end());
+		visible_tableau_cards[to].push_back(visible_tableau_cards[from].pop_back(tmp_count));
 		// # 来源列没有可见牌的时候要翻开来源列的隐藏的牌
 		if (visible_tableau_cards[from].empty() && !hidden_tableau_cards[from].empty()) {
-			visible_tableau_cards[from].insert(visible_tableau_cards[from].end(), hidden_tableau_cards[from].end() - 1,
-			                                   hidden_tableau_cards[from].end());
-			hidden_tableau_cards[from].erase(hidden_tableau_cards[from].end() - 1, hidden_tableau_cards[from].end());
+			visible_tableau_cards[from].push_back(hidden_tableau_cards[from].pop_back());
 		}
 	}
 	// # 添加历史记录
@@ -374,7 +391,7 @@ void state::move_card(const int from, const int count, const int to) {
 	hi.set_from(from);
 	hi.set_to(to);
 	hi.set_count(count);
-	hi.set_collection(false);
+	hi.set_collection(false); // todo: 这个不能永远是false,应该和上边的行为保持一致
 	history.insert(history.begin(), hi);
 }
 
@@ -395,26 +412,32 @@ int state::get_valuation() {
 }
 
 std::string state::to_serialized() const {
+	if (history.size() > 0) {
+		int f = history[0].get_from();
+		int t = history[0].get_to();
+		int c = history[0].get_count();
+		int cc = history[0].get_count();
+	}
 	std::string ret;
 	for (int i = 0; i < 7; i++) {
 		ret += "/";
-		for (const auto j: hidden_tableau_cards[i]) {
-			ret += j->get_char();
+		for (int x = 0; x < hidden_tableau_cards[i].size(); ++x) {
+			ret += hidden_tableau_cards[i][x]->get_char();
 		}
-		for (const auto j: visible_tableau_cards[i]) {
-			ret += j->get_char();
+		for (int x = 0; x < visible_tableau_cards[i].size(); ++x) {
+			ret += visible_tableau_cards[i][x]->get_char();
 		}
 	}
 	ret += "*";
-	for (const auto deck_card: waste_cards) {
-		ret += deck_card->get_char();
+	for (int x = 0; x < waste_cards.size(); ++x) {
+		ret += waste_cards[x]->get_char();
 	}
 	ret += std::to_string(deck_index);
 
 	for (int i = 0; i < 4; ++i) {
 		ret += "#";
-		for (const auto j: foundation_cards[i]) {
-			ret += j->get_char();
+		for (int x = 0; x < foundation_cards[i].size(); ++x) {
+			ret += foundation_cards[i][x]->get_char();
 		}
 	}
 
@@ -472,6 +495,12 @@ int state::calculate_empty_column_value() const {
 	return value;
 }
 
+int state::calculate_waste_playable_value() const {
+	int value = 0;
+	// todo:
+	return value;
+}
+
 std::string state::hidden_string(const int row, const int max) const {
 	if (max == 0)
 		return "";
@@ -484,7 +513,7 @@ std::string state::floor_hidden_string(const int row) const {
 	std::string ret;
 	for (auto &item: hidden_tableau_cards) {
 		auto column = item;
-		std::ranges::reverse(column);
+		column.reverse();
 		if (column.size() > row) {
 			ret += column[column.size() - row - 1]->to_string();
 		} else {
@@ -506,7 +535,7 @@ std::string state::floor_visible_string(const int row) const {
 	std::string ret;
 	for (auto &item: visible_tableau_cards) {
 		auto column = item;
-		std::ranges::reverse(column);
+		column.reverse();
 		if (column.size() > row) {
 			ret += column[column.size() - row - 1]->to_string();
 		} else {
@@ -519,8 +548,8 @@ std::string state::floor_visible_string(const int row) const {
 std::string state::deck_string() const {
 	std::string ret;
 	ret += kld::empty_card;
-	for (auto &item: waste_cards) {
-		ret += item->to_string();
+	for (int x = 0; x < waste_cards.size(); ++x) {
+		ret += waste_cards[x]->to_string();
 	}
 	ret += "\n";
 	const int space_count = (deck_index + 1) * 5 + 2;
@@ -534,8 +563,8 @@ std::string state::deck_string() const {
 std::string state::collected_string() const {
 	std::string ret;
 	for (auto &item: foundation_cards) {
-		for (auto &cd: item) {
-			ret += cd->to_string();
+		for (int x = 0; x < item.size(); ++x) {
+			ret += item[x]->to_string();
 		}
 		if (!item.empty())
 			ret += "\n";

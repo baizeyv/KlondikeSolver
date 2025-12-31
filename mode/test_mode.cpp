@@ -25,22 +25,13 @@ void test_mode::setup() {
 	arg_commands = new std::map<std::string, std::function<void(const std::string &)> >;
 	commands = new std::map<std::string, std::function<void()> >;
 
-	commands->insert(std::make_pair("aaa", []() {
-		poker pk("W#wg#diA#Kxof#RYItC#vhFQSk#MTuOmNn#XpZJyBlLEsaDzcbjGrUqHVPe");
-		state st(&pk);
-		std::cout << st.to_string() << std::endl;
-		auto arr = st.find_movable();
-		for (auto &item: arr) {
-			std::cout << item->to_string() << std::endl;
-		}
-	}));
 	commands->insert(std::make_pair("qq", []() {
-		solver slr("I#zf#uqo#ETlG#mMJsL#RgpdYP#ySxZNjb#QneicWKCrDBthFvVwkaUXAHO");
+		solver slr("J#CQ#Zji#HGcY#qEWra#MuPwgv#eVzkdyK#tBNRLDXAloTOhmnxfFUsSpIb");
 		slr.call_dfs();
 	}));
 	commands->insert(std::make_pair("ww", [this]() {
 		test_thread = std::make_unique<std::thread>(std::thread([this]() {
-			step_solver = new solver("s#KG#rnM#tqhS#bjHAF#OwVpiP#lgeBcoY#TDUWvyIJNCxkmZfzdLEaQXRu");
+			step_solver = new solver("J#CQ#Zji#HGcY#qEWra#MuPwgv#eVzkdyK#tBNRLDXAloTOhmnxfFUsSpIb");
 			step_solver->call_step_dfs();
 		}));
 	}));

@@ -4,12 +4,12 @@
 
 #ifndef KLONDIKESOLVER_STATE_H
 #define KLONDIKESOLVER_STATE_H
-#include "card.h"
 #include "history_item.h"
 
 #include <vector>
 
 #include "poker.h"
+#include "../struct/pile.h"
 
 class state {
 	/**
@@ -21,22 +21,22 @@ public:
 	/**
 	 * * 右上角的牌堆
 	 */
-	std::vector<card *> waste_cards{};
+	pile waste_cards{};
 
 	/**
 	 * * 每一列的隐藏的牌
 	 */
-	std::vector<std::vector<card *> > hidden_tableau_cards{};
+	pile_vec hidden_tableau_cards{};
 
 	/**
 	 * * 每一列的可见的牌
 	 */
-	std::vector<std::vector<card *> > visible_tableau_cards{};
+	pile_vec visible_tableau_cards{};
 
 	/**
 	 * * 左上角已经收集的牌 (size: 4)
 	 */
-	std::vector<std::vector<card *> > foundation_cards{};
+	pile_vec foundation_cards{};
 
 	/**
 	 * * 历史记录
