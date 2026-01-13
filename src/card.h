@@ -49,7 +49,7 @@ public:
 	char get_char() const;
 
 	[[nodiscard]]
-	std::string to_string() const;
+	std::string to_str() const;
 
 private:
 	/**

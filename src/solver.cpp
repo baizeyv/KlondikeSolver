@@ -38,11 +38,11 @@ void solver::dfs(const state *root, const bool step_mode) {
 			}
 		}
 		next_step = 0;
-		std::cout << std::endl << root->to_string() << std::endl;
+		std::cout << std::endl << root->to_str() << std::endl;
 	}
 
 	calc++;
-	all_serialized_states.insert(root->to_serialized());
+	all_hash_states.insert(root->to_hash());
 
 	std::vector<state *> states; {
 		const auto movable_state = root->find_movable();
@@ -56,12 +56,12 @@ void solver::dfs(const state *root, const bool step_mode) {
 	}
 	for (size_t i = 0; i < states.size(); ++i) {
 		for (size_t x = i; x < states.size(); ++x) {
-			all_serialized_states.insert(states[x]->to_serialized());
+			all_hash_states.insert(states[x]->to_hash());
 		}
 		if (states[i]->is_completed()) {
 			// # 完成了,可以进行动画收牌了
 			if (step_mode) {
-				std::cout << states[i]->to_string() << std::endl;
+				std::cout << states[i]->to_str() << std::endl;
 			}
 			std::cout << "COMPLETED!" << std::endl;
 			// todo: delete
@@ -75,6 +75,6 @@ void solver::dfs(const state *root, const bool step_mode) {
 }
 
 bool solver::state_serialized_exists(const state *new_state) const {
-	const auto str = new_state->to_serialized();
-	return all_serialized_states.contains(str);
+	const auto key = new_state->to_hash();
+	return all_hash_states.contains(key);
 }

@@ -26,7 +26,8 @@ void test_mode::setup() {
 	commands = new std::map<std::string, std::function<void()> >;
 
 	commands->insert(std::make_pair("qq", []() {
-		solver slr("J#CQ#Zji#HGcY#qEWra#MuPwgv#eVzkdyK#tBNRLDXAloTOhmnxfFUsSpIb");
+		// solver slr("J#CQ#Zji#HGcY#qEWra#MuPwgv#eVzkdyK#tBNRLDXAloTOhmnxfFUsSpIb");
+		solver slr("K#GN#rRc#dQhy#xjUsn#iSwLqA#uTMXoDa#mPbzkeOYtIBfClVJvWgFHEpZ");
 		slr.call_dfs();
 	}));
 	commands->insert(std::make_pair("ww", [this]() {

@@ -6,20 +6,21 @@
 
 #include <algorithm>
 #include <stdexcept>
+#include "../helper/xxhash.h"
 
 #include "../constant.h"
 
 state::state(poker *pkr) : previous(nullptr) {
 	for (int i = 0; i < 4; ++i) {
-		std::vector<card *> collected_vec{};
+		vector<card *> collected_vec{};
 		// # 初始化左上角的已收集的牌堆
 		foundation_cards.emplace_back(collected_vec);
 	}
 	int idx = 0;
 	for (int i = 0; i < 7; ++i) {
-		std::vector<card *> hidden_vec{};
+		vector<card *> hidden_vec{};
 		hidden_tableau_cards.emplace_back(hidden_vec);
-		std::vector<card *> visible_vec{};
+		vector<card *> visible_vec{};
 		visible_tableau_cards.emplace_back(visible_vec);
 
 		// # 一共7列
@@ -40,7 +41,7 @@ state::state(const state *previous_state) {
 	pile_vec new_hidden_cards;
 	pile_vec new_collected_cards;
 	const pile new_deck_cards(previous_state->waste_cards);
-	const std::vector new_history(previous_state->history.begin(), previous_state->history.end());
+	const vector new_history(previous_state->history.begin(), previous_state->history.end());
 	for (int i = 0; i < 7; ++i) {
 		pile x(previous_state->visible_tableau_cards[i]);
 		new_visible_cards.emplace_back(x);
@@ -60,9 +61,9 @@ state::state(const state *previous_state) {
 	deck_index = previous_state->deck_index;
 }
 
-std::string state::to_string() const {
+string state::to_str() const {
 	// # 最终的字符串结果
-	std::string ret;
+	string ret;
 	// # 最多隐藏牌列的隐藏牌的数量
 	int max_hidden = 0;
 	for (auto &item: hidden_tableau_cards) {
@@ -96,8 +97,8 @@ bool state::is_completed() const {
 	return true;
 }
 
-std::vector<state *> state::find_movable() const {
-	std::vector<state *> result;
+vector<state *> state::find_movable() const {
+	vector<state *> result;
 	for (int i = 0; i < 7; i++) {
 		if (visible_tableau_cards[i].empty()) {
 			// # 其他列的K可以移动到当前这里
@@ -251,15 +252,25 @@ std::vector<state *> state::find_movable() const {
 	auto func = [this, &result](const int i) {
 		const auto cd = waste_cards[i];
 		for (int x = 0; x < visible_tableau_cards.size(); ++x) {
-			if (visible_tableau_cards[x].back()->can_move_to_me(cd)) {
-				auto new_state = new state(this);
-				new_state->move_card(10, i, x);
-				result.emplace_back(new_state);
+			if (visible_tableau_cards[x].empty()) {
+				// # 需要移动K
+				if (cd->get_value() == 13) {
+					// # 确定是K
+					auto new_state = new state(this);
+					new_state->move_card(10, i, x);
+					result.emplace_back(new_state);
+				}
+			} else {
+				if (visible_tableau_cards[x].back()->can_move_to_me(cd)) {
+					auto new_state = new state(this);
+					new_state->move_card(10, i, x);
+					result.emplace_back(new_state);
+				}
 			}
 		}
 	};
 	if (deck_index < 0) {
-		for (int i = 0; i < waste_cards.size(); ++ i) {
+		for (int i = 0; i < waste_cards.size(); ++i) {
 			func(i);
 		}
 	} else {
@@ -344,7 +355,7 @@ void state::move_card(const int from, const int count, const int to) {
 			deck_index--;
 		} else {
 			// # deck_index 的< 0 d情况是不能从右上角取牌的
-			throw std::runtime_error("to index error.");
+			throw runtime_error("to index error.");
 		}
 	} else if (count == 8 && to == 8) {
 		// # N88 (N是0-6), 代表从当前状态收集from_index列的最后一张到左上角
@@ -362,7 +373,7 @@ void state::move_card(const int from, const int count, const int to) {
 			foundation_cards[suit].push_back(waste_cards.pop(deck_index));
 			deck_index--;
 		} else {
-			throw std::runtime_error("index error.");
+			throw runtime_error("index error.");
 		}
 	} else if (from == 9 && count != 9 && to != 9) {
 		// # N9N 代表从左上角count(index:0,1,2,3)移动到下边指定的to_index
@@ -370,7 +381,7 @@ void state::move_card(const int from, const int count, const int to) {
 		if (!foundation_cards[count].empty()) {
 			visible_tableau_cards[to].push_back(foundation_cards[count].pop_back());
 		} else {
-			throw std::runtime_error("count index error.");
+			throw runtime_error("count index error.");
 		}
 	} else if (from == 10) {
 		// # 这个情况直接将waste中的这个deck_index中放到对应的位置,deck_index也需要回退一个位置
@@ -379,7 +390,7 @@ void state::move_card(const int from, const int count, const int to) {
 		visible_tableau_cards[to].push_back(waste_cards.pop(count));
 		deck_index = count - 1;
 	} else {
-		const size_t tmp_count = std::min<size_t>(count, visible_tableau_cards[from].size());
+		const size_t tmp_count = min<size_t>(count, visible_tableau_cards[from].size());
 		visible_tableau_cards[to].push_back(visible_tableau_cards[from].pop_back(tmp_count));
 		// # 来源列没有可见牌的时候要翻开来源列的隐藏的牌
 		if (visible_tableau_cards[from].empty() && !hidden_tableau_cards[from].empty()) {
@@ -411,14 +422,14 @@ int state::get_valuation() {
 	// todo:
 }
 
-std::string state::to_serialized() const {
+string state::to_serialized() const {
 	if (history.size() > 0) {
 		int f = history[0].get_from();
 		int t = history[0].get_to();
 		int c = history[0].get_count();
-		int cc = history[0].get_count();
+		int cc = history[0].get_collection();
 	}
-	std::string ret;
+	string ret;
 	for (int i = 0; i < 7; i++) {
 		ret += "/";
 		for (int x = 0; x < hidden_tableau_cards[i].size(); ++x) {
@@ -432,7 +443,7 @@ std::string state::to_serialized() const {
 	for (int x = 0; x < waste_cards.size(); ++x) {
 		ret += waste_cards[x]->get_char();
 	}
-	ret += std::to_string(deck_index);
+	ret += to_string(deck_index);
 
 	for (int i = 0; i < 4; ++i) {
 		ret += "#";
@@ -444,6 +455,12 @@ std::string state::to_serialized() const {
 	return ret;
 }
 
+state_key state::to_hash() const {
+	const string ser = to_serialized();
+	const XXH128_hash_t hash = XXH3_128bits(ser.data(), ser.size());
+	return {hash.low64, hash.high64};
+}
+
 state::~state() {
 	waste_cards.clear();
 	hidden_tableau_cards.clear();
@@ -453,24 +470,28 @@ state::~state() {
 }
 
 int state::calculate_revealed_value() const {
-	// * 隐藏牌数量的最大值
-	constexpr int max_hidden_cards_count = 1 + 2 + 3 + 4 + 5 + 6;
+	// # 这里的 base_weight = 100 是一个权重值,可以进行调试, (100是W1, weight-1)
 
-	// # 当前局面中的隐藏牌的数量
-	int total_hidden_cards_count = 0;
-	for (size_t i = 0; i < hidden_tableau_cards.size(); ++i) {
-		total_hidden_cards_count += hidden_tableau_cards[i].size();
+	int revealed_value = 0;
+	for (int i = 0; i < hidden_tableau_cards.size(); ++i) {
+		constexpr int base_weight = 100;
+
+		// # 当前列中的隐藏牌的数量
+		const int current_hidden_count_in_column = hidden_tableau_cards[i].size();
+		const float dot_weight = current_hidden_count_in_column * 1.0f / 10;
+
+		revealed_value += (1 + dot_weight) * base_weight * (i - current_hidden_count_in_column);
 	}
 
 	// # 1. 已经翻开的牌的数量
-	// * revealed = 已经翻开的 tableau 牌的数量
-	const int revealed = (max_hidden_cards_count - total_hidden_cards_count) * 100;
-	// 这里的100是一个权重值,可以进行调试, (100是W1, weight-1)
-	return revealed;
+	return revealed_value;
 }
 
 int state::calculate_mobility_value() const {
 	// # 2. 可移动性加权值计算
+
+	// # 衡量当前局面允许多少"合法且有意义的移动"
+	// todo:
 
 	int value = 0;
 	// todo:
@@ -501,7 +522,7 @@ int state::calculate_waste_playable_value() const {
 	return value;
 }
 
-std::string state::hidden_string(const int row, const int max) const {
+string state::hidden_string(const int row, const int max) const {
 	if (max == 0)
 		return "";
 	if (row == max - 1)
@@ -509,13 +530,13 @@ std::string state::hidden_string(const int row, const int max) const {
 	return floor_hidden_string(row) + "\n" + hidden_string(row + 1, max);
 }
 
-std::string state::floor_hidden_string(const int row) const {
-	std::string ret;
+string state::floor_hidden_string(const int row) const {
+	string ret;
 	for (auto &item: hidden_tableau_cards) {
 		auto column = item;
 		column.reverse();
 		if (column.size() > row) {
-			ret += column[column.size() - row - 1]->to_string();
+			ret += column[column.size() - row - 1]->to_str();
 		} else {
 			ret += kld::empty_card;
 		}
@@ -523,7 +544,7 @@ std::string state::floor_hidden_string(const int row) const {
 	return ret;
 }
 
-std::string state::visible_string(const int row, const int max) const {
+string state::visible_string(const int row, const int max) const {
 	if (max == 0)
 		return "";
 	if (row == max - 1)
@@ -531,13 +552,13 @@ std::string state::visible_string(const int row, const int max) const {
 	return floor_visible_string(row) + "\n" + visible_string(row + 1, max);
 }
 
-std::string state::floor_visible_string(const int row) const {
-	std::string ret;
+string state::floor_visible_string(const int row) const {
+	string ret;
 	for (auto &item: visible_tableau_cards) {
 		auto column = item;
 		column.reverse();
 		if (column.size() > row) {
-			ret += column[column.size() - row - 1]->to_string();
+			ret += column[column.size() - row - 1]->to_str();
 		} else {
 			ret += kld::empty_card;
 		}
@@ -545,11 +566,11 @@ std::string state::floor_visible_string(const int row) const {
 	return ret;
 }
 
-std::string state::deck_string() const {
-	std::string ret;
+string state::deck_string() const {
+	string ret;
 	ret += kld::empty_card;
 	for (int x = 0; x < waste_cards.size(); ++x) {
-		ret += waste_cards[x]->to_string();
+		ret += waste_cards[x]->to_str();
 	}
 	ret += "\n";
 	const int space_count = (deck_index + 1) * 5 + 2;
@@ -560,11 +581,11 @@ std::string state::deck_string() const {
 	return ret;
 }
 
-std::string state::collected_string() const {
-	std::string ret;
+string state::collected_string() const {
+	string ret;
 	for (auto &item: foundation_cards) {
 		for (int x = 0; x < item.size(); ++x) {
-			ret += item[x]->to_string();
+			ret += item[x]->to_str();
 		}
 		if (!item.empty())
 			ret += "\n";

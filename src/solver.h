@@ -10,10 +10,11 @@
 
 
 class solver {
+
 	/**
-	 * * 所有尝试过的状态的指针hash_set
+	 * * 所有尝试过的hash状态的指针hash_set
 	 */
-	std::unordered_set<std::string> all_serialized_states{};
+	std::unordered_set<state_key, state_key_hasher> all_hash_states{};
 
 	/**
 	 * * 求解计数

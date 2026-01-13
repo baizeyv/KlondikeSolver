@@ -58,7 +58,7 @@ char card::get_char() const {
 	return original_char;
 }
 
-std::string card::to_string() const {
+std::string card::to_str() const {
 	std::string ret;
 	ret += "\033[";
 	if (suit == 0 || suit == 3) {

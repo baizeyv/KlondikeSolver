@@ -5,6 +5,7 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_executable(KlondikeSolver main.cpp
         constant.h
+        meow.h
         src/card.h
         src/card.cpp
         src/history_item.h
@@ -19,8 +20,10 @@ add_executable(KlondikeSolver main.cpp
         mode/test_mode.h
         mode/test_mode.cpp
         helper/cxxopts.h
+        helper/xxhash.h
         helper/helper.h
         helper/helper.cpp
         struct/pile.h
         struct/pile.cpp
+        struct/state_key.h
 )

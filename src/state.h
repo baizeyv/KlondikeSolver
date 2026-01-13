@@ -6,10 +6,11 @@
 #define KLONDIKESOLVER_STATE_H
 #include "history_item.h"
 
-#include <vector>
+#include "../meow.h"
 
 #include "poker.h"
 #include "../struct/pile.h"
+#include "../struct/state_key.h"
 
 class state {
 	/**
@@ -41,7 +42,7 @@ public:
 	/**
 	 * * 历史记录
 	 */
-	std::vector<history_item> history{};
+	vector<history_item> history{};
 
 	/**
 	 * * 右上角的牌堆区域翻到第几张牌了
@@ -67,7 +68,7 @@ public:
 	explicit state(const state *previous_state);
 
 	[[nodiscard]]
-	std::string to_string() const;
+	string to_str() const;
 
 	/**
 	 * * 是否完成了 (所有隐藏牌都翻开了)
@@ -81,7 +82,7 @@ public:
 	 * @return
 	 */
 	[[nodiscard]]
-	std::vector<state *> find_movable() const;
+	vector<state *> find_movable() const;
 
 	/**
 	 * * 移动牌
@@ -98,7 +99,9 @@ public:
 	int get_valuation();
 
 	[[nodiscard]]
-	std::string to_serialized() const;
+	string to_serialized() const;
+
+	state_key to_hash() const;
 
 	/**
 	 * * destructor
@@ -111,6 +114,7 @@ private:
 	 * # importance: 1.
 	 * @return
 	 */
+	[[nodiscard]]
 	int calculate_revealed_value() const;
 
 	/**
@@ -138,22 +142,22 @@ private:
 	 * @return
 	 */
 	[[nodiscard]]
-	std::string hidden_string(int row, int max) const;
+	string hidden_string(int row, int max) const;
 
 	[[nodiscard]]
-	std::string floor_hidden_string(int row) const;
+	string floor_hidden_string(int row) const;
 
 	[[nodiscard]]
-	std::string visible_string(int row, int max) const;
+	string visible_string(int row, int max) const;
 
 	[[nodiscard]]
-	std::string floor_visible_string(int row) const;
+	string floor_visible_string(int row) const;
 
 	[[nodiscard]]
-	std::string deck_string() const;
+	string deck_string() const;
 
 	[[nodiscard]]
-	std::string collected_string() const;
+	string collected_string() const;
 };
 
 #endif // KLONDIKESOLVER_STATE_H
