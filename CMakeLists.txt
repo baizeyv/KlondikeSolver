@@ -8,14 +8,8 @@ add_executable(KlondikeSolver main.cpp
         meow.h
         src/card.h
         src/card.cpp
-        src/history_item.h
-        src/history_item.cpp
         src/poker.h
         src/poker.cpp
-        src/state.h
-        src/state.cpp
-        src/solver.h
-        src/solver.cpp
         mode/base_mode.h
         mode/test_mode.h
         mode/test_mode.cpp
@@ -23,7 +17,33 @@ add_executable(KlondikeSolver main.cpp
         helper/xxhash.h
         helper/helper.h
         helper/helper.cpp
-        struct/pile.h
-        struct/pile.cpp
-        struct/state_key.h
+        src/action.h
+        src/action.cpp
+        src/action_type.h
+        src/bucket.h
+        src/bucket.cpp
+        src/card_ext.h
+        src/card_ext.cpp
+        src/estimation.h
+        src/estimation.cpp
+        src/motion.h
+        src/motion.cpp
+        src/motion_index.h
+        src/motion_node.h
+        src/motion_node.cpp
+        src/pile.h
+        src/pile.cpp
+        src/solver.h
+        src/solver.cpp
+        src/state.h
+        src/state.cpp
+        src/state_key.h
+        src/state_map.h
+        src/state_map.cpp
+        src/tableau.h
+        src/tableau.cpp
+        src/talon_helper.h
+        src/talon_helper.cpp
+        src/solve_result.h
+        src/solve_result.cpp
 )

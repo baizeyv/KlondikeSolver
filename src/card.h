@@ -20,7 +20,7 @@ class card {
 	uint8_t value: 4;
 	/**
 	 * * 牌面花色 <br/>
-	 * * 0方片 1黑桃 2梅花 3红桃
+	 * * 0方片 1梅花 2红桃 3黑桃
 	 */
 	uint8_t suit: 2;
 
@@ -30,6 +30,13 @@ class card {
 	char original_char;
 
 public:
+
+	static const card UNKNOWN;
+
+	card();
+
+	card(uint8_t v, uint8_t s);
+
 	explicit card(char c);
 
 	/**
@@ -40,10 +47,19 @@ public:
 	bool can_move_to_me(const card* cd) const;
 
 	[[nodiscard]]
+	bool is_king() const;
+
+	[[nodiscard]]
+	uint8_t get_id() const;
+
+	[[nodiscard]]
 	uint8_t get_value() const;
 
 	[[nodiscard]]
 	uint8_t get_suit() const;
+
+	[[nodiscard]]
+	bool is_unknown() const;
 
 	[[nodiscard]]
 	char get_char() const;

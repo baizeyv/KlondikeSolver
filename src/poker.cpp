@@ -4,6 +4,8 @@
 
 #include "poker.h"
 
+#include <algorithm>
+
 #include "../helper/helper.h"
 
 poker::poker(const std::string &seed) : seed(seed) {
@@ -15,4 +17,27 @@ poker::poker(const std::string &seed) : seed(seed) {
 			cards.emplace_back(cd);
 		}
 	}
+}
+
+solver poker::call() const {
+	state st;
+
+	int idx = 0;
+	for (int i = 0; i < 7; ++ i) {
+		vector<card> vec;
+		for (int j = 0; j <= i; ++ j) {
+			vec.push_back(cards[idx++]);
+		}
+		st.tableaus[i] = tableau(vec, 1);
+	}
+
+	for (size_t i = idx; i < cards.size(); ++ i) {
+		st.stock.push_back(cards[idx++]);
+	}
+
+	std::ranges::reverse(st.stock);
+
+	solver s;
+	s.setup(st);
+	return s;
 }

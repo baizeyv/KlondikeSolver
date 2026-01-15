@@ -3,14 +3,12 @@
 //
 
 #include "test_mode.h"
+#include "../src/poker.h"
 
 #include <memory>
 #include <thread>
 
 #include "../constant.h"
-#include "../src/poker.h"
-#include "../src/solver.h"
-#include "../src/state.h"
 
 test_mode::test_mode() : is_input(true), step_solver(nullptr) {
 }
@@ -26,14 +24,20 @@ void test_mode::setup() {
 	commands = new std::map<std::string, std::function<void()> >;
 
 	commands->insert(std::make_pair("qq", []() {
-		// solver slr("J#CQ#Zji#HGcY#qEWra#MuPwgv#eVzkdyK#tBNRLDXAloTOhmnxfFUsSpIb");
-		solver slr("K#GN#rRc#dQhy#xjUsn#iSwLqA#uTMXoDa#mPbzkeOYtIBfClVJvWgFHEpZ");
-		slr.call_dfs();
+		const poker pkr("L#cf#oPA#BMYm#waeXN#ljRSWO#DhgZKpU#uHbsGIqxTVJEyvzrtdFQCnik");
+		auto slr = pkr.call();
+		cout << slr.to_str() << endl;
+		const auto res = slr.solve(std::numeric_limits<uint32_t>::max() - 1, false, false);
+		cout << res.to_str() << endl;
 	}));
 	commands->insert(std::make_pair("ww", [this]() {
 		test_thread = std::make_unique<std::thread>(std::thread([this]() {
-			step_solver = new solver("J#CQ#Zji#HGcY#qEWra#MuPwgv#eVzkdyK#tBNRLDXAloTOhmnxfFUsSpIb");
-			step_solver->call_step_dfs();
+			// step_solver = new solver("J#CQ#Zji#HGcY#qEWra#MuPwgv#eVzkdyK#tBNRLDXAloTOhmnxfFUsSpIb");
+			// step_solver->call_step_dfs();
+			const poker pkr("K#GN#rRc#dQhy#xjUsn#iSwLqA#uTMXoDa#mPbzkeOYtIBfClVJvWgFHEpZ");
+			auto s = pkr.call();
+			step_solver = &s;
+			step_solver->solve(1000000, false, true);
 		}));
 	}));
 	commands->insert(std::make_pair("ss", [this]() {

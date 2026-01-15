@@ -17,7 +17,7 @@ class test_mode final : public base_mode{
 
 	std::unique_ptr<std::thread> test_thread;
 
-	solver* step_solver;
+	solver* step_solver{};
 
 public:
 	test_mode();

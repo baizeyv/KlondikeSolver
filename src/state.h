@@ -1,163 +1,120 @@
 ﻿//
-// Created by baizeyv on 12/26/2025.
+// Created by baizeyv on 1/14/2026.
 //
 
-#ifndef KLONDIKESOLVER_STATE_H
-#define KLONDIKESOLVER_STATE_H
-#include "history_item.h"
+#ifndef KLONDIKESOLVER_POKER_HA
+#define KLONDIKESOLVER_POKER_HA
 
+#include <array>
+#include <optional>
+
+#include "tableau.h"
+#include "../constant.h"
 #include "../meow.h"
+#include "card.h"
 
-#include "poker.h"
-#include "../struct/pile.h"
-#include "../struct/state_key.h"
 
-class state {
+/**
+ * * 牌局状态结构体
+ */
+struct state {
+
 	/**
-	 * * -9999代表还没有进行估值,其他值为真正的估值
+	 * * 牌堆
 	 */
-	int valuation = -9999;
+	vector<card> stock{};
 
-public:
 	/**
-	 * * 右上角的牌堆
+	 * * 废牌堆
 	 */
-	pile waste_cards{};
+	vector<card> waste{};
 
 	/**
-	 * * 每一列的隐藏的牌
+	 * * 4个foundation
 	 */
-	pile_vec hidden_tableau_cards{};
+	array<optional<card>, kld::TOTAL_FOUNDATIONS> foundations{};
 
 	/**
-	 * * 每一列的可见的牌
+	 * * 7个牌阵列
 	 */
-	pile_vec visible_tableau_cards{};
+	array<tableau, kld::TOTAL_TABLEAUS> tableaus{};
 
 	/**
-	 * * 左上角已经收集的牌 (size: 4)
+	 * * constructor
 	 */
-	pile_vec foundation_cards{};
+	state();
 
 	/**
-	 * * 历史记录
-	 */
-	vector<history_item> history{};
-
-	/**
-	 * * 右上角的牌堆区域翻到第几张牌了
-	 * # -1 代表还没有翻牌,可以点击翻牌到deck_cards[0]
-	 */
-	int deck_index = -1;
-
-	/**
-	 * * 上一步的状态
-	 */
-	const state *previous;
-
-	/**
-	 * * 使用这个 constructor method 相当于生成的是 root_state
-	 * @param pkr poker 指定的一副牌
-	 */
-	explicit state(poker *pkr);
-
-	/**
-	 * * 这个constructor用于走步骤的时候创建新的状态
-	 * @param previous_state
-	 */
-	explicit state(const state *previous_state);
-
-	[[nodiscard]]
-	string to_str() const;
-
-	/**
-	 * * 是否完成了 (所有隐藏牌都翻开了)
+	 * * 计算foundation的总得分
+	 * * logic: 累加4个foundation堆顶卡片的点数
 	 * @return
 	 */
 	[[nodiscard]]
-	bool is_completed() const;
+	uint8_t foundation_score() const;
 
 	/**
-	 * * 找到所有可以移动到的新的状态
+	 * * 校验当前棋盘状态是否合法
+	 * * 检查项:
+	 * # 1. 没有任何一张牌是UNKNOWN
+	 * # 2. 52张牌不重不漏,每张牌再棋盘上只出现一次
 	 * @return
 	 */
 	[[nodiscard]]
-	vector<state *> find_movable() const;
+	bool is_valid() const;
 
 	/**
-	 * * 移动牌
-	 * @param from from column index
-	 * @param count 移动的牌的数量
-	 * @param to to column index
-	 */
-	void move_card(int from, int count, int to);
-
-	/**
-	 * * 计算及获取一次估值
-	 * @return
-	 */
-	int get_valuation();
-
-	[[nodiscard]]
-	string to_serialized() const;
-
-	state_key to_hash() const;
-
-	/**
-	 * * destructor
-	 */
-	~state();
-
-private:
-	/**
-	 * * 计算已经翻开的牌的数量的加权值
-	 * # importance: 1.
+	 * * 判断是否需要 redeal
 	 * @return
 	 */
 	[[nodiscard]]
-	int calculate_revealed_value() const;
+	bool need_redeal() const;
 
 	/**
-	 * * 计算衡量当前局面允许多少 "合法且有意义的移动" 的加权值
-	 * @return
+	 * * 执行发牌 (点击stock堆)的操作
+	 * * 处理翻牌逻辑以及重新发牌逻辑
 	 */
-	int calculate_mobility_value() const;
+	void draw();
 
 	/**
-	 * * 计算空列数的加权值
-	 * @return
+	 * * 将waste顶部的牌移动到foundation
+	 * @param idx foundation的索引(0-3)
 	 */
-	int calculate_empty_column_value() const;
+	void move_waste_to_foundation(size_t idx);
 
 	/**
-	 * * 计算 waste 牌堆的状态质量
-	 * @return
+	 * * 将waste顶部的牌移动到指定的tableau
+	 * @param idx 目标tableau列的索引(0-6)
 	 */
-	int calculate_waste_playable_value() const;
+	void move_waste_to_tableau(size_t idx);
 
 	/**
-	 * * 隐藏牌的字符串显示
-	 * @param row 第几行
-	 * @param max 隐藏牌最大数量
-	 * @return
+	 * * 将tableau顶部的牌移动到foundation
+	 * @param tableau_idx 源tableau索引(0-6)
+	 * @param foundation_idx 目标foundation索引(0-3)
 	 */
-	[[nodiscard]]
-	string hidden_string(int row, int max) const;
+	void move_tableau_to_foundation(size_t tableau_idx, size_t foundation_idx);
 
-	[[nodiscard]]
-	string floor_hidden_string(int row) const;
+	/**
+	 * * 将多张牌从一个tableau移动到另一个tableau
+	 * @param from_idx 源tableau索引(0-6)
+	 * @param to_idx 目标tableau索引(0-6)
+	 * @param count 移动的卡牌数量
+	 */
+	void move_tableau_to_tableau(size_t from_idx, size_t to_idx, size_t count);
 
-	[[nodiscard]]
-	string visible_string(int row, int max) const;
+	/**
+	 * * 将牌从foundation放回tableau
+	 * @param foundation_idx 源foundation索引(0-3)
+	 * @param tableau_idx 目标tableau索引(0-6)
+	 */
+	void move_foundation_to_tableau(size_t foundation_idx, size_t tableau_idx);
 
-	[[nodiscard]]
-	string floor_visible_string(int row) const;
-
-	[[nodiscard]]
-	string deck_string() const;
-
-	[[nodiscard]]
-	string collected_string() const;
+	/**
+	 * * 将另一个poker的状态复制到当前对象
+	 * @param pk source poker object
+	 */
+	void copy_from(const state& pk);
 };
 
-#endif // KLONDIKESOLVER_STATE_H
+
+#endif //KLONDIKESOLVER_POKER_HA
