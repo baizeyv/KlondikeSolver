@@ -185,8 +185,8 @@ void hint::update_tableau_to_tableau() {
 	// # 1. 检查是否存在被压住的K
 	// # 如果某个牌堆有隐藏牌,且隐藏牌正上方压着的第一张可见牌是K
 	bool has_king_block = false;
-	for (int id = kld::PILE_TABLEAU_START; id <= kld::PILE_TABLEAU_END; ++ id) {
-		const pile* pile = &this->slr->piles[id];
+	for (int id = kld::PILE_TABLEAU_START; id <= kld::PILE_TABLEAU_END; ++id) {
+		const pile *pile = &this->slr->piles[id];
 		int hidden_count = pile->size - pile->face_up_count();
 		auto cd = pile->peek_first_face_up();
 		if (hidden_count > 0 && !cd.is_unknown() && cd.rank == 12) {
@@ -197,8 +197,8 @@ void hint::update_tableau_to_tableau() {
 	}
 
 	// # 2. 遍历经过排序的tableau (优先处理隐藏牌多的)
-	for (int i = 0; i < kld::TOTAL_TABLEAUS; ++ i) {
-		pile* from = this->tableau_sorted_by_hidden_count[i];
+	for (int i = 0; i < kld::TOTAL_TABLEAUS; ++i) {
+		pile *from = this->tableau_sorted_by_hidden_count[i];
 		if (from->size <= 0)
 			continue;
 
@@ -206,7 +206,7 @@ void hint::update_tableau_to_tableau() {
 		// int bottom_card
 		// int bottom_rank
 
-		for (int to_id = kld::PILE_TABLEAU_START; to_id <= kld::PILE_TABLEAU_END; ++ to_id) {
+		for (int to_id = kld::PILE_TABLEAU_START; to_id <= kld::PILE_TABLEAU_END; ++to_id) {
 			// todo:
 		}
 	}
@@ -265,7 +265,7 @@ void hint::review_last_move() {
 
 void hint::update_auto() {
 	// # 遍历所有已排序并筛选出的候选移动 (all列表)
-	for (int i = 0, n = this->all.size(); i < n; ++ i) {
+	for (int i = 0, n = this->all.size(); i < n; ++i) {
 		auto move = this->all[i];
 
 		// # 检查auto列表中是否已经存在来自同一个起始堆栈且移动牌数相同的指定
@@ -277,8 +277,7 @@ void hint::update_auto() {
 }
 
 motion hint::get(const vector<motion> &list, const int from, const int count) {
-	for (int i = 0, size = list.size(); i < size; ++ i) {
-		auto move = list[i];
+	for (auto move: list) {
 		if (move.from() == from && move.count() == count) {
 			return move;
 		}
