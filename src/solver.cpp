@@ -155,7 +155,7 @@ solve_result solver::solve(const uint32_t max_nodes, const bool minimal, const b
 		// # 核心步骤: 重构棋盘状态
 		// # 这里的逻辑是: 为了节省内存,node_storage 只存最后一步和父节点索引
 		// # 我们需要通过回溯把棋盘恢复到当前节点对应的样子
-		uint8_t moves_to_make = node_storage[current_node.index].copy_path(moves_history, node_storage); // todo:
+		const uint8_t moves_to_make = node_storage[current_node.index].copy_path(moves_history, node_storage);
 		this->reset();
 		for (int i = moves_to_make - 1; i >= 0; --i) {
 			this->make_move(moves_history[i]);

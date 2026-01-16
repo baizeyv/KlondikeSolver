@@ -24,7 +24,7 @@ void test_mode::setup() {
 	commands = new std::map<std::string, std::function<void()> >;
 
 	commands->insert(std::make_pair("qq", []() {
-		const poker pkr("L#cf#oPA#BMYm#waeXN#ljRSWO#DhgZKpU#uHbsGIqxTVJEyvzrtdFQCnik");
+		const poker pkr("w#pQ#ZJI#utCY#drWeA#zhPjGi#EVmKDlx#goNRyqXnLbTOHMakFsUfScvB");
 		auto slr = pkr.call();
 		cout << slr.to_str() << endl;
 		const auto res = slr.solve(std::numeric_limits<uint32_t>::max() - 1, false, false);

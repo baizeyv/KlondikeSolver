@@ -46,4 +46,5 @@ add_executable(KlondikeSolver main.cpp
         src/talon_helper.cpp
         src/solve_result.h
         src/solve_result.cpp
+        src/hint.cpp
 )

@@ -12,7 +12,6 @@
 #include "state_map.h"
 #include "talon_helper.h"
 #include "../constant.h"
-#include "../meow.h"
 #include "pile.h"
 #include "solve_result.h"
 #include "state_key.h"
