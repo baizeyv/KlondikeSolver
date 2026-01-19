@@ -9,10 +9,10 @@
 
 #include "motion.h"
 #include "pile.h"
-#include "solver.h"
 #include "../constant.h"
 #include "../meow.h"
 
+class solver;
 
 /**
  * * dfs 提示
@@ -31,7 +31,7 @@ class hint {
 
 	int first_empty_tableau_stack_id;
 
-	array<pile*, kld::TOTAL_TABLEAUS> tableau_sorted_by_hidden_count;
+	array<int, kld::TOTAL_TABLEAUS> tableau_sorted_by_hidden_count{};
 
 	// # 各种分类的移动列表
 	vector<motion> t2f_safe;
@@ -56,8 +56,6 @@ class hint {
 	vector<motion> all;
 	vector<motion> auto_moves;
 
-	bool cached;
-
 public:
 	explicit hint(solver *_slr);
 
@@ -67,9 +65,23 @@ public:
 	 * * 获取一个提示的移动
 	 * @return
 	 */
+	[[nodiscard]]
 	motion get() const;
 
+	/**
+	 * * 更新一次
+	 */
+	void update();
+
+	/**
+	 * * 清空所有牌堆
+	 */
+	void clear();
+
 private:
+
+	bool cached;
+
 	/**
 	 * * 更新 foundation 中每种花色当前已叠放的最高点数 (真正的点数,没有牌是0,有了之后是1-13)
 	 */
@@ -137,13 +149,22 @@ private:
 	void update_auto();
 
 	/**
+	 * * 预测逻辑: 检查将 top_card 移至 to_id 后,能否诱发其他牌堆产生新的翻牌移动 (t2t_flip)
+	 * @param to_id 目标堆栈index
+	 * @param top_card 计划移入该堆栈的卡牌
+	 * @return 如果能产生连锁翻牌反应,返回true
+	 */
+	[[nodiscard]]
+	bool check_next_step_tableau_to_tableau_flip(int to_id, card_ext top_card) const;
+
+	/**
 	 * * 根据起始堆栈id和移动卡牌数量,在列表中查找匹配渡轮拆散指令
 	 * @param list 待搜索的移动指令列表
 	 * @param from 起始堆栈id
 	 * @param count 移动的卡牌数量
 	 * @return 匹配的移动
 	 */
-	static motion get(const vector<motion>& list, int from, int count);
+	static motion get(const vector<motion> &list, int from, int count);
 
 	/**
 	 * * 判断列表中是否存在符合条件的移动指令
@@ -152,7 +173,16 @@ private:
 	 * @param count
 	 * @return
 	 */
-	static bool contains(vector<motion>& list, int from, int count);
+	static bool contains(const vector<motion> &list, int from, int count);
+public:
+
+	/**
+	 * * 判断两张牌是否是不同的颜色
+	 * @param a 第一张牌
+	 * @param b 第二张牌
+	 * @return
+	 */
+	static bool diff_color(const card_ext &a, const card_ext &b);
 };
 
 

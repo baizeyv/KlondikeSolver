@@ -18,6 +18,8 @@
 
 using possible_moves = vector<motion>;
 
+class hint;
+
 class solver {
 public:
 	// ! --- 核心游戏状态 ---
@@ -84,6 +86,11 @@ public:
 	 */
 	state initial_state;
 
+	/**
+	 * * 提示工具
+	 */
+	hint* hint_kit;
+
 	// ! --- 搜索赋值组件 ---
 
 	/**
@@ -113,8 +120,37 @@ public:
 	 * * A* 搜索主函数
 	 * @param max_nodes 最大搜索节点数,防止内存溢出或时间过长
 	 * @param minimal 是否寻找最优解 (为true时找到解不停止,继续搜更短的路径)
+	 * @param step_mode 是否时逐步模式
 	 */
 	solve_result solve(uint32_t max_nodes, bool minimal, bool step_mode);
+
+	/**
+	 * * IDA* 搜索主函数
+	 */
+	bool solve(bool step_mode);
+
+	/**
+	 * * IDA* auto move 现在提示一下
+	 * @return
+	 */
+	[[nodiscard]]
+	hint* hint_now() const;
+
+	/**
+	 * * IDA* auto move 现在发一下牌
+	 * @return 是否成功发牌或redeal
+	 */
+	[[nodiscard]]
+	bool draw_now();
+
+	/**
+	 * * IDA* auto move 现在移动一些牌
+	 * @return 是否成功移动
+	 */
+	[[nodiscard]]
+	bool move_now(int from_index, int to_index, int count);
+
+	void moved() const;
 
 	/**
 	 * * 获取当前局面的hash value, 用于状态判重
@@ -192,6 +228,7 @@ public:
 	 * @param cd
 	 * @return
 	 */
+	[[nodiscard]]
 	optional<uint8_t> can_move_to_foundation(card_ext cd) const;
 
 	/**
@@ -203,6 +240,7 @@ public:
 	 * * 将解题器的移动序列转换为具体的操作序列
 	 * @return
 	 */
+	[[nodiscard]]
 	vector<action> export_actions() const;
 
 	// * ---------------------------------------------------------

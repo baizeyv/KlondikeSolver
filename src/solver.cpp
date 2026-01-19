@@ -10,18 +10,20 @@
 #include <unordered_map>
 
 #include "action.h"
+#include "hint.h"
 #include "../helper/xxhash.h"
 #include "motion_index.h"
 
-solver::solver() : draw_count(1), foundation_score(0), initial_foundation_score(0),
-                   foundation_minimum(0),
-                   moves_total(0), round_count(1), last_move(motion()) {
+solver::solver() : draw_count(1), foundation_score(0),
+                   initial_foundation_score(0), foundation_minimum(0),
+                   moves_total(0), round_count(1), last_move(motion()), hint_kit(nullptr) {
 	// # 初始化花色到foundation的映射表
 	// # 这里将其填充为4,标识当前还没有任何花色分配到回收站
 	suits_to_foundations.fill(kld::MAX_SUIT);
 	initial_piles.fill(pile());
 	piles.fill(pile());
 	moves.fill(motion());
+	hint_kit = new hint(this);
 }
 
 void solver::setup(const state &st) {
@@ -206,7 +208,7 @@ solve_result solver::solve(const uint32_t max_nodes, const bool minimal, const b
 				if (!should_skip) {
 					// # 记录新节点
 					node_storage[node_count] = motion_node{current_node.index, mov};
-					bool solved = (this->foundation_score == 52);
+					const bool solved = (this->foundation_score == 52);
 					if (this->foundation_score > max_foundation_score || solved) {
 						solution_node_index = node_count;
 						max_foundation_score = this->foundation_score;
@@ -263,6 +265,164 @@ found_solution:
 	return {
 		minimal && node_count < max_nodes, static_cast<int32_t>(node_count), end_time - start_time, export_actions()
 	};
+}
+
+bool solver::solve(const bool step_mode) {
+	if (step_mode) {
+		while (next_step == 0) {
+			if (abort_step == 1)
+				break;
+		}
+		next_step = 0;
+	}
+	hint_kit->clear();
+	const motion mov = hint_now()->get();
+	if (mov.is_null()) {
+		const bool f = draw_now();
+		if (step_mode) {
+			std::cout << std::endl << to_str() << std::endl;
+		}
+		return f;
+	} else {
+		const bool f = move_now(mov.from(), mov.to(), mov.count());
+		if (step_mode) {
+			std::cout << std::endl << to_str() << std::endl;
+		}
+		return f;
+	}
+}
+
+hint *solver::hint_now() const {
+	hint_kit->update();
+	return hint_kit;
+}
+
+bool solver::draw_now() {
+	// # 从 stock 到 waste 的点击以及 redeal
+
+	pile *stock = &piles[kld::PILE_STOCK];
+	pile *waste = &piles[kld::PILE_WASTE];
+	if (stock->size > 0) {
+		// # 当前draw_count, 通常(1或3)
+		constexpr int count = 1;
+		const motion mov(kld::PILE_STOCK, kld::PILE_WASTE, count, false);
+		// # 移动牌
+
+		for (int i = 0; i < count; ++i) {
+			stock->pop_card_to(piles[kld::PILE_WASTE]);
+		}
+		stock->set_face_up_count(0);
+
+		// # 记录历史
+		this->moves[this->moves_total] = mov;
+		this->moves_total += 1;
+		this->last_move = mov;
+
+		moved();
+
+		return true;
+	} else if (waste->size > 0) {
+		// # 如果stock空了,但waste有牌,此时重置牌堆redeal
+
+		const auto count = waste->size;
+		const motion mov(kld::PILE_WASTE, kld::PILE_STOCK, count, false);
+		// # 移动牌
+		for (int i = 0; i < count; ++i) {
+			waste->pop_card_to(piles[kld::PILE_STOCK]);
+		}
+		stock->set_face_up_count(0);
+
+		// # 记录历史
+		this->moves[this->moves_total] = mov;
+		this->moves_total += 1;
+		this->last_move = mov;
+
+		moved();
+
+		return true;
+	} else {
+		// ! 发牌失败
+		return false;
+	}
+}
+
+bool solver::move_now(const int from_index, const int to_index, int count) {
+	if (from_index == to_index)
+		return false; // # 移动牌失败
+	const pile *from = &piles[from_index];
+	const pile *to = &piles[to_index];
+
+	if (from_index == kld::PILE_STOCK) {
+		return false; // # 不能直接从stock移动,必须通过draw方法
+	} else if (from_index >= kld::PILE_TABLEAU_START && from_index <= kld::PILE_TABLEAU_END) {
+		if (count > from->face_up_count()) {
+			return false; // # 移动数量不能超过正面朝上的牌数
+		}
+	} else if ((from_index >= kld::PILE_FOUNDATION_START && from_index <= kld::PILE_FOUNDATION_END) || from_index ==
+	           kld::PILE_WASTE) {
+		if (count != 1 || from->size <= 0)
+			return false; // # foundation和waste一次只能移动一张
+	}
+
+	// # 获取要移动的那叠牌中最底下的那张牌 (决定能否接在目标堆栈上)
+	const auto base_card = from->get(from->size - count);
+	// # 验证目标堆栈的放置规则
+	if (to_index == kld::PILE_STOCK || to_index == kld::PILE_WASTE) {
+		return false; // # 不能移回stock或waste
+	} else if (to_index >= kld::PILE_TABLEAU_START && to_index <= kld::PILE_TABLEAU_END) {
+		// # tableau
+		if (to->size > 0) {
+			const auto top_card = to->peek_top();
+			// # 规则: 点数小1且颜色不同(红黑交替)
+			if (top_card.rank != base_card.rank + 1 || !hint::diff_color(top_card, base_card)) {
+				return false;
+			}
+		} else {
+			// # 规则: 空位只能放K
+			if (base_card.rank + 1 != 13) {
+				return false;
+			}
+		}
+	} else if (to_index >= kld::PILE_FOUNDATION_START && to_index <= kld::PILE_FOUNDATION_END) {
+		if (to->size > 0) {
+			const auto top_card = to->peek_top();
+			// # 规则: 童话色且点数大1
+			if (top_card.rank + 1 != base_card.rank || top_card.suit != base_card.suit) {
+				return false;
+			}
+		} else {
+			// # 规则: 空的foundation只能放A
+			if (base_card.rank + 1 != 1)
+				return false;
+		}
+	}
+
+	// # 4. 执行移动逻辑
+	// # 判断是否回翻开一张新的背面牌 (只有从tableau移走所有正面牌且下方有背面牌时触发)
+	const bool from_is_tableau = from_index >= kld::PILE_TABLEAU_START && from_index <= kld::PILE_TABLEAU_END;
+	const bool flip = from_is_tableau && from->face_up_count() == count && from->size > count;
+
+	const motion mov(from_index, to_index, count, flip);
+
+	// # 1. 记录动作历史
+	this->moves[this->moves_total] = mov;
+	this->moves_total += 1;
+	this->last_move = mov;
+
+	piles[from_index].move_n_cards_to(piles[to_index], count);
+	if (flip) {
+		piles[from_index].set_face_up_count(1);
+	}
+
+	moved();
+
+	return true;
+}
+
+void solver::moved() const {
+	hint_kit->clear();
+	hint_kit->update();
+	// auto hn = hint_now();
 }
 
 state_key solver::get_state() const {
@@ -353,7 +513,7 @@ uint8_t solver::calculate_additional_moves(motion mov) const {
 	uint8_t count = 1;
 	const uint8_t mov_count = static_cast<uint8_t>(mov.count());
 
-	// # 如果是从 wast 移动牌, 且涉及到翻牌操作
+	// # 如果是从 waste 移动牌, 且涉及到翻牌操作
 	if (mov.from() == static_cast<uint8_t>(kld::PILE_WASTE) && mov_count != 0) {
 		uint8_t d_count = this->draw_count; // 1 或 3
 		if (!mov.flip()) {

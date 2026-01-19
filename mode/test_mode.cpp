@@ -40,6 +40,17 @@ void test_mode::setup() {
 			step_solver->solve(1000000, false, true);
 		}));
 	}));
+	commands->insert(std::make_pair("ff", [this]() {
+		test_thread = std::make_unique<std::thread>(std::thread([this]() {
+			const poker pkr("i#GE#NvW#JPAy#LXdDs#brVMxf#tpBuohC#SUgeTKcqHnOaklZjFmYIQzRw");
+			auto s = pkr.call();
+			step_solver = &s;
+			std::cout << std::endl << step_solver->to_str() << std::endl;
+			for (size_t i = 0; i < kld::MAX_MOVES; ++ i) {
+				step_solver->solve(true);
+			}
+		}));
+	}));
 	commands->insert(std::make_pair("ss", [this]() {
 		if (step_solver != nullptr) {
 			step_solver->next_step = 1;
