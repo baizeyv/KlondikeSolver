@@ -23,3 +23,7 @@ string solve_result::to_str() const {
 	ret += action::format_actions(actions);
 	return ret;
 }
+
+bool solve_result::is_solved() const {
+	return !actions.empty();
+}

@@ -107,6 +107,19 @@ void solver::setup(const state &st) {
 	this->reset();
 }
 
+solve_result solver::solve() {
+	// # ida* 搜索结果
+	const solve_result ida_result = solve(false);
+
+	if (ida_result.is_solved()) {
+		return ida_result;
+	}
+
+	// # a* 搜索结果
+	solve_result a_result = solve(std::numeric_limits<uint32_t>::max() - 1, false, false);
+	return a_result;
+}
+
 solve_result solver::solve(const uint32_t max_nodes, const bool minimal, const bool step_mode) {
 	// # 1. 初始化校验
 	if (!this->initial_state.is_valid()) {

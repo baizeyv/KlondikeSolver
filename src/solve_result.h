@@ -30,6 +30,13 @@ struct solve_result {
 	std::vector<action> actions;
 
 	string to_str() const;
+
+	/**
+	 * * 是否有解
+	 * @return
+	 */
+	[[nodiscard]]
+	bool is_solved() const;
 };
 
 #endif //KLONDIKESOLVER_SOLVE_RESULT_H

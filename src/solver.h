@@ -117,6 +117,12 @@ public:
 	void setup(const state& st);
 
 	/**
+	 * * 先 IDA*(DFS) 再 A*(BFS) 搜索解决方案
+	 * @return
+	 */
+	solve_result solve();
+
+	/**
 	 * * A* 搜索主函数
 	 * @param max_nodes 最大搜索节点数,防止内存溢出或时间过长
 	 * @param minimal 是否寻找最优解 (为true时找到解不停止,继续搜更短的路径)
