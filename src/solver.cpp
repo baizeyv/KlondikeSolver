@@ -141,6 +141,10 @@ solve_result solver::solve(const uint32_t max_nodes, const bool minimal, const b
 	std::optional<uint32_t> solution_node_index = std::nullopt;
 	const auto start_time = std::chrono::steady_clock::now();
 
+	if (step_mode) {
+		cout << to_str() << endl;
+	}
+
 	// # 3. 主循环
 	while (!open.empty()) {
 		if (node_count >= max_nodes)
@@ -263,33 +267,52 @@ found_solution:
 	const auto end_time = std::chrono::steady_clock::now();
 
 	return {
-		minimal && node_count < max_nodes, static_cast<int32_t>(node_count), end_time - start_time, export_actions()
+		minimal && node_count < max_nodes, static_cast<int32_t>(node_count), end_time - start_time, export_actions_for_a_star()
 	};
 }
 
-bool solver::solve(const bool step_mode) {
+solve_result solver::solve(const bool step_mode) {
+	const auto start_time =  std::chrono::steady_clock::now();
 	if (step_mode) {
-		while (next_step == 0) {
-			if (abort_step == 1)
-				break;
-		}
-		next_step = 0;
+		// # 步骤模式会进行局面输出
+		cout << to_str() << endl;
 	}
-	hint_kit->clear();
-	const motion mov = hint_now()->get();
-	if (mov.is_null()) {
-		const bool f = draw_now();
+	for (size_t i = 0; i < kld::MAX_MOVES; ++i) {
 		if (step_mode) {
-			std::cout << std::endl << to_str() << std::endl;
+			while (next_step == 0) {
+				if (abort_step == 1)
+					break;
+			}
+			next_step = 0;
 		}
-		return f;
-	} else {
-		const bool f = move_now(mov.from(), mov.to(), mov.count());
-		if (step_mode) {
-			std::cout << std::endl << to_str() << std::endl;
+		hint_kit->clear();
+		const motion mov = hint_now()->get();
+		bool has_action = false;
+		if (mov.is_null()) {
+			const bool f = draw_now();
+			if (step_mode) {
+				std::cout << std::endl << to_str() << std::endl;
+			}
+			has_action = f;
+		} else {
+			const bool f = move_now(mov.from(), mov.to(), mov.count());
+			if (step_mode) {
+				std::cout << std::endl << to_str() << std::endl;
+			}
+			has_action = f;
 		}
-		return f;
+		if (!has_action) {
+			// # 没有操作了
+			const auto end_time = std::chrono::steady_clock::now();
+			return {false, -1, end_time - start_time, {}};
+		}
+		if (is_win()) {
+			// # 当前局面获胜了
+			break;
+		}
 	}
+	const auto end_time = std::chrono::steady_clock::now();
+	return {false, this->moves_total, end_time - start_time, export_actions_for_ida_star()};
 }
 
 hint *solver::hint_now() const {
@@ -918,6 +941,15 @@ optional<uint8_t> solver::can_move_to_foundation(card_ext cd) const {
 	return std::nullopt;
 }
 
+bool solver::is_win() const {
+	int size = 0;
+	for (int i = kld::PILE_FOUNDATION_START; i <= kld::PILE_FOUNDATION_END; ++ i) {
+		const pile* p = &this->piles[i];
+		size += p->size;
+	}
+	return size >= (13 * 4);
+}
+
 void solver::reset() {
 	// # 1. 恢复当前牌堆状态 (使用 std::array 的拷贝赋值)
 	this->piles = this->initial_piles;
@@ -933,7 +965,7 @@ void solver::reset() {
 	this->last_move = motion();
 }
 
-vector<action> solver::export_actions() const {
+vector<action> solver::export_actions_for_a_star() const {
 	vector<action> actions;
 	// # 初始化模拟状态
 	size_t stock_size = this->initial_piles[kld::PILE_STOCK].size;
@@ -1027,6 +1059,54 @@ vector<action> solver::export_actions() const {
 				const size_t to_idx = move_to - kld::PILE_TABLEAU_START;
 				actions.push_back(action::foundation2tableau(from_idx, to_idx));
 				st.move_foundation_to_tableau(from_idx, to_idx);
+			}
+		}
+	}
+	return actions;
+}
+
+vector<action> solver::export_actions_for_ida_star() const {
+	if (this->moves_total >= kld::MAX_MOVES)
+		return {};
+	vector<action> actions;
+	for (size_t i = 0; i < this->moves_total; ++ i) {
+		const motion& mov = this->moves[i];
+
+		// # 获取移动的具体参数(src,dest,count,是否设置redeal/flip)
+		const uint8_t move_from = mov.from();
+		const uint8_t move_to = mov.to();
+		const uint8_t move_count = mov.count();
+		// const bool move_flip = mov.flip();
+
+		// # 情况A: 从waste移出
+		if (move_from == kld::PILE_WASTE) {
+			if (move_to == kld::PILE_STOCK) {
+				// # redeal
+				actions.push_back(action::redeal());
+			} else if (move_to >= kld::PILE_FOUNDATION_START && move_to <= kld::PILE_FOUNDATION_END) {
+				// # waste -> foundation
+				actions.push_back(action::waste2foundation(move_to - kld::PILE_FOUNDATION_START));
+			} else if (move_to >= kld::PILE_TABLEAU_START && move_to <= kld::PILE_TABLEAU_END) {
+				// # waste -> tableau
+				actions.push_back(action::waste2tableau(move_to - kld::PILE_TABLEAU_START));
+			}
+		} else if (move_from == kld::PILE_STOCK) {
+			if (move_to == kld::PILE_WASTE) {
+				// # draw
+				actions.push_back(action::draw());
+			}
+		} else if (move_from >= kld::PILE_TABLEAU_START && move_from <= kld::PILE_TABLEAU_END) {
+			if (move_to >= kld::PILE_TABLEAU_START && move_to <= kld::PILE_TABLEAU_END) {
+				// # tableau -> tableau
+				actions.push_back(action::tableau2tableau(move_from - kld::PILE_TABLEAU_START, move_to - kld::PILE_TABLEAU_START, move_count));
+			} else if (move_to >= kld::PILE_FOUNDATION_START && move_to <= kld::PILE_FOUNDATION_END) {
+				// # tableau -> foundation
+				actions.push_back(action::tableau2foundation(move_from - kld::PILE_TABLEAU_START, move_to - kld::PILE_FOUNDATION_START));
+			}
+		} else if (move_from >= kld::PILE_FOUNDATION_START && move_from <= kld::PILE_FOUNDATION_END) {
+			if (move_to >= kld::PILE_TABLEAU_START && move_to <= kld::PILE_TABLEAU_END) {
+				// # foundation -> tableau
+				actions.push_back(action::foundation2tableau(move_from - kld::PILE_FOUNDATION_START, move_to - kld::PILE_TABLEAU_START));
 			}
 		}
 	}

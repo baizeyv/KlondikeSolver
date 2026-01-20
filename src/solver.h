@@ -127,7 +127,7 @@ public:
 	/**
 	 * * IDA* 搜索主函数
 	 */
-	bool solve(bool step_mode);
+	solve_result solve(bool step_mode);
 
 	/**
 	 * * IDA* auto move 现在提示一下
@@ -232,16 +232,29 @@ public:
 	optional<uint8_t> can_move_to_foundation(card_ext cd) const;
 
 	/**
+	 * * 当前局面是否已经获胜
+	 * @return
+	 */
+	[[nodiscard]]
+	bool is_win() const;
+
+	/**
 	 * * 将 solver 恢复到初始状态
 	 */
 	void reset();
 
 	/**
-	 * * 将解题器的移动序列转换为具体的操作序列
+	 * * 将解题器的移动序列转换为具体的操作序列 (A*算法)->BFS
 	 * @return
 	 */
 	[[nodiscard]]
-	vector<action> export_actions() const;
+	vector<action> export_actions_for_a_star() const;
+
+	/**
+	 * * 将解题器的移动序列转换为具体的操作序列 (IDA*算法)->DFS
+	 * @return
+	 */
+	vector<action> export_actions_for_ida_star() const;
 
 	// * ---------------------------------------------------------
 

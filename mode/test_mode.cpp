@@ -42,13 +42,11 @@ void test_mode::setup() {
 	}));
 	commands->insert(std::make_pair("ff", [this]() {
 		test_thread = std::make_unique<std::thread>(std::thread([this]() {
-			const poker pkr("i#GE#NvW#JPAy#LXdDs#brVMxf#tpBuohC#SUgeTKcqHnOaklZjFmYIQzRw");
+			const poker pkr("L#mn#ild#txRW#bgoYB#fuSFVK#hrUGIcX#wyqajNCADPsZHkTpvQMzEeJO");
 			auto s = pkr.call();
 			step_solver = &s;
-			std::cout << std::endl << step_solver->to_str() << std::endl;
-			for (size_t i = 0; i < kld::MAX_MOVES; ++ i) {
-				step_solver->solve(true);
-			}
+			const auto res = step_solver->solve(false);
+			cout << res.to_str() << endl;
 		}));
 	}));
 	commands->insert(std::make_pair("ss", [this]() {

@@ -4,6 +4,13 @@
 #include "solve_result.h"
 
 string solve_result::to_str() const {
+	if (actions.empty()) {
+		string s;
+		s += "\n duration: ";
+		s += std::to_string(elapsed.count());
+		s += "\n { unsolved }";
+		return s;
+	}
 	string ret;
 	ret += "\nminimal: ";
 	ret += std::to_string(minimal);
