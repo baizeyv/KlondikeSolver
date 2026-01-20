@@ -32,6 +32,10 @@ motion hint::get() const {
 	return !all.empty() ? all[0] : motion{};
 }
 
+int hint::get_mobility() const {
+	return all.size();
+}
+
 void hint::update() {
 	if (cached)
 		return;

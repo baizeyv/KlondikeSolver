@@ -69,6 +69,12 @@ public:
 	motion get() const;
 
 	/**
+	 * * 获取可移动的数量
+	 * @return
+	 */
+	int get_mobility() const;
+
+	/**
 	 * * 更新一次
 	 */
 	void update();

@@ -93,19 +93,19 @@ action action::redeal() {
 }
 
 action action::waste2foundation(const size_t f_idx) {
-	return {action_type::waste_to_foundation, 0, f_idx, 0};
+	return {action_type::waste_to_foundation, 0, f_idx, 1};
 }
 
 action action::waste2tableau(const size_t t_idx) {
-	return {action_type::waste_to_tableau, 0, t_idx, 0};
+	return {action_type::waste_to_tableau, 0, t_idx, 1};
 }
 
 action action::tableau2foundation(const size_t t_idx, const size_t f_idx) {
-	return {action_type::tableau_to_foundation, t_idx, f_idx, 0};
+	return {action_type::tableau_to_foundation, t_idx, f_idx, 1};
 }
 
 action action::foundation2tableau(const size_t f_idx, const size_t t_idx) {
-	return {action_type::foundation_to_tableau, f_idx, t_idx, 0};
+	return {action_type::foundation_to_tableau, f_idx, t_idx, 1};
 }
 
 action action::tableau2tableau(const size_t f_idx, const size_t t_idx, const size_t n) {

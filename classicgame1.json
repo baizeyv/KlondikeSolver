@@ -1,7 +1,7 @@
 {
   "1010001": {
     "ID": 1010001,
-    "CardCode": "WjGDInxkbFRYvgpiHsQSKzThOMNaXcZwloLyrfAqmCBJteUduVPE",
+    "CardCode": "W#jG#DIn#xkbF#RYvgp#iHsQSK#zThOMNa#XcZwloLyrfAqmCBJteUduVPE", // score: 3189.02
     "Layer": 1,
     "WinRate": 0.9304,
     "score25": 3750,
@@ -10,7 +10,7 @@
   },
   "1010002": {
     "ID": 1010002,
-    "CardCode": "xtNeRCDQHlkJUfaISjydnhTzXbqAMPBmKEOYgvoFpLVwiWGsurcZ",
+    "CardCode": "x#tN#eRC#DQHl#kJUfa#ISjydn#hTzXbqA#MPBmKEOYgvoFpLVwiWGsurcZ", // score: 1166.44
     "Layer": 1,
     "WinRate": 0.9635,
     "score25": 3520,
@@ -19,7 +19,7 @@
   },
   "1010004": {
     "ID": 1010004,
-    "CardCode": "GUgzhapuINqfSvKtTJoywOicnbjAVWrZReEkCFsMLHYQDBPldXmx",
+    "CardCode": "G#Ug#zha#puIN#qfSvK#tTJoyw#OicnbjA#VWrZReEkCFsMLHYQDBPldXmx", // score: 2555.98
     "Layer": 1,
     "WinRate": 0.9632,
     "score25": 4160,
@@ -2352,7 +2352,7 @@
 {
   "1010000": {
     "ID": 1010000,
-    "CardCode": "rVLMWiItFJyONTaeDmlpAsHbSoKkqncxQzUjBvGfdwERgYZCXuhP",
+    "CardCode": "r#VL#MWi#ItFJ#yONTa#eDmlpA#sHbSoKk#qncxQzUjBvGfdwERgYZCXuhP", // score: 992.426
     "Layer": 2,
     "WinRate": 0.9194,
     "score25": 4265,
@@ -2361,7 +2361,7 @@
   },
   "1010006": {
     "ID": 1010006,
-    "CardCode": "MJWVXrQOUxkTDNZpBoaCAjFsLmylRwuhiYfHdEPIezGbgcKStqvn",
+    "CardCode": "M#JW#VXr#QOUx#kTDNZ#pBoaCA#jFsLmyl#RwuhiYfHdEPIezGbgcKStqvn", // score: 6005.61
     "Layer": 2,
     "WinRate": 0.9173,
     "score25": 4500,
@@ -9621,7 +9621,7 @@
 {
   "1010005": {
     "ID": 1010005,
-    "CardCode": "yQADfakVXpdlqMNijtRmsZuEebxwvohLnzYPSHWKgTcFOBrUCJIG",
+    "CardCode": "y#QA#Dfa#kVXp#dlqMN#ijtRms#ZuEebxw#vohLnzYPSHWKgTcFOBrUCJIG", // score: 1313.08
     "Layer": 5,
     "WinRate": 0.8835,
     "score25": 3780,
@@ -9630,7 +9630,7 @@
   },
   "1010054": {
     "ID": 1010054,
-    "CardCode": "uxymzWGKqdYhvTJMUEfklrQDINZaFBbCLetcsAoVnHgiPXRpOSwj",
+    "CardCode": "u#xy#mzW#GKqd#YhvTJ#MUEfkl#rQDINZa#FBbCLetcsAoVnHgiPXRpOSwj", // score: 2215.1
     "Layer": 5,
     "WinRate": 0.8846,
     "score25": 4165,
@@ -14638,7 +14638,7 @@
   },
   "1010101": {
     "ID": 1010101,
-    "CardCode": "xihKgHUqLBGpJRXdcbOVvfzkyoYWnMASINEQjuwsFPtarCmeTDlZ",
+    "CardCode": "x#ih#KgH#UqLB#GpJRX#dcbOVv#fzkyoYW#nMASINEQjuwsFPtarCmeTDlZ", // score: 247.894
     "Layer": 7,
     "WinRate": 0.876,
     "score25": 4465,
@@ -17106,7 +17106,7 @@
 {
   "1010051": {
     "ID": 1010051,
-    "CardCode": "PodkxwHFfXyDcUrMITutRYWVQvNqmaSsAiELOZpzbBGJCjghlnKe",
+    "CardCode": "P#od#kxw#HFfX#yDcUr#MITutR#YWVQvNq#maSsAiELOZpzbBGJCjghlnKe", // score: 2347.46
     "Layer": 8,
     "WinRate": 0.8667,
     "score25": 3460,
@@ -17115,7 +17115,7 @@
   },
   "1010086": {
     "ID": 1010086,
-    "CardCode": "zlWbJBKyLnfMCFTjwiPNSgUYqchrkRdEsGvpDaoIAteOumVxHXZQ",
+    "CardCode": "z#lW#bJB#KyLn#fMCFT#jwiPNS#gUYqchr#kRdEsGvpDaoIAteOumVxHXZQ", // score: 3199.16
     "Layer": 8,
     "WinRate": 0.8655,
     "score25": 3530,
@@ -24886,7 +24886,7 @@
   },
   "1081023": {
     "ID": 1081023,
-    "CardCode": "linduamNYHGcDoTfsCUwhIPxvypWtFXAReQkZrSOVKJBbgjMzLqE",
+    "CardCode": "l#in#dua#mNYH#GcDoT#fsCUwh#IPxvypW#tFXAReQkZrSOVKJBbgjMzLqE", // score: 2481.39
     "Layer": 10,
     "WinRate": 0.8538,
     "score25": 4185,
@@ -24895,7 +24895,7 @@
   },
   "1081590": {
     "ID": 1081590,
-    "CardCode": "w#pQ#ZJI#utCY#drWeA#zhPjGi#EVmKDlx#goNRyqXnLbTOHMakFsUfScvB", // 1.98s | 74361
+    "CardCode": "w#pQ#ZJI#utCY#drWeA#zhPjGi#EVmKDlx#goNRyqXnLbTOHMakFsUfScvB", // 1.98s | 74361, score: 2541.8
     "Layer": 10,
     "WinRate": 0.8537,
     "score25": 3985,
@@ -24931,7 +24931,7 @@
   },
   "1100957": {
     "ID": 1100957,
-    "CardCode": "i#GE#NvW#JPAy#LXdDs#brVMxf#tpBuohC#SUgeTKcqHnOaklZjFmYIQzRw",
+    "CardCode": "i#GE#NvW#JPAy#LXdDs#brVMxf#tpBuohC#SUgeTKcqHnOaklZjFmYIQzRw", // score: 3662.83
     "Layer": 10,
     "WinRate": 0.8504,
     "score25": 3585,

@@ -58,8 +58,8 @@ void solver::setup(const state &st) {
 
 		if (st.foundations[i].has_value()) {
 			const auto &cd = st.foundations[i].value();
-			uint8_t suit = cd.get_suit();
-			uint8_t rank = cd.get_value() - 1;
+			const uint8_t suit = cd.get_suit();
+			const uint8_t rank = cd.get_value() - 1;
 
 			foundation_score_temp += (rank + 1);
 
@@ -105,19 +105,6 @@ void solver::setup(const state &st) {
 
 	// # 将当前运行状态恢复到initial_state定义的状态
 	this->reset();
-}
-
-solve_result solver::solve() {
-	// # ida* 搜索结果
-	const solve_result ida_result = solve(false);
-
-	if (ida_result.is_solved()) {
-		return ida_result;
-	}
-
-	// # a* 搜索结果
-	solve_result a_result = solve(std::numeric_limits<uint32_t>::max() - 1, false, false);
-	return a_result;
 }
 
 solve_result solver::solve(const uint32_t max_nodes, const bool minimal, const bool step_mode) {
@@ -935,7 +922,7 @@ void solver::undo_move() {
 	}
 }
 
-optional<uint8_t> solver::can_move_to_foundation(card_ext cd) const {
+optional<uint8_t> solver::can_move_to_foundation(const card_ext cd) const {
 	// # 1. 安全检查
 	if (cd.is_unknown()) {
 		return std::nullopt;

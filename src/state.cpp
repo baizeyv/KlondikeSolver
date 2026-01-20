@@ -6,6 +6,8 @@
 
 #include <algorithm>
 
+#include "poker.h"
+
 state::state() {
 	foundations.fill(std::nullopt);
 }
@@ -14,7 +16,7 @@ uint8_t state::foundation_score() const {
 	uint8_t total_score = 0;
 
 	// # 遍历4个foundation
-	for (const auto& f_card_opt : this->foundations) {
+	for (const auto &f_card_opt: this->foundations) {
 		// # 如果该位置有牌
 		if (f_card_opt.has_value()) {
 			total_score += (f_card_opt->get_value());
@@ -32,8 +34,8 @@ bool state::is_valid() const {
 	size_t count = 0;
 
 	// # 定义一个内部lambda辅助函数用于检查卡牌数组
-	auto check_cards = [&](const vector<card>& cards) -> bool {
-		for (const auto& cd : cards) {
+	auto check_cards = [&](const vector<card> &cards) -> bool {
+		for (const auto &cd: cards) {
 			if (cd.is_unknown())
 				return false;
 			size_t id = static_cast<size_t>(cd.get_id());
@@ -55,14 +57,14 @@ bool state::is_valid() const {
 		return false;
 	// # 3. 检查foundation
 	// ! 注意: foundation只存了顶牌,但逻辑上它包含了从A到该顶牌的所有牌
-	for (const auto& f_card_opt : this->foundations) {
+	for (const auto &f_card_opt: this->foundations) {
 		if (!f_card_opt.has_value())
 			continue;
 
 		// # 还原foundation中"下面"被压住的所有牌
 		vector<card> f_stack;
 		const uint8_t current_suit = f_card_opt->get_suit();
-		for (uint8_t r = 0; r < f_card_opt->get_value(); ++ r) {
+		for (uint8_t r = 0; r < f_card_opt->get_value(); ++r) {
 			f_stack.push_back(card(r + 1, current_suit));
 		}
 		if (!check_cards(f_stack))
@@ -70,7 +72,7 @@ bool state::is_valid() const {
 	}
 
 	// # 4. 检查7个tableau
-	for (const auto& tab : this->tableaus) {
+	for (const auto &tab: this->tableaus) {
 		// # 直接传入存储在 tableau 结构体中的cards vector
 		if (!check_cards(tab.cards))
 			return false;
@@ -98,15 +100,15 @@ void state::draw() {
 		}
 	} else {
 		// # 翻牌draw逻辑 (draw_count)
-		size_t d_count = 1;
+		const size_t d_count = 1;
 		// # 实际能翻的数量取决于剩余牌数
-		size_t num = std::min(d_count, stock_len);
+		const size_t num = std::min(d_count, stock_len);
 
 		// # 1. 确定起始迭代器
-		auto start_it = this->stock.end() - num;
+		const auto start_it = this->stock.end() - num;
 		// # 2. 将这部分牌反转并存入临时容器或直接处理
 		vector<card> drawn_cards(start_it, this->stock.end());
-		std::reverse(drawn_cards.begin(), drawn_cards.end());
+		ranges::reverse(drawn_cards);
 		// # 3. 压入废牌堆
 		this->waste.insert(this->waste.end(), drawn_cards.begin(), drawn_cards.end());
 		// # 4. 从原发牌堆移除
@@ -182,7 +184,132 @@ void state::copy_from(const state &pk) {
 	// # 2. 赋值foundation
 	this->foundations = pk.foundations;
 	// # 3. 赋值7个tableau
-	for (size_t i = 0; i < kld::TOTAL_TABLEAUS; ++ i) {
+	for (size_t i = 0; i < kld::TOTAL_TABLEAUS; ++i) {
 		this->tableaus[i] = pk.tableaus[i];
 	}
+}
+
+int state::calculate_empty_column_count() const {
+	int count = 0;
+	for (const auto &tab: tableaus) {
+		count += tab.is_empty() ? 1 : 0;
+	}
+	return count;
+}
+
+int state::calculate_face_down_count() const {
+	int count = 0;
+	for (const auto &tab: tableaus) {
+		count += tab.size() - tab.face_up_count;
+	}
+	return count;
+}
+
+int state::calculate_foundation_ready_count() const {
+	int count = 0;
+	if (!waste.empty()) {
+		// # waste亮着的第一张牌(在vector中是最后一张)
+		const card cd = this->waste.back();
+		if (can_move_to_foundation(cd)) {
+			// # 可以推进foundation (waste->foundation)
+			count++;
+		}
+	}
+	for (const auto &tab: tableaus) {
+		if (tab.is_empty())
+			continue;
+		if (tab.face_up_count > 0) {
+			const card cd = tab.cards[tab.size() - 1];
+			if (can_move_to_foundation(cd)) {
+				// # 可以推进foundation (tableau->foundation)
+				count++;
+			}
+		}
+	}
+	return count;
+}
+
+bool state::check_flip_card(const state &previous, const action &act) const {
+	switch (act.type) {
+		case action_type::tableau_to_tableau:
+		case action_type::tableau_to_foundation: {
+			const auto old_tab = previous.tableaus[act.from_idx];
+			const auto now_tab = tableaus[act.from_idx];
+			// # 移动之前的背面牌数量
+			const int old_face_down_count = old_tab.size() - old_tab.face_up_count;
+			// # 移动之后的背面牌数量
+			const int now_face_down_count = now_tab.size() - now_tab.face_up_count;
+			return old_face_down_count - now_face_down_count == 1;
+		}
+		case action_type::waste_to_foundation:
+		case action_type::waste_to_tableau:
+		case action_type::foundation_to_tableau:
+		case action_type::draw:
+		case action_type::redeal:
+			return false;
+	}
+	return false;
+}
+
+bool state::check_consume_empty(const state &previous, const action &act) const {
+	switch (act.type) {
+		case action_type::tableau_to_foundation:
+		case action_type::tableau_to_tableau: {
+			const auto old_tab = previous.tableaus[act.to_idx];
+			const auto now_tab = tableaus[act.to_idx];
+			// # 移动前为空,移动后不为空代表消耗了空列
+			return old_tab.is_empty() && !now_tab.is_empty();
+		}
+		case action_type::waste_to_foundation:
+		case action_type::waste_to_tableau:
+		case action_type::foundation_to_tableau:
+		case action_type::draw:
+		case action_type::redeal:
+			return false;
+	}
+	return false;
+}
+
+string state::to_str() const {
+	string ret;
+	ret += "STOCK: ";
+	for (const auto &item: stock) {
+		ret += item.to_str();
+	}
+	ret += "\nWASTE: ";
+	for (const auto &item: waste) {
+		ret += item.to_str();
+	}
+	ret += "\nFOUNDATION: ";
+	for (const auto &item: foundations) {
+		if (item.has_value()) {
+			ret += item.value().to_str();
+		} else {
+			ret += kld::empty_card;
+		}
+	}
+	ret += "\nTABLEAU: \n";
+	for (const auto &tab: tableaus) {
+		for (const auto &item: tab.cards) {
+			ret += item.to_str();
+		}
+		ret += "{" + to_string(tab.face_up_count);
+		ret += "}\n";
+	}
+	ret += "\n";
+	return ret;
+}
+
+bool state::can_move_to_foundation(const card &cd) const {
+	if (cd.get_value() == 1)
+		return true;
+	const auto suit = cd.get_suit();
+	const auto now = foundations[suit];
+	if (!now.has_value()) {
+		return false;
+	}
+	const auto n = now.value();
+	if (n.get_value() + 1 == cd.get_value())
+		return true;
+	return false;
 }

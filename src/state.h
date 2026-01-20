@@ -13,12 +13,13 @@
 #include "../meow.h"
 #include "card.h"
 
+struct action;
+
 
 /**
  * * 牌局状态结构体
  */
 struct state {
-
 	/**
 	 * * 牌堆
 	 */
@@ -113,7 +114,58 @@ struct state {
 	 * * 将另一个poker的状态复制到当前对象
 	 * @param pk source poker object
 	 */
-	void copy_from(const state& pk);
+	void copy_from(const state &pk);
+
+	/* * ======================================================================== */
+
+	/**
+	 * * 计算当前局面的空列数
+	 * @return
+	 */
+	[[nodiscard]]
+	int calculate_empty_column_count() const;
+
+	/**
+	 * * 计算当前局面所有列中face-down总数
+	 * @return
+	 */
+	[[nodiscard]]
+	int calculate_face_down_count() const;
+
+	/**
+	 * * 计算当前局面中可立刻推进foundation的数量
+	 * @return
+	 */
+	[[nodiscard]]
+	int calculate_foundation_ready_count() const;
+
+	/**
+	 * * 检测执行某步骤是否产生了翻牌行为
+	 * @param previous 移动前的状态
+	 * @param act 移动操作
+	 * @return
+	 */
+	[[nodiscard]]
+	bool check_flip_card(const state &previous, const action& act) const;
+
+	/**
+	 * * 检测执行某步骤是否产生了消耗空列的行为
+	 * @param previous 移动前的状态
+	 * @param act 移动操作
+	 * @return
+	 */
+	[[nodiscard]]
+	bool check_consume_empty(const state &previous, const action& act) const;
+
+	string to_str() const;
+
+private:
+	/**
+	 * * 是否可以将指定牌推进foundation中
+	 * @param cd 指定card
+	 * @return
+	 */
+	bool can_move_to_foundation(const card& cd) const;
 };
 
 

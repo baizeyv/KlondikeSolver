@@ -47,4 +47,6 @@ add_executable(KlondikeSolver main.cpp
         src/solve_result.h
         src/solve_result.cpp
         src/hint.cpp
+        src/analyzer.h
+        src/analyzer.cpp
 )

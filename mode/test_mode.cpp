@@ -9,6 +9,7 @@
 #include <thread>
 
 #include "../constant.h"
+#include "../src/analyzer.h"
 
 test_mode::test_mode() : is_input(true), step_solver(nullptr) {
 }
@@ -22,12 +23,19 @@ test_mode::~test_mode() {
 void test_mode::setup() {
 	arg_commands = new std::map<std::string, std::function<void(const std::string &)> >;
 	commands = new std::map<std::string, std::function<void()> >;
-
+	commands->insert(std::make_pair("oo", [this]() {
+		test_thread = std::make_unique<std::thread>(std::thread([this]() {
+			analyzer ana("w#pQ#ZJI#utCY#drWeA#zhPjGi#EVmKDlx#goNRyqXnLbTOHMakFsUfScvB");
+			ana.solve();
+			ana.output();
+			ana.simulate_analysis();
+		}));
+	}));
 	commands->insert(std::make_pair("qq", []() {
-		const poker pkr("w#pQ#ZJI#utCY#drWeA#zhPjGi#EVmKDlx#goNRyqXnLbTOHMakFsUfScvB");
+		const poker pkr("L#mn#ild#txRW#bgoYB#fuSFVK#hrUGIcX#wyqajNCADPsZHkTpvQMzEeJO");
 		auto slr = pkr.call();
 		cout << slr.to_str() << endl;
-		const auto res = slr.solve(std::numeric_limits<uint32_t>::max() - 1, false, false);
+		const auto res = slr.solve(2200000, false, false);
 		cout << res.to_str() << endl;
 	}));
 	commands->insert(std::make_pair("ww", [this]() {
