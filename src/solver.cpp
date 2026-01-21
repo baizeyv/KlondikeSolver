@@ -252,9 +252,12 @@ solve_result solver::solve(const uint32_t max_nodes, const bool minimal, const b
 	}
 
 found_solution:
+	const auto end_time = std::chrono::steady_clock::now();
 	// # 6. 结果导出
 	if (!solution_node_index.has_value() || max_foundation_score < 52) {
-		throw runtime_error("no solution found.");
+		// # 没有解题结果
+		// ! no solution found
+		return {false, static_cast<int32_t>(max_nodes), end_time - start_time, {}};
 	}
 
 	// # 最终将棋盘状态置为解出的终局
@@ -264,7 +267,6 @@ found_solution:
 		this->make_move(moves_history[i]);
 	}
 
-	const auto end_time = std::chrono::steady_clock::now();
 
 	return {
 		minimal && node_count < max_nodes, static_cast<int32_t>(node_count), end_time - start_time, export_actions_for_a_star()

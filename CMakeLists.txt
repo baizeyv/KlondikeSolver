@@ -49,4 +49,10 @@ add_executable(KlondikeSolver main.cpp
         src/hint.cpp
         src/analyzer.h
         src/analyzer.cpp
+        json_struct/json.hpp
+        json_struct/level_json_data.h
+        io/json_reader.h
+        io/json_reader.cpp
+        csv_struct/export_data.hpp
+        csv_struct/export_data.cpp
 )

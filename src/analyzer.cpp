@@ -9,7 +9,7 @@
 #include "hint.h"
 #include "poker.h"
 
-analyzer::analyzer(string _level_seed) : level_seed(std::move(_level_seed)) {
+analyzer::analyzer(string _level_seed) : level_seed(std::move(_level_seed)), is_auto_move(false) {
 }
 
 void analyzer::solve() { {
@@ -19,20 +19,22 @@ void analyzer::solve() { {
 		const solve_result ida_result = slr.solve(false);
 		if (ida_result.is_solved()) {
 			result = ida_result;
+			is_auto_move = true;
 			return;
 		}
 	} {
 		const poker a_pkr(level_seed);
 		solver slr = a_pkr.call();
 		// # a* 搜索结果
-		const solve_result a_result = slr.solve(100000000, false, false);
+		const solve_result a_result = slr.solve(500000000, false, false);
 		result = a_result;
+		is_auto_move = false;
 	}
 }
 
-void analyzer::simulate_analysis() const {
+export_data analyzer::simulate_analysis(bool output_content) const {
 	if (!result.is_solved())
-		return;
+		return {};
 
 	const poker a_pkr(level_seed);
 	const solver slr = a_pkr.call();
@@ -40,7 +42,7 @@ void analyzer::simulate_analysis() const {
 	state previous_state = slr.initial_state;
 
 	// # 难度
-	double difficulty = 0.0;
+	// double difficulty = 0.0;
 
 	// # 强制度 (这是"如果不这样走就完了"的量化) (mobility<=3是真正的危险区)
 	double forcedness = 0.0;
@@ -50,7 +52,6 @@ void analyzer::simulate_analysis() const {
 	double compression_score = 0.0;
 
 	// # 资源消耗惩罚参数
-	double resource_burn = 0.0;
 	double stagnation = 0.0;
 
 	// # 信息释放效率 (我们不看做了多少事,而看:每一步带来了多少新信息)
@@ -59,7 +60,7 @@ void analyzer::simulate_analysis() const {
 
 	int N = 1;
 
-	for (int i = 0; i < result.actions.size(); ++i, ++ N) {
+	for (int i = 0; i < result.actions.size(); ++i, ++N) {
 		// # 遍历解题路径
 		auto act = result.actions[i];
 		// # 根据两个参数来创建新的状态
@@ -77,30 +78,42 @@ void analyzer::simulate_analysis() const {
 
 		// # 计算低自由度持续时间
 		if (feature.mobility <= 2) {
-			compression_len ++;
+			compression_len++;
 			compression_score += compression_len;
 		} else {
 			compression_len = 0;
 		}
 
 		// # 计算资源消耗惩罚
-		// # (消耗空列但没翻牌->假进展) (这一步在走"唯一解",但同时把未来堵死)
-		if (feature.consume_empty && !feature.flip_card)
-			resource_burn += 2.0;
 		if (!feature.flip_card && feature.foundation_ready == 0)
 			stagnation += 1.0;
 
 		// # 计算信息释放效率
-		progress += (feature.flip_card ? 2.0 : 0.0) + feature.foundation_ready * 0.5 - (feature.consume_empty ? 1.0 : 0.0);
+		progress += (feature.flip_card ? 2.0 : 0.0) + feature.foundation_ready * 0.5 - (
+			feature.consume_empty ? 1.0 : 0.0);
 
 		previous_state = next_state;
 	}
 	// ? 高难局往往efficiency很低
 	efficiency = progress / N;
 
-	difficulty = 1.5 * forcedness + 1.0 * compression_score + 1.2 * resource_burn + 1.0 * stagnation + 5.0 * (1.0 - efficiency);
+	// difficulty = 1.5 * forcedness + 1.0 * compression_score + 1.0 * stagnation + 5.0 * (1.0 - efficiency);
 
-	cout << " difficulty score: " << difficulty << endl;
+	if (output_content) {
+		cout << " forcedness: " << to_string(forcedness) << endl;
+		cout << " compression score: " << to_string(compression_score) << endl;
+		cout << " stagnation: " << to_string(stagnation) << endl;
+		cout << " efficiency: " << to_string(efficiency) << endl;
+		cout << " result: \n" << result.to_str() << endl;
+	}
+	export_data dt{};
+	dt.forcedness = forcedness;
+	dt.compression_score = compression_score;
+	dt.stagnation = stagnation;
+	dt.efficiency = efficiency;
+	dt.auto_move_flag = is_auto_move;
+	dt.result = "\"" + result.to_str() + "\"";
+	return dt;
 }
 
 void analyzer::output() const {

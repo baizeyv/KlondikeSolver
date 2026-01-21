@@ -8,6 +8,7 @@
 #include "poker.h"
 #include "solve_result.h"
 #include "step_feature.h"
+#include "../csv_struct/export_data.hpp"
 
 /**
  * * difficulty analyzer (难度分析器)
@@ -22,6 +23,11 @@ class analyzer {
 	 * * 解决结果
 	 */
 	solve_result result;
+
+	/**
+	 * * 是否是使用auto_move方法解决的题
+	 */
+	bool is_auto_move;
 
 public:
 
@@ -39,7 +45,7 @@ public:
 	/**
 	 * * 模拟关卡及分析
 	 */
-	void simulate_analysis() const;
+	export_data simulate_analysis(bool output_content) const;
 
 	/**
 	 * * 输出

@@ -1,0 +1,2441 @@
+﻿{
+  "1010051": {
+    "ID": 1010051,
+    "CardCode": "P#od#kxw#HFfX#yDcUr#MITutR#YWVQvNq#maSsAiELOZpzbBGJCjghlnKe",
+    "Layer": 8,
+    "WinRate": 0.8667,
+    "score25": 3460,
+    "score50": 3755,
+    "score75": 4055
+  },
+  "1010086": {
+    "ID": 1010086,
+    "CardCode": "z#lW#bJB#KyLn#fMCFT#jwiPNS#gUYqchr#kRdEsGvpDaoIAteOumVxHXZQ",
+    "Layer": 8,
+    "WinRate": 0.8655,
+    "score25": 3530,
+    "score50": 3740,
+    "score75": 3945
+  },
+  "1010088": {
+    "ID": 1010088,
+    "CardCode": "MNmLBlJHtKiGrbUgcWyzdCEFanVfYxIhqZATjSQsvpwekOouXRDP",
+    "Layer": 8,
+    "WinRate": 0.8684,
+    "score25": 4090,
+    "score50": 4275,
+    "score75": 4585
+  },
+  "1010090": {
+    "ID": 1010090,
+    "CardCode": "qKOmaNQYDUpTVrELwdZyjWMAkoInFGtBzhCvbXclPJHxeSiRufgs",
+    "Layer": 8,
+    "WinRate": 0.8646,
+    "score25": 3710,
+    "score50": 4010,
+    "score75": 4295
+  },
+  "1010115": {
+    "ID": 1010115,
+    "CardCode": "foJqwmOLZgSYrIRzxFGPahydcCABunkVMNEDpUlHvitKsWQeXTbj",
+    "Layer": 8,
+    "WinRate": 0.8641,
+    "score25": 3775,
+    "score50": 4010,
+    "score75": 4320
+  },
+  "1010234": {
+    "ID": 1010234,
+    "CardCode": "YJiwEyUbfNxqdMoImaRQcuFvWKZODTlkpHVBgnPjsLCAtrezGShX",
+    "Layer": 8,
+    "WinRate": 0.8681,
+    "score25": 4220,
+    "score50": 4595,
+    "score75": 4805
+  },
+  "1010251": {
+    "ID": 1010251,
+    "CardCode": "vwYWRdBQfqkGtDnrZCiNcLXIgKzoEyPVxMspjTumeFhbAUSaOJlH",
+    "Layer": 8,
+    "WinRate": 0.8678,
+    "score25": 3250,
+    "score50": 3575,
+    "score75": 3895
+  },
+  "1010287": {
+    "ID": 1010287,
+    "CardCode": "QXHRpBYSUnAejMFuJoaLTqbydEvCcGKrkiPOzVgWwDfhlNZtIsmx",
+    "Layer": 8,
+    "WinRate": 0.8672,
+    "score25": 4585,
+    "score50": 4960,
+    "score75": 5250
+  },
+  "1010293": {
+    "ID": 1010293,
+    "CardCode": "VqdWvaxQPeTcJlSIfmsoFLbBpCGUyKNEARYzMZgrutDjkwHhOiXn",
+    "Layer": 8,
+    "WinRate": 0.8652,
+    "score25": 4040,
+    "score50": 4330,
+    "score75": 4585
+  },
+  "1010307": {
+    "ID": 1010307,
+    "CardCode": "hZwiOCfUamrLJQosMkpPdYgXteENDcxlSBGTnqAVyzFKRjHWbvIu",
+    "Layer": 8,
+    "WinRate": 0.8686,
+    "score25": 4080,
+    "score50": 4380,
+    "score75": 4610
+  },
+  "1010321": {
+    "ID": 1010321,
+    "CardCode": "mSvxIfYHEzrKBklswRPNJtWhygQFLTpjdbDAMuncUoVZiXeaOGqC",
+    "Layer": 8,
+    "WinRate": 0.8673,
+    "score25": 3555,
+    "score50": 3840,
+    "score75": 4055
+  },
+  "1010337": {
+    "ID": 1010337,
+    "CardCode": "MbasOQhBCljiWRoTyedqKJxXwgmDIZpHtAuVScrfLFYzPEUvGknN",
+    "Layer": 8,
+    "WinRate": 0.8684,
+    "score25": 3705,
+    "score50": 4040,
+    "score75": 4305
+  },
+  "1010372": {
+    "ID": 1010372,
+    "CardCode": "zLYDkIdyObKCAXTEFqsZhgGrfwPRmlpWBaQSjUeHvVNxMtociJun",
+    "Layer": 8,
+    "WinRate": 0.8632,
+    "score25": 3925,
+    "score50": 4210,
+    "score75": 4430
+  },
+  "1010373": {
+    "ID": 1010373,
+    "CardCode": "ciIJguAeQsfqRVKGjmYLWXpdxlChwMHZTPoaEtSzNnUykBbvFDOr",
+    "Layer": 8,
+    "WinRate": 0.8676,
+    "score25": 4250,
+    "score50": 4500,
+    "score75": 4830
+  },
+  "1010408": {
+    "ID": 1010408,
+    "CardCode": "yzxRGmtiUWVYbFfvEBHIXgpSjhCOsNuQZDkJTrLcPdaKqwloAnMe",
+    "Layer": 8,
+    "WinRate": 0.8667,
+    "score25": 4510,
+    "score50": 4920,
+    "score75": 5125
+  },
+  "1010417": {
+    "ID": 1010417,
+    "CardCode": "mhVrsuijdlZRMPzxgeYtNQHDwkFbWnqSoXpBJGOaAIvyUTCcLKfE",
+    "Layer": 8,
+    "WinRate": 0.864,
+    "score25": 3935,
+    "score50": 4245,
+    "score75": 4555
+  },
+  "1010453": {
+    "ID": 1010453,
+    "CardCode": "LJRTrxCuFlsEpOydhmtcgVjDNXAMZHeonBYkiIwWzGqafUvSKPQb",
+    "Layer": 8,
+    "WinRate": 0.8689,
+    "score25": 3835,
+    "score50": 4255,
+    "score75": 4615
+  },
+  "1010480": {
+    "ID": 1010480,
+    "CardCode": "SxoKumNwREgIQVThFzbMvCdpDWqslUGnArOJkPfcZYtBiajHLyeX",
+    "Layer": 8,
+    "WinRate": 0.8636,
+    "score25": 4010,
+    "score50": 4210,
+    "score75": 4540
+  },
+  "1010525": {
+    "ID": 1010525,
+    "CardCode": "hkVAtuKYFgjJwbndfWIBQGNUCEiDsvmpXceHzTSMyRrlaqPoxLOZ",
+    "Layer": 8,
+    "WinRate": 0.8686,
+    "score25": 4260,
+    "score50": 4550,
+    "score75": 4715
+  },
+  "1010529": {
+    "ID": 1010529,
+    "CardCode": "IGciXHKAYFuvDwUsVLjTNQOoeZBztlEgPnhyrSJWxMbpRdafCqkm",
+    "Layer": 8,
+    "WinRate": 0.8651,
+    "score25": 3445,
+    "score50": 3825,
+    "score75": 4295
+  },
+  "1010562": {
+    "ID": 1010562,
+    "CardCode": "YfTLRyBGiPFUunohWqsOXpDlbZeArHkvECawNSxItKdQmVjzcMJg",
+    "Layer": 8,
+    "WinRate": 0.8632,
+    "score25": 4350,
+    "score50": 4530,
+    "score75": 4735
+  },
+  "1010576": {
+    "ID": 1010576,
+    "CardCode": "JYidtwNCvAylpZjPbExKnsrmkGIBfeHFSaWqLTVUDMRoQzXguOch",
+    "Layer": 8,
+    "WinRate": 0.8684,
+    "score25": 4445,
+    "score50": 4715,
+    "score75": 4955
+  },
+  "1010577": {
+    "ID": 1010577,
+    "CardCode": "AmgIlRzXQnofDwNdYLycSJupEsirUvMHaGWbTKZqheFOVxBPjkCt",
+    "Layer": 8,
+    "WinRate": 0.8682,
+    "score25": 4170,
+    "score50": 4515,
+    "score75": 4760
+  },
+  "1010585": {
+    "ID": 1010585,
+    "CardCode": "gJYtOuwTKxqevoVhESayNFbsCplnfXAZUQkirRHcDzmPWLdMjBGI",
+    "Layer": 8,
+    "WinRate": 0.8641,
+    "score25": 4190,
+    "score50": 4550,
+    "score75": 4940
+  },
+  "1010594": {
+    "ID": 1010594,
+    "CardCode": "SNmbrEPlQnHuVWchXTgaItvDfqxoLGsBUOMCFApzwJdeYKkZijyR",
+    "Layer": 8,
+    "WinRate": 0.8678,
+    "score25": 4120,
+    "score50": 4415,
+    "score75": 4735
+  },
+  "1010623": {
+    "ID": 1010623,
+    "CardCode": "MPwCtQUoAaWyqzsLhTSlNpVGjxYmFDOBEinHurZcgXRIeKbkdJfv",
+    "Layer": 8,
+    "WinRate": 0.8682,
+    "score25": 3965,
+    "score50": 4135,
+    "score75": 4320
+  },
+  "1010626": {
+    "ID": 1010626,
+    "CardCode": "xPLXJQyRrlZInTCbHatdzgSDfGhNUKkWYvscMmopiBVjquwEAeFO",
+    "Layer": 8,
+    "WinRate": 0.8632,
+    "score25": 4250,
+    "score50": 4460,
+    "score75": 4655
+  },
+  "1010639": {
+    "ID": 1010639,
+    "CardCode": "DdJSQFXqMtspPobuGHezkhcKlZRaLOvVBiCNfIWwrEmYjAyUxTgn",
+    "Layer": 8,
+    "WinRate": 0.8667,
+    "score25": 4040,
+    "score50": 4310,
+    "score75": 4575
+  },
+  "1010651": {
+    "ID": 1010651,
+    "CardCode": "oHdTlSfeROkumgqWVrPXUJwIjyEpsQcazGbYxAZDCniMvKBtNFLh",
+    "Layer": 8,
+    "WinRate": 0.8632,
+    "score25": 4040,
+    "score50": 4445,
+    "score75": 4750
+  },
+  "1010680": {
+    "ID": 1010680,
+    "CardCode": "TIuEeaJHVmXZPCNWAhboyMFRktdqrUznDisBfGcpLjYOSlxvgwKQ",
+    "Layer": 8,
+    "WinRate": 0.8682,
+    "score25": 3725,
+    "score50": 3960,
+    "score75": 4245
+  },
+  "1010682": {
+    "ID": 1010682,
+    "CardCode": "XjUYpVkWREcGKxvbDTAymqraiLwNJtQoFMSsudICZfOghnlHzBPe",
+    "Layer": 8,
+    "WinRate": 0.8644,
+    "score25": 4110,
+    "score50": 4380,
+    "score75": 4610
+  },
+  "1010686": {
+    "ID": 1010686,
+    "CardCode": "JLRszqWVipjZOnNBHPAEKCQDhYUdXlkawreMImbgFtufcvoGxyST",
+    "Layer": 8,
+    "WinRate": 0.8641,
+    "score25": 4585,
+    "score50": 4835,
+    "score75": 5030
+  },
+  "1010700": {
+    "ID": 1010700,
+    "CardCode": "owNbemyrlkhDYLpGRWOFHIXSiZuABcEKtdMxJVjgCTnvzfqUQsaP",
+    "Layer": 8,
+    "WinRate": 0.8644,
+    "score25": 3360,
+    "score50": 3495,
+    "score75": 3660
+  },
+  "1010716": {
+    "ID": 1010716,
+    "CardCode": "pjzLOoXiCNqclwfgVMBPIFResbhtvZYGkKDArEWUaSJduyxQmHTn",
+    "Layer": 8,
+    "WinRate": 0.864,
+    "score25": 4420,
+    "score50": 4685,
+    "score75": 4800
+  },
+  "1010769": {
+    "ID": 1010769,
+    "CardCode": "crWMAwsbJNTpEYtQhjVBadDefxgiSXkvPIOKFLnomyHRqzCUZGul",
+    "Layer": 8,
+    "WinRate": 0.8678,
+    "score25": 4190,
+    "score50": 4405,
+    "score75": 4620
+  },
+  "1010770": {
+    "ID": 1010770,
+    "CardCode": "ETbIxCozWsmMpgGiVPOBZKvcLRnQqyetNwJrAjkuUXfdDhFlaSHY",
+    "Layer": 8,
+    "WinRate": 0.8678,
+    "score25": 3670,
+    "score50": 3980,
+    "score75": 4465
+  },
+  "1010811": {
+    "ID": 1010811,
+    "CardCode": "siKMcPqTGySdrBmoEzZwnbOgaWXfLUCkHtIQuYAxVNeDRpJvhFlj",
+    "Layer": 8,
+    "WinRate": 0.864,
+    "score25": 4835,
+    "score50": 5065,
+    "score75": 5265
+  },
+  "1010841": {
+    "ID": 1010841,
+    "CardCode": "dZEjBAuKDnqlkHhJLNzySsRXUQigCavYwerOTWoxIGMVpPFctfbm",
+    "Layer": 8,
+    "WinRate": 0.8689,
+    "score25": 3640,
+    "score50": 3855,
+    "score75": 4100
+  },
+  "1010849": {
+    "ID": 1010849,
+    "CardCode": "fFVAvnhUguwMaCteiYObZGSyoWHPDJLlmsQrBxKdjckXRIzTpNEq",
+    "Layer": 8,
+    "WinRate": 0.8672,
+    "score25": 3960,
+    "score50": 4215,
+    "score75": 4435
+  },
+  "1010895": {
+    "ID": 1010895,
+    "CardCode": "KvCRGxQEZdrkFLsgIyjOzfVPbqoeUNJhSMiYXBpAulDHaTnwmctW",
+    "Layer": 8,
+    "WinRate": 0.8651,
+    "score25": 4005,
+    "score50": 4245,
+    "score75": 4485
+  },
+  "1010914": {
+    "ID": 1010914,
+    "CardCode": "GMuyHnifAWpOYgbRxZsIClkXUQoaVKhFJzvNmdqDLPrSjETcewBt",
+    "Layer": 8,
+    "WinRate": 0.8672,
+    "score25": 4240,
+    "score50": 4590,
+    "score75": 4920
+  },
+  "1010924": {
+    "ID": 1010924,
+    "CardCode": "MZTwKgOyVhjUJaBmCentRzGNLpflDFrdoSAPHbicxsEYQkIvWquX",
+    "Layer": 8,
+    "WinRate": 0.8644,
+    "score25": 3950,
+    "score50": 4245,
+    "score75": 4510
+  },
+  "1010936": {
+    "ID": 1010936,
+    "CardCode": "wfgHYMWFhjbRsJoyTmSKVketUNQInuDdCpvcBqxGzZELPOiAlraX",
+    "Layer": 8,
+    "WinRate": 0.8632,
+    "score25": 4085,
+    "score50": 4370,
+    "score75": 4550
+  },
+  "1010953": {
+    "ID": 1010953,
+    "CardCode": "aPkmMYcxWqVdSlFQvtHeNhBRipILZrJsXyzGDTwgEbOfujnUoAKC",
+    "Layer": 8,
+    "WinRate": 0.864,
+    "score25": 3600,
+    "score50": 4710,
+    "score75": 5185
+  },
+  "1010994": {
+    "ID": 1010994,
+    "CardCode": "ZlwrnHyVSMQAhkasEXTczRCBKbOgmeFiDvoPJxuGWfpUjqtNILYd",
+    "Layer": 8,
+    "WinRate": 0.8681,
+    "score25": 4185,
+    "score50": 4415,
+    "score75": 4685
+  },
+  "1011018": {
+    "ID": 1011018,
+    "CardCode": "GMJQtSgAfRObpoUhvNnduesrBCPYlHjTIFWackZKEiwDzVqLmXxy",
+    "Layer": 8,
+    "WinRate": 0.8655,
+    "score25": 5050,
+    "score50": 5440,
+    "score75": 5735
+  },
+  "1011036": {
+    "ID": 1011036,
+    "CardCode": "VNaPojykRMXupvDOilZAHIEeFcgrYGwzBfWLtmxQSTCnqJsbUhKd",
+    "Layer": 8,
+    "WinRate": 0.8684,
+    "score25": 4250,
+    "score50": 4530,
+    "score75": 4755
+  },
+  "1011043": {
+    "ID": 1011043,
+    "CardCode": "EIxUeLQRgYPTGcusMzZdtoCrwqAbFNaySHvfiKXBOhmWpklJnDjV",
+    "Layer": 8,
+    "WinRate": 0.8661,
+    "score25": 4220,
+    "score50": 4465,
+    "score75": 4635
+  },
+  "1011050": {
+    "ID": 1011050,
+    "CardCode": "vfNJlZtOcwFdAWyjhQsgCGzMIRmqkuEKSnpYParUeDVxBoTibLXH",
+    "Layer": 8,
+    "WinRate": 0.8667,
+    "score25": 4000,
+    "score50": 4365,
+    "score75": 4690
+  },
+  "1011076": {
+    "ID": 1011076,
+    "CardCode": "xgwkDEVWAfHYiOvJSyGlRXsPqzBNaUpmKTdhCFLurQbtojeZIMnc",
+    "Layer": 8,
+    "WinRate": 0.8673,
+    "score25": 3910,
+    "score50": 4165,
+    "score75": 4415
+  },
+  "1011181": {
+    "ID": 1011181,
+    "CardCode": "kNCybiFEnxdsuTjpGftXZUqLWzaBQgmwhIoORSMAHYvJcKVPelDr",
+    "Layer": 8,
+    "WinRate": 0.8644,
+    "score25": 4275,
+    "score50": 4470,
+    "score75": 4645
+  },
+  "1011235": {
+    "ID": 1011235,
+    "CardCode": "WjFMJeImcHkEOavbViSTAowRCBsufYlQxgUGpPhZLnXKzDqdrtyN",
+    "Layer": 8,
+    "WinRate": 0.8684,
+    "score25": 4770,
+    "score50": 4950,
+    "score75": 5115
+  },
+  "1011247": {
+    "ID": 1011247,
+    "CardCode": "XJBmtxrPOTVcZMspwhdvnFaeLREibjDNqlfAozGCYHKWygQSUIuk",
+    "Layer": 8,
+    "WinRate": 0.8672,
+    "score25": 4090,
+    "score50": 4325,
+    "score75": 4460
+  },
+  "1011281": {
+    "ID": 1011281,
+    "CardCode": "iRNzeYkvdGUoJsXKWhjuVfDPBnAmqHgMTLCatlxObEpywSrZcIQF",
+    "Layer": 8,
+    "WinRate": 0.8667,
+    "score25": 3585,
+    "score50": 3845,
+    "score75": 4120
+  },
+  "1011282": {
+    "ID": 1011282,
+    "CardCode": "dhufONovrzSaFHmtbQPnXDKsRpETcZLwWYxUCGJVAjieIBlgMqky",
+    "Layer": 8,
+    "WinRate": 0.8651,
+    "score25": 4455,
+    "score50": 4710,
+    "score75": 4955
+  },
+  "1011309": {
+    "ID": 1011309,
+    "CardCode": "LKpTqsHCkrWeRouBYlAdwSzagZXixhOyjfmcNPMIGFbvEVJQDUnt",
+    "Layer": 8,
+    "WinRate": 0.8661,
+    "score25": 4585,
+    "score50": 4900,
+    "score75": 5175
+  },
+  "1011325": {
+    "ID": 1011325,
+    "CardCode": "ejiOwzIGKcFsRfExkhmaNQbTdqlnAPpWoSXgUBHtyCrvLJDMYVuZ",
+    "Layer": 8,
+    "WinRate": 0.8678,
+    "score25": 4085,
+    "score50": 4255,
+    "score75": 4495
+  },
+  "1011337": {
+    "ID": 1011337,
+    "CardCode": "NkZBeIvsAdfPrHbFMXUpCREuliSGoOLgayJjwxhzVnQmDWKtYcTq",
+    "Layer": 8,
+    "WinRate": 0.8647,
+    "score25": 4070,
+    "score50": 4410,
+    "score75": 4550
+  },
+  "1011378": {
+    "ID": 1011378,
+    "CardCode": "EBHWwZbAjlTCsrviXgMztJmKfpVSRLukeFaPGDUNnqhxyoQcOdIY",
+    "Layer": 8,
+    "WinRate": 0.8672,
+    "score25": 3715,
+    "score50": 4110,
+    "score75": 4455
+  },
+  "1011384": {
+    "ID": 1011384,
+    "CardCode": "uNEDMAomeZfCqltgrBdiQcsbKSpkVXJGTYRzWjnLFahvwyIPHUxO",
+    "Layer": 8,
+    "WinRate": 0.8654,
+    "score25": 4945,
+    "score50": 5170,
+    "score75": 5300
+  },
+  "1011390": {
+    "ID": 1011390,
+    "CardCode": "tcZwrhuCABEgmfIljNpXFsOWdonabyRvqLPVTJUQYDSkGxizHKMe",
+    "Layer": 8,
+    "WinRate": 0.864,
+    "score25": 4030,
+    "score50": 4490,
+    "score75": 4845
+  },
+  "1011449": {
+    "ID": 1011449,
+    "CardCode": "iuJEfUXkAIwCpbonyzNaTvMxgPLDjhOYtmcrFVqZBGeQHRsSdlKW",
+    "Layer": 8,
+    "WinRate": 0.8632,
+    "score25": 3060,
+    "score50": 3350,
+    "score75": 3695
+  },
+  "1011467": {
+    "ID": 1011467,
+    "CardCode": "mPwMjoyrxbJXVSHOdagAclUfsLiqpvQKFBeunDEzIZGtRCkTYhNW",
+    "Layer": 8,
+    "WinRate": 0.864,
+    "score25": 3520,
+    "score50": 3820,
+    "score75": 4200
+  },
+  "1011478": {
+    "ID": 1011478,
+    "CardCode": "iuxOcJytUNmLSWBQfCRvaHYjTXlnFegbAzwVpDZsoPqdKMkGIrhE",
+    "Layer": 8,
+    "WinRate": 0.8667,
+    "score25": 3090,
+    "score50": 3350,
+    "score75": 3715
+  },
+  "1011498": {
+    "ID": 1011498,
+    "CardCode": "EwxJOBhMaztTqUVeYvFgGIcjbniZKkPprWoSmXRuLyDQsACHldfN",
+    "Layer": 8,
+    "WinRate": 0.8657,
+    "score25": 4195,
+    "score50": 4665,
+    "score75": 5020
+  },
+  "1011506": {
+    "ID": 1011506,
+    "CardCode": "rvbNtcsoGVEmeTpMPLZBSjfgUODaXAQYhwixuWRykJdzFClKHqIn",
+    "Layer": 8,
+    "WinRate": 0.863,
+    "score25": 4050,
+    "score50": 4425,
+    "score75": 4650
+  },
+  "1011525": {
+    "ID": 1011525,
+    "CardCode": "TsqoaHQYuiWIrVdXezBUpKcjxkLPANOfZDSFJwhEgbmlCtvMnyRG",
+    "Layer": 8,
+    "WinRate": 0.8644,
+    "score25": 3520,
+    "score50": 3710,
+    "score75": 3960
+  },
+  "1011558": {
+    "ID": 1011558,
+    "CardCode": "GMfpFDRZBimCkHAJudNszELgtUIQqvSYXanKojlVxPbycweWhOTr",
+    "Layer": 8,
+    "WinRate": 0.8655,
+    "score25": 3925,
+    "score50": 4170,
+    "score75": 4360
+  },
+  "1011560": {
+    "ID": 1011560,
+    "CardCode": "yQhulqpiBPanAEWORFZezStbTwmkdjMCcYVgULHvIofJGNxrsKDX",
+    "Layer": 8,
+    "WinRate": 0.8667,
+    "score25": 4325,
+    "score50": 4590,
+    "score75": 4830
+  },
+  "1011626": {
+    "ID": 1011626,
+    "CardCode": "CJVyDnPqxKzskBLANhuwaEegjodHSTiQXmbWpYRGvZctflOrIUMF",
+    "Layer": 8,
+    "WinRate": 0.8632,
+    "score25": 4725,
+    "score50": 4970,
+    "score75": 5155
+  },
+  "1011633": {
+    "ID": 1011633,
+    "CardCode": "toPYKurSbsWfRwgHMIqAOBQcdGxLNlpjCUDEZzThikXJyevFnmVa",
+    "Layer": 8,
+    "WinRate": 0.8629,
+    "score25": 3855,
+    "score50": 4480,
+    "score75": 4940
+  },
+  "1011645": {
+    "ID": 1011645,
+    "CardCode": "aAJuDfodKLIlRhrnvpmZXUOCjVzcykqPSgGBbtwWEiMxsTNYHQFe",
+    "Layer": 8,
+    "WinRate": 0.8632,
+    "score25": 4710,
+    "score50": 4840,
+    "score75": 4950
+  },
+  "1011660": {
+    "ID": 1011660,
+    "CardCode": "qHhReXgyowJubvGtEDnBAifpCONzMKZLIxFTjSWsPrVUlkcaYQmd",
+    "Layer": 8,
+    "WinRate": 0.8661,
+    "score25": 4455,
+    "score50": 4785,
+    "score75": 5170
+  },
+  "1011688": {
+    "ID": 1011688,
+    "CardCode": "BOjUPsowctndCKEyJlYHAfDNQThvqGikebazprZVMmxWFISRgLuX",
+    "Layer": 8,
+    "WinRate": 0.8657,
+    "score25": 4010,
+    "score50": 4435,
+    "score75": 4785
+  },
+  "1011721": {
+    "ID": 1011721,
+    "CardCode": "xUeCnYFbcdlSNBAJoIWrHLPqsKMypVmfOQiRhwEjXvaGkzTgutZD",
+    "Layer": 8,
+    "WinRate": 0.8692,
+    "score25": 4570,
+    "score50": 4810,
+    "score75": 5060
+  },
+  "1011724": {
+    "ID": 1011724,
+    "CardCode": "osjyKCxhXkdpVrDevgENinwTLJUPMAcmBzqfHlbSGWFuYIaORZtQ",
+    "Layer": 8,
+    "WinRate": 0.8673,
+    "score25": 4055,
+    "score50": 4360,
+    "score75": 4710
+  },
+  "1011736": {
+    "ID": 1011736,
+    "CardCode": "TjouJKhteywsOvpUIqNWbFPglraBLiEkZnzfMADCYmHVxSRcQdGX",
+    "Layer": 8,
+    "WinRate": 0.8678,
+    "score25": 3940,
+    "score50": 4205,
+    "score75": 4530
+  },
+  "1011797": {
+    "ID": 1011797,
+    "CardCode": "JHydvkFucqKQejtWCfrYTsozbZNSInxpXDhlAPOLRUwiamEGgMBV",
+    "Layer": 8,
+    "WinRate": 0.8684,
+    "score25": 3865,
+    "score50": 4065,
+    "score75": 4245
+  },
+  "1011798": {
+    "ID": 1011798,
+    "CardCode": "elvswPikZHKTjLtcbdMrUEoafYGVDSXgmIQARhxpuBOCznJNWyqF",
+    "Layer": 8,
+    "WinRate": 0.8661,
+    "score25": 4230,
+    "score50": 4555,
+    "score75": 4780
+  },
+  "1011895": {
+    "ID": 1011895,
+    "CardCode": "LgApNVsvkaTUhFbdxreoDfEGtIqPMjwyQRKYJiBuSmncClHOzZWX",
+    "Layer": 8,
+    "WinRate": 0.8644,
+    "score25": 3965,
+    "score50": 4180,
+    "score75": 4425
+  },
+  "1011898": {
+    "ID": 1011898,
+    "CardCode": "NSWzMFUmqnHyDxwCERlotdfBuLZPQgVceGsiIkvrabpjhOTJXYKA",
+    "Layer": 8,
+    "WinRate": 0.8649,
+    "score25": 4110,
+    "score50": 4335,
+    "score75": 4635
+  },
+  "1011910": {
+    "ID": 1011910,
+    "CardCode": "HOvUYLgoipcfBTdjmhabrzwCnPtXNKZlqRxsFAueEWVMIyJGQDkS",
+    "Layer": 8,
+    "WinRate": 0.8651,
+    "score25": 4220,
+    "score50": 4520,
+    "score75": 4800
+  },
+  "1020005": {
+    "ID": 1020005,
+    "CardCode": "qXsKVdWlwZMCSBGFjLoOykDYeInmhzaAUpRHvPctbEiJfTguQxrN",
+    "Layer": 8,
+    "WinRate": 0.8661,
+    "score25": 3935,
+    "score50": 4220,
+    "score75": 4455
+  },
+  "1020038": {
+    "ID": 1020038,
+    "CardCode": "CdUhZLjfQGnINeMoslqrXKgiYbSTDHtmcWPzpvVkAuBRwxEOJFay",
+    "Layer": 8,
+    "WinRate": 0.8684,
+    "score25": 4195,
+    "score50": 4465,
+    "score75": 4725
+  },
+  "1020060": {
+    "ID": 1020060,
+    "CardCode": "KknYfUsemrlLqIQjoMOpHSdAiXyZhRcGxEzCvJVNtWFPwgTbBDau",
+    "Layer": 8,
+    "WinRate": 0.8682,
+    "score25": 4655,
+    "score50": 4910,
+    "score75": 5110
+  },
+  "1020072": {
+    "ID": 1020072,
+    "CardCode": "AqfipWwJQbFZUMhIsBjuYLzdGVaECnxRSPrymTlOgDcoXtKvkHNe",
+    "Layer": 8,
+    "WinRate": 0.8672,
+    "score25": 4065,
+    "score50": 4380,
+    "score75": 4615
+  },
+  "1020088": {
+    "ID": 1020088,
+    "CardCode": "xCMNVufISROzoKUeqAYXWwQFBTGJpZrbgdEnajthylHkvsmciPLD",
+    "Layer": 8,
+    "WinRate": 0.8672,
+    "score25": 4635,
+    "score50": 4950,
+    "score75": 5255
+  },
+  "1020105": {
+    "ID": 1020105,
+    "CardCode": "zhIvWNOdkCyXTrFiPxpuUDsSemGRaElntKZqJjLAYQowgBcfHMbV",
+    "Layer": 8,
+    "WinRate": 0.8684,
+    "score25": 3645,
+    "score50": 3935,
+    "score75": 4185
+  },
+  "1020117": {
+    "ID": 1020117,
+    "CardCode": "iHuWthJmxSvLTcelrVERIDaPYogBKsGjkdwpCzNXFnUZMOqAbQyf",
+    "Layer": 8,
+    "WinRate": 0.864,
+    "score25": 4105,
+    "score50": 4420,
+    "score75": 4745
+  },
+  "1020193": {
+    "ID": 1020193,
+    "CardCode": "YocPtZqkpszECbwxvTQXGfyeShRLjnNBMlDiFOdIamrKuUVAJHgW",
+    "Layer": 8,
+    "WinRate": 0.8632,
+    "score25": 4090,
+    "score50": 4300,
+    "score75": 4480
+  },
+  "1020250": {
+    "ID": 1020250,
+    "CardCode": "NQATvbRmDWzXuOkIlSUisnHrcLBCetYgfpZoaqEKyMGFPjxdJVwh",
+    "Layer": 8,
+    "WinRate": 0.8671,
+    "score25": 3800,
+    "score50": 4030,
+    "score75": 4295
+  },
+  "1020278": {
+    "ID": 1020278,
+    "CardCode": "qOBPGEHRaxKJkLiwCnjmNpdzWZTAUbhYtgXuFfIylsDQecvSrMoV",
+    "Layer": 8,
+    "WinRate": 0.8652,
+    "score25": 4445,
+    "score50": 4685,
+    "score75": 4905
+  },
+  "1020295": {
+    "ID": 1020295,
+    "CardCode": "bzxGkYqwJDdriCRQUfFsXIHuMmjAEgpnBtKSNZlLohvTyaOWVPec",
+    "Layer": 8,
+    "WinRate": 0.8689,
+    "score25": 4175,
+    "score50": 4390,
+    "score75": 4570
+  },
+  "1020309": {
+    "ID": 1020309,
+    "CardCode": "XlaUnvsAKukwomIVyOjhMbdHCPDBWTSEztNifJQRepxLgFGrcZqY",
+    "Layer": 8,
+    "WinRate": 0.8644,
+    "score25": 3920,
+    "score50": 4255,
+    "score75": 4530
+  },
+  "1020317": {
+    "ID": 1020317,
+    "CardCode": "CFgjMtKWUswvRpVlmSQbNhzTXAoPiHuqnrkZDyEYecGOfIxaBdJL",
+    "Layer": 8,
+    "WinRate": 0.8647,
+    "score25": 3790,
+    "score50": 4135,
+    "score75": 4420
+  },
+  "1020389": {
+    "ID": 1020389,
+    "CardCode": "lJmpyfaiZNgcKzOPTxEhLISDBuQHtGoFwqRXVbjrsUvkMCYeAndW",
+    "Layer": 8,
+    "WinRate": 0.8644,
+    "score25": 4200,
+    "score50": 4435,
+    "score75": 4660
+  },
+  "1020408": {
+    "ID": 1020408,
+    "CardCode": "ofZQIeMpnshUvmDVwGxzCPljduOyEBkRrAHKXLiYTSJFNtWqcbag",
+    "Layer": 8,
+    "WinRate": 0.8643,
+    "score25": 3955,
+    "score50": 4265,
+    "score75": 4510
+  },
+  "1020431": {
+    "ID": 1020431,
+    "CardCode": "aeYtzHJjflLWidChVUrPnposXcBmOwbvugFQAEGkIyqDKRZTNMSx",
+    "Layer": 8,
+    "WinRate": 0.8636,
+    "score25": 4075,
+    "score50": 4270,
+    "score75": 4490
+  },
+  "1020465": {
+    "ID": 1020465,
+    "CardCode": "rIphakJUlHTvcCObDVodSiQeEAzGsFKZPNfnjwLBXMuymxWqRtYg",
+    "Layer": 8,
+    "WinRate": 0.8672,
+    "score25": 4305,
+    "score50": 4625,
+    "score75": 4875
+  },
+  "1020467": {
+    "ID": 1020467,
+    "CardCode": "QnsybSNRTEXKpFiZjgrmfwIhPOlMJeYHABudkCczLaoUVWqvGDtx",
+    "Layer": 8,
+    "WinRate": 0.8687,
+    "score25": 3835,
+    "score50": 4135,
+    "score75": 4435
+  },
+  "1020470": {
+    "ID": 1020470,
+    "CardCode": "kTarqugwLNVcUCtoKfsSMzIRDBPdOpxHEWlYAnjbZQJeFyhXvimG",
+    "Layer": 8,
+    "WinRate": 0.8647,
+    "score25": 4345,
+    "score50": 4520,
+    "score75": 4655
+  },
+  "1020491": {
+    "ID": 1020491,
+    "CardCode": "HFBDvjAVwIpdLYnsUthciXPCzrSeRMmolgxOEGNQKWyqZTkJbufa",
+    "Layer": 8,
+    "WinRate": 0.8632,
+    "score25": 4255,
+    "score50": 4555,
+    "score75": 4780
+  },
+  "1020495": {
+    "ID": 1020495,
+    "CardCode": "VKYmvNxRroEyDOaWngtUuklBGcIjpXhSFzZMeqAwHsibfJdCQPTL",
+    "Layer": 8,
+    "WinRate": 0.8672,
+    "score25": 4160,
+    "score50": 4660,
+    "score75": 5025
+  },
+  "1020521": {
+    "ID": 1020521,
+    "CardCode": "HcvbDkSernguiRBjVQFpPtEwxCqGhUKYsTIoZyzaMlNLdJfmOWAX",
+    "Layer": 8,
+    "WinRate": 0.863,
+    "score25": 4340,
+    "score50": 4555,
+    "score75": 4730
+  },
+  "1020528": {
+    "ID": 1020528,
+    "CardCode": "gnKXWzaHONQjhPucFikmAxYMwdUvpZeITSoBErbyLJlGqsVftCRD",
+    "Layer": 8,
+    "WinRate": 0.8632,
+    "score25": 3790,
+    "score50": 3980,
+    "score75": 4215
+  },
+  "1020537": {
+    "ID": 1020537,
+    "CardCode": "RFMiQeJfuBhzVmKrkWCqLXToPcIlgxnYywUsEjSGNDavOHZdbtpA",
+    "Layer": 8,
+    "WinRate": 0.8651,
+    "score25": 3850,
+    "score50": 4255,
+    "score75": 4635
+  },
+  "1020557": {
+    "ID": 1020557,
+    "CardCode": "LAROuYFBzNPHcUkdWopTxVZGCiDrnMhJvtXKeljgybmswSIEfQaq",
+    "Layer": 8,
+    "WinRate": 0.864,
+    "score25": 4240,
+    "score50": 4450,
+    "score75": 4615
+  },
+  "1020577": {
+    "ID": 1020577,
+    "CardCode": "RXwLSzljyAQarhBZMmWVvJIdtPDiYExGsOcqgbNnKuUkpoTeHFCf",
+    "Layer": 8,
+    "WinRate": 0.8673,
+    "score25": 2995,
+    "score50": 3220,
+    "score75": 3465
+  },
+  "1020672": {
+    "ID": 1020672,
+    "CardCode": "DhTyvnjtNJzQYAEKIPuLGcWaCxUprmRHfdOlVkFeoXqZMbBsSgiw",
+    "Layer": 8,
+    "WinRate": 0.8689,
+    "score25": 4355,
+    "score50": 4610,
+    "score75": 4870
+  },
+  "1020675": {
+    "ID": 1020675,
+    "CardCode": "krdBMaeoWwILmxXvTfScQpFACnbiKZtJzlUONHqYyuEhGRjPgDsV",
+    "Layer": 8,
+    "WinRate": 0.8667,
+    "score25": 3790,
+    "score50": 4115,
+    "score75": 4385
+  },
+  "1020690": {
+    "ID": 1020690,
+    "CardCode": "pJXgSEmxrdncNtwyuPobMRkfLZqKAeIUYhOGHBWsaDlFCjvzTQiV",
+    "Layer": 8,
+    "WinRate": 0.8667,
+    "score25": 4000,
+    "score50": 4325,
+    "score75": 4625
+  },
+  "1020797": {
+    "ID": 1020797,
+    "CardCode": "zcXtRwePJMaANWhiQEsxIgFBCvyfDLGVSKjkZHnuOrqoTbpldmUY",
+    "Layer": 8,
+    "WinRate": 0.8684,
+    "score25": 4325,
+    "score50": 4490,
+    "score75": 4655
+  },
+  "1020808": {
+    "ID": 1020808,
+    "CardCode": "TAWXYtgjFDbcNmaGriPnCKoSUsLOEIVRvBufzlwJqhMHkZexQpdy",
+    "Layer": 8,
+    "WinRate": 0.8661,
+    "score25": 4290,
+    "score50": 4600,
+    "score75": 4880
+  },
+  "1020852": {
+    "ID": 1020852,
+    "CardCode": "ljJsCWeyPxrnSmKDvRUBAtNoFdqTucGwphOZHYabQIgEMVLfkziX",
+    "Layer": 8,
+    "WinRate": 0.8684,
+    "score25": 4705,
+    "score50": 4890,
+    "score75": 5040
+  },
+  "1020859": {
+    "ID": 1020859,
+    "CardCode": "nPmjctEHNrsFJAQlzCbqKMiURkaLyVfBvXhYwZedOoupTgDGSWIx",
+    "Layer": 8,
+    "WinRate": 0.8667,
+    "score25": 4645,
+    "score50": 5000,
+    "score75": 5180
+  },
+  "1020880": {
+    "ID": 1020880,
+    "CardCode": "nATzQeEOZfGgtvpiPHWqKRJyYCXlajukVdMrNxbhBsLoUScIFDmw",
+    "Layer": 8,
+    "WinRate": 0.8684,
+    "score25": 4080,
+    "score50": 4460,
+    "score75": 4945
+  },
+  "1020920": {
+    "ID": 1020920,
+    "CardCode": "aBghnOfZNmqDQIjoETxVFpvRJLePGszHlCydwucYKXSkrUAMWtbi",
+    "Layer": 8,
+    "WinRate": 0.8636,
+    "score25": 4445,
+    "score50": 4610,
+    "score75": 4755
+  },
+  "1020925": {
+    "ID": 1020925,
+    "CardCode": "LHYqyIUJRlfuAPjTcZpMXEdVmDSxwhrBGFWnNgzvistCOboeaKkQ",
+    "Layer": 8,
+    "WinRate": 0.8636,
+    "score25": 3980,
+    "score50": 4240,
+    "score75": 4505
+  },
+  "1020931": {
+    "ID": 1020931,
+    "CardCode": "mLDfBUWNycqOgGrvtjCzslZXPAbdiwJIMkSxhnKuFYoVHepTREaQ",
+    "Layer": 8,
+    "WinRate": 0.8647,
+    "score25": 4110,
+    "score50": 4340,
+    "score75": 4585
+  },
+  "1020976": {
+    "ID": 1020976,
+    "CardCode": "auWOHrnRjLVATINtzKpbiXwxeBmJCDgdkYFcGovslEyqhMSPZfUQ",
+    "Layer": 8,
+    "WinRate": 0.8644,
+    "score25": 3595,
+    "score50": 3975,
+    "score75": 4260
+  },
+  "1021007": {
+    "ID": 1021007,
+    "CardCode": "tIHACkNSUnXKgPaMljeVEiyTvQYmqcRJDLzOZfuorbhxFwdGBspW",
+    "Layer": 8,
+    "WinRate": 0.8661,
+    "score25": 3390,
+    "score50": 3720,
+    "score75": 4025
+  },
+  "1021016": {
+    "ID": 1021016,
+    "CardCode": "mwncWdeNpkYjClHtgqhSarfiIOKLFzbERxXQuAyJUZTsovMPBDVG",
+    "Layer": 8,
+    "WinRate": 0.8689,
+    "score25": 4010,
+    "score50": 4245,
+    "score75": 4475
+  },
+  "1021053": {
+    "ID": 1021053,
+    "CardCode": "PLpADnkHUZgtIscXGEwYqyemJzRadOxorWNFShjQCiMfVubKTBvl",
+    "Layer": 8,
+    "WinRate": 0.8636,
+    "score25": 3465,
+    "score50": 3855,
+    "score75": 4240
+  },
+  "1021068": {
+    "ID": 1021068,
+    "CardCode": "rWAzeUtDOcTshwQPXkndGuZmKEbgqjfvJRHaFVpoyBNIMxCliYLS",
+    "Layer": 8,
+    "WinRate": 0.8667,
+    "score25": 4165,
+    "score50": 4395,
+    "score75": 4615
+  },
+  "1021145": {
+    "ID": 1021145,
+    "CardCode": "YCALqTUDfoehcNKGwQxOMPutjbBEFVmSZkdnlgyIrRHaJsXzpWvi",
+    "Layer": 8,
+    "WinRate": 0.864,
+    "score25": 4135,
+    "score50": 4500,
+    "score75": 4915
+  },
+  "1021248": {
+    "ID": 1021248,
+    "CardCode": "nXOaoKhfiNgGDqdwZWPplmUVCrHAeJMxyRFSkvBLbjcutsYQTzEI",
+    "Layer": 8,
+    "WinRate": 0.8682,
+    "score25": 3545,
+    "score50": 3925,
+    "score75": 4335
+  },
+  "1021302": {
+    "ID": 1021302,
+    "CardCode": "cVRWSGyMohvgUFzsufipEBYHIDlQCXbPqerawJKdnZjALOmxNtTk",
+    "Layer": 8,
+    "WinRate": 0.8636,
+    "score25": 3585,
+    "score50": 3810,
+    "score75": 4035
+  },
+  "1021308": {
+    "ID": 1021308,
+    "CardCode": "NRxgBvwDPAfVkLKdrjEqTWmoclizQOnMGuCtYhUHbpZJsIFyXaeS",
+    "Layer": 8,
+    "WinRate": 0.8654,
+    "score25": 3855,
+    "score50": 4280,
+    "score75": 4545
+  },
+  "1021341": {
+    "ID": 1021341,
+    "CardCode": "bDuRBpvTaLcoYGwZIsWMiUHnCOQXNVKPjhrFfygtezlkAmxdESJq",
+    "Layer": 8,
+    "WinRate": 0.8679,
+    "score25": 3975,
+    "score50": 4255,
+    "score75": 4645
+  },
+  "1021344": {
+    "ID": 1021344,
+    "CardCode": "gzoHaCGrZtucVQFiwnPlOXybqUpAxTKLeIBRWvhYjfDSkdmMEsNJ",
+    "Layer": 8,
+    "WinRate": 0.8684,
+    "score25": 4230,
+    "score50": 4550,
+    "score75": 4820
+  },
+  "1021418": {
+    "ID": 1021418,
+    "CardCode": "VqzpjDdrTihIHgZGkftUesyavAOwobFNSBlJRXPQcxKYLEWuMCnm",
+    "Layer": 8,
+    "WinRate": 0.8641,
+    "score25": 3865,
+    "score50": 4105,
+    "score75": 4365
+  },
+  "1021442": {
+    "ID": 1021442,
+    "CardCode": "spqDuZzKniaeHWNMPJAEkGjobLVclXCxShUwIrRYBTtfQdvmgyOF",
+    "Layer": 8,
+    "WinRate": 0.8661,
+    "score25": 3850,
+    "score50": 4315,
+    "score75": 4805
+  },
+  "1021449": {
+    "ID": 1021449,
+    "CardCode": "dIXHEfKxbvzaQVMiSqNjCkFRPUoAJtwsluTgYWmeyLDZOhGcBnpr",
+    "Layer": 8,
+    "WinRate": 0.863,
+    "score25": 4315,
+    "score50": 4665,
+    "score75": 4915
+  },
+  "1021468": {
+    "ID": 1021468,
+    "CardCode": "OYVQgTZfCtIldBAbqUpazMRNXGWDwxnPHyjEFrLJekmKshiucvSo",
+    "Layer": 8,
+    "WinRate": 0.8646,
+    "score25": 4340,
+    "score50": 4560,
+    "score75": 4780
+  },
+  "1021608": {
+    "ID": 1021608,
+    "CardCode": "YfoNtLIWqbdrscDgkphnZVHzUMyRwKaBxOmPvFAGuEjTQJeClSiX",
+    "Layer": 8,
+    "WinRate": 0.8661,
+    "score25": 3615,
+    "score50": 3935,
+    "score75": 4215
+  },
+  "1021657": {
+    "ID": 1021657,
+    "CardCode": "xLKRWgzlkVOTYmMHycDvdeptuNCGIiasXPwFJfoqhQbErSUBAnZj",
+    "Layer": 8,
+    "WinRate": 0.8629,
+    "score25": 3520,
+    "score50": 3885,
+    "score75": 4225
+  },
+  "1021667": {
+    "ID": 1021667,
+    "CardCode": "TepQCRqJFIOUKyzMHdbxhDovLGaNwWZgSsrjlmAEfPkcBXVtiYun",
+    "Layer": 8,
+    "WinRate": 0.8682,
+    "score25": 4495,
+    "score50": 4720,
+    "score75": 4870
+  },
+  "1021747": {
+    "ID": 1021747,
+    "CardCode": "XncdSDVyCmgqepvaABtwlokjZRzNPJHWxGEKFTYOIhLbusfriQUM",
+    "Layer": 8,
+    "WinRate": 0.8644,
+    "score25": 4615,
+    "score50": 4800,
+    "score75": 5010
+  },
+  "1021762": {
+    "ID": 1021762,
+    "CardCode": "hPcveaStpIzgqDQTLfruXsHWibnwGoMROVNkKBUyYmdxAJFjEClZ",
+    "Layer": 8,
+    "WinRate": 0.8655,
+    "score25": 3700,
+    "score50": 3915,
+    "score75": 4120
+  },
+  "1021847": {
+    "ID": 1021847,
+    "CardCode": "DmOUCnNELlwZBFcfepaVosQtJygzSuMYrAdHvIkqKWPGhxXiRTjb",
+    "Layer": 8,
+    "WinRate": 0.8682,
+    "score25": 4585,
+    "score50": 4900,
+    "score75": 5260
+  },
+  "1021853": {
+    "ID": 1021853,
+    "CardCode": "lwiFpJKDuTqOfZhnrxkaBmRNzWcGEosXgLIVPYbeCdSAMUHjyQvt",
+    "Layer": 8,
+    "WinRate": 0.8692,
+    "score25": 4180,
+    "score50": 4345,
+    "score75": 4615
+  },
+  "1021856": {
+    "ID": 1021856,
+    "CardCode": "YDNeOWKHPxjTtzQMywFhqvmGsoidfRLSXIpEUcgrlaunZJkVbACB",
+    "Layer": 8,
+    "WinRate": 0.8678,
+    "score25": 3750,
+    "score50": 4140,
+    "score75": 4470
+  },
+  "1021941": {
+    "ID": 1021941,
+    "CardCode": "BMSeLwlvqYctVEHZNkACKRQfmPnGdDgjXpbFuITOWJyazoUhsrxi",
+    "Layer": 8,
+    "WinRate": 0.8661,
+    "score25": 4035,
+    "score50": 4355,
+    "score75": 4645
+  },
+  "1021977": {
+    "ID": 1021977,
+    "CardCode": "RDrLsMZFdwtljaBEfzbYqXKVGgSAhWmUxNQcPIounCeTvOipykJH",
+    "Layer": 8,
+    "WinRate": 0.8641,
+    "score25": 3740,
+    "score50": 4040,
+    "score75": 4275
+  },
+  "1030022": {
+    "ID": 1030022,
+    "CardCode": "eiQxjFJTYKVrOwlCuzWZNcLRpGAIXtnHUbMakmdoBgsDEvhSfyqP",
+    "Layer": 8,
+    "WinRate": 0.8647,
+    "score25": 3570,
+    "score50": 3965,
+    "score75": 4405
+  },
+  "1030114": {
+    "ID": 1030114,
+    "CardCode": "eGZkBKdStilPcruIwhCNWxJoYUyvQfFmnTaAbVjDqpgLRMXsOHEz",
+    "Layer": 8,
+    "WinRate": 0.8667,
+    "score25": 3660,
+    "score50": 3895,
+    "score75": 4185
+  },
+  "1030128": {
+    "ID": 1030128,
+    "CardCode": "jLfTgJxIryhsAcEKtReUaHozkPbdZMpwVmqOiBXnWSvGQCluDNYF",
+    "Layer": 8,
+    "WinRate": 0.8676,
+    "score25": 3720,
+    "score50": 4030,
+    "score75": 4330
+  },
+  "1030151": {
+    "ID": 1030151,
+    "CardCode": "ucrMRhWLdZEAbIevoDPYTlFgGmXCkpQOKVyNSwJjiqHsxaUnfBtz",
+    "Layer": 8,
+    "WinRate": 0.8686,
+    "score25": 4420,
+    "score50": 4680,
+    "score75": 4920
+  },
+  "1030157": {
+    "ID": 1030157,
+    "CardCode": "lwoHneTuQpFvbirWLOIVakYyPqCgmStKXEzJdBfUDshAjRGNcZxM",
+    "Layer": 8,
+    "WinRate": 0.864,
+    "score25": 4520,
+    "score50": 4730,
+    "score75": 4900
+  },
+  "1030243": {
+    "ID": 1030243,
+    "CardCode": "MjEXqYnFsIlOwCpcSyPNfzrbQiVmTgvdxeLuJoBtZRaHDKkAUGhW",
+    "Layer": 8,
+    "WinRate": 0.8673,
+    "score25": 4595,
+    "score50": 4800,
+    "score75": 5030
+  },
+  "1030319": {
+    "ID": 1030319,
+    "CardCode": "EziDOrvgTNUbCslIGfkBAJmYQduaxFSqwKPtMnZeHWyLRVpcojhX",
+    "Layer": 8,
+    "WinRate": 0.8667,
+    "score25": 4100,
+    "score50": 4415,
+    "score75": 4725
+  },
+  "1030389": {
+    "ID": 1030389,
+    "CardCode": "xCXfkKhcePAgzmJbIEqHjOLSYBvWiZaRnowrMysDFpTNQulUtdVG",
+    "Layer": 8,
+    "WinRate": 0.8676,
+    "score25": 4395,
+    "score50": 4645,
+    "score75": 4845
+  },
+  "1030467": {
+    "ID": 1030467,
+    "CardCode": "pZxwgETntaKcrOSoYdJhWuRbCzFmfeIyiABUjqLQVkvMGPDNlHXs",
+    "Layer": 8,
+    "WinRate": 0.8667,
+    "score25": 4380,
+    "score50": 4685,
+    "score75": 4950
+  },
+  "1030486": {
+    "ID": 1030486,
+    "CardCode": "zkHgfTmtnboALDaYBGNFEcipQjWduKZXhROVPxrCMqywsUISveJl",
+    "Layer": 8,
+    "WinRate": 0.8692,
+    "score25": 4930,
+    "score50": 5135,
+    "score75": 5305
+  },
+  "1030498": {
+    "ID": 1030498,
+    "CardCode": "cTrbOzpAZYfBNimowagUWGPCKqMJVuHLlsXdyeQERhDSFjktvInx",
+    "Layer": 8,
+    "WinRate": 0.8673,
+    "score25": 5235,
+    "score50": 5440,
+    "score75": 5705
+  },
+  "1030645": {
+    "ID": 1030645,
+    "CardCode": "xhYytIvpKqFZGloOETLzNrCPHwuSfnAJjXBaksDVReWmUciQgdMb",
+    "Layer": 8,
+    "WinRate": 0.8684,
+    "score25": 4370,
+    "score50": 4550,
+    "score75": 4745
+  },
+  "1030658": {
+    "ID": 1030658,
+    "CardCode": "TdPNnjKMswbrYIouBWDchgAzEeOpQVfZXLykCSaGqvRmitHxUlJF",
+    "Layer": 8,
+    "WinRate": 0.8689,
+    "score25": 4820,
+    "score50": 5095,
+    "score75": 5410
+  },
+  "1030772": {
+    "ID": 1030772,
+    "CardCode": "PKgTSGzBRekMwCxYbhnofyNdZIErUJHOVlXFALmupiqWQvasDjct",
+    "Layer": 8,
+    "WinRate": 0.8672,
+    "score25": 4470,
+    "score50": 4650,
+    "score75": 4825
+  },
+  "1030854": {
+    "ID": 1030854,
+    "CardCode": "KvufQtYAiRUxarohVPlDWOzwHpSMNBgmynIksqFCGLdbTcZEeXjJ",
+    "Layer": 8,
+    "WinRate": 0.8655,
+    "score25": 4360,
+    "score50": 4610,
+    "score75": 4820
+  },
+  "1030880": {
+    "ID": 1030880,
+    "CardCode": "EzrOviqBuasyYhtVRCldAkfcXpgbPeZDHMTnjGQKWxIwSLoFJNmU",
+    "Layer": 8,
+    "WinRate": 0.8655,
+    "score25": 3860,
+    "score50": 4130,
+    "score75": 4400
+  },
+  "1030968": {
+    "ID": 1030968,
+    "CardCode": "TJIcUPerfyxbOlSuKoMGVvpCjdXkmYqHLFWzQBanwAsDEZRtgihN",
+    "Layer": 8,
+    "WinRate": 0.8684,
+    "score25": 4090,
+    "score50": 4445,
+    "score75": 4645
+  },
+  "1030972": {
+    "ID": 1030972,
+    "CardCode": "zbcLEhkDVGdwJWqtTCFuSnUOXayYliPeBofIQgpKxjNHRMvArZms",
+    "Layer": 8,
+    "WinRate": 0.8667,
+    "score25": 4450,
+    "score50": 4795,
+    "score75": 5030
+  },
+  "1030987": {
+    "ID": 1030987,
+    "CardCode": "usLohrSRaGcbWAKCeUOjXpyfQBDgmYtnMNTkvHdlPqJziZxEFIVw",
+    "Layer": 8,
+    "WinRate": 0.8629,
+    "score25": 4605,
+    "score50": 4805,
+    "score75": 4965
+  },
+  "1031064": {
+    "ID": 1031064,
+    "CardCode": "nhbuTpzUasdHWcNkoyMCReGZDwAIBqSjrifVgOxvmXFPlJEtQLYK",
+    "Layer": 8,
+    "WinRate": 0.8689,
+    "score25": 3990,
+    "score50": 4270,
+    "score75": 4530
+  },
+  "1031102": {
+    "ID": 1031102,
+    "CardCode": "lFjPXeVxoIArBncGvMdNhqbQyWtKzRSfpZUimkDgTuaCwOsHYELJ",
+    "Layer": 8,
+    "WinRate": 0.8667,
+    "score25": 4505,
+    "score50": 4815,
+    "score75": 5070
+  },
+  "1031123": {
+    "ID": 1031123,
+    "CardCode": "DVTtaNLBPWomlrbUQusRYxpSFzAcndqCyMegfXGwkhijvIOJEZKH",
+    "Layer": 8,
+    "WinRate": 0.8661,
+    "score25": 4430,
+    "score50": 4715,
+    "score75": 4950
+  },
+  "1031262": {
+    "ID": 1031262,
+    "CardCode": "NRoUFQqIjWDJBLfguSXHdbEtiCrzPyOGwAcpxenmTlvhYMZsKkVa",
+    "Layer": 8,
+    "WinRate": 0.8667,
+    "score25": 3965,
+    "score50": 4175,
+    "score75": 4355
+  },
+  "1031279": {
+    "ID": 1031279,
+    "CardCode": "kYxQqrgoAfhmydBKFZPVazDbEuvWNwlGsITpejCSnLROcUJMiXHt",
+    "Layer": 8,
+    "WinRate": 0.8672,
+    "score25": 3660,
+    "score50": 4260,
+    "score75": 4655
+  },
+  "1031410": {
+    "ID": 1031410,
+    "CardCode": "yTQgMPrNkVWqOoKIzZAGuxUbhDjBRnpewvJmtYafEsFdLHSXcCil",
+    "Layer": 8,
+    "WinRate": 0.8678,
+    "score25": 4570,
+    "score50": 4780,
+    "score75": 4930
+  },
+  "1031588": {
+    "ID": 1031588,
+    "CardCode": "TNgdQxhALFwvDofCaMIGqltsHpZJjKYzEXVnciBOkrmPyuUWSRbe",
+    "Layer": 8,
+    "WinRate": 0.8655,
+    "score25": 3865,
+    "score50": 4320,
+    "score75": 4650
+  },
+  "1031684": {
+    "ID": 1031684,
+    "CardCode": "tHxdRmPLaQASMzOVDsXGfThbcqwNpnyeiBvEYWkrouKlFJIUZjCg",
+    "Layer": 8,
+    "WinRate": 0.8692,
+    "score25": 4325,
+    "score50": 4565,
+    "score75": 4755
+  },
+  "1031759": {
+    "ID": 1031759,
+    "CardCode": "dDlYaJNbZCRHiLnEgIoeSKpOPtvWzufxFkhyTVUjXwmcMqQABGrs",
+    "Layer": 8,
+    "WinRate": 0.8636,
+    "score25": 4345,
+    "score50": 4600,
+    "score75": 4835
+  },
+  "1031910": {
+    "ID": 1031910,
+    "CardCode": "ukrjIWgpMKHseLoDZaFfnqURVctlixGNhmEYJzQbSyTwBdOvCAPX",
+    "Layer": 8,
+    "WinRate": 0.8692,
+    "score25": 4165,
+    "score50": 4445,
+    "score75": 4910
+  },
+  "1031950": {
+    "ID": 1031950,
+    "CardCode": "VSxNjHtEOzLIMoDPBJiKTqcUkAunfsyQlbeChXdGvZpFRarwmWgY",
+    "Layer": 8,
+    "WinRate": 0.8636,
+    "score25": 4410,
+    "score50": 4705,
+    "score75": 4830
+  },
+  "1040044": {
+    "ID": 1040044,
+    "CardCode": "swVBbGWemAlOzCYDXinEShyoNLxTjJHKZuFQrPtakMvUpRdqIcfg",
+    "Layer": 8,
+    "WinRate": 0.864,
+    "score25": 3810,
+    "score50": 4140,
+    "score75": 4550
+  },
+  "1040162": {
+    "ID": 1040162,
+    "CardCode": "HbGYnzOWjRtufKihwxrqSgpyvIcDUQolkVdJETeXZFMaPACNBLms",
+    "Layer": 8,
+    "WinRate": 0.8644,
+    "score25": 3765,
+    "score50": 4000,
+    "score75": 4220
+  },
+  "1040193": {
+    "ID": 1040193,
+    "CardCode": "WJifAmdrqzHPoQuRTslFkLGZIMOYbtKaxNceUCwhpVSnByDXgjEv",
+    "Layer": 8,
+    "WinRate": 0.864,
+    "score25": 4070,
+    "score50": 4345,
+    "score75": 4620
+  },
+  "1040214": {
+    "ID": 1040214,
+    "CardCode": "FjeIXxpgYhTlHkUqPtzGaJLbAOZNorsuSVMyKmvfDcWwnQiCRdEB",
+    "Layer": 8,
+    "WinRate": 0.8678,
+    "score25": 4000,
+    "score50": 4320,
+    "score75": 4715
+  },
+  "1040365": {
+    "ID": 1040365,
+    "CardCode": "rISugafoedBPnQMwEhTNOpYkAbGjcmDJszUlZCLHKVvRtxXqWFyi",
+    "Layer": 8,
+    "WinRate": 0.8684,
+    "score25": 4545,
+    "score50": 4845,
+    "score75": 5080
+  },
+  "1040424": {
+    "ID": 1040424,
+    "CardCode": "fAcoMndOGCmzjBZWklqLJbKIPiNepuVsSghwrayFxvHETtDURXYQ",
+    "Layer": 8,
+    "WinRate": 0.8667,
+    "score25": 4765,
+    "score50": 5020,
+    "score75": 5220
+  },
+  "1040433": {
+    "ID": 1040433,
+    "CardCode": "AplzeBGvPDUYkhoaVELnxIsgyKHZXQONcFmiqMbWCSJftRjwudTr",
+    "Layer": 8,
+    "WinRate": 0.8641,
+    "score25": 4235,
+    "score50": 4545,
+    "score75": 5030
+  },
+  "1040436": {
+    "ID": 1040436,
+    "CardCode": "pDAkZrFzPdxQKeqTtNuXBHYJULOEmcnyRblWiSgGIaMoswCjVfhv",
+    "Layer": 8,
+    "WinRate": 0.8672,
+    "score25": 3940,
+    "score50": 4255,
+    "score75": 4520
+  },
+  "1040621": {
+    "ID": 1040621,
+    "CardCode": "PkLuopgdUIEXDnamVjCWZvqBMfTJwhltOxHYyRNKiFrbseSGAczQ",
+    "Layer": 8,
+    "WinRate": 0.8684,
+    "score25": 3650,
+    "score50": 3835,
+    "score75": 4220
+  },
+  "1040695": {
+    "ID": 1040695,
+    "CardCode": "amzZtEhqypTSflNvJiMgXLnCuOHWeIPxGjBrUdwsDYFQVkKRocbA",
+    "Layer": 8,
+    "WinRate": 0.8689,
+    "score25": 3920,
+    "score50": 4390,
+    "score75": 4600
+  },
+  "1040765": {
+    "ID": 1040765,
+    "CardCode": "ZRlxqTQmGLUiCJjdpNvAnKWVHcbXDeShsgkPfztyIoBwMEuaYrOF",
+    "Layer": 8,
+    "WinRate": 0.8676,
+    "score25": 3445,
+    "score50": 3700,
+    "score75": 3900
+  },
+  "1040787": {
+    "ID": 1040787,
+    "CardCode": "klUSuqJYAyPHXjxzQdTEGFWODmvBpnwLerMgCNhbRKZfsatiVIco",
+    "Layer": 8,
+    "WinRate": 0.864,
+    "score25": 4180,
+    "score50": 4390,
+    "score75": 4575
+  },
+  "1040817": {
+    "ID": 1040817,
+    "CardCode": "tyAewxpDdKgOEanjViqvNfWoCBUZhlIMmcHkrsTSRbFYzLuJXQPG",
+    "Layer": 8,
+    "WinRate": 0.8636,
+    "score25": 3875,
+    "score50": 4130,
+    "score75": 4565
+  },
+  "1040855": {
+    "ID": 1040855,
+    "CardCode": "kGnijVWTaKXPOsmUEwdqluYgyFDcNoMJIrexQbftzZvRCHpASLhB",
+    "Layer": 8,
+    "WinRate": 0.8667,
+    "score25": 3375,
+    "score50": 3620,
+    "score75": 3845
+  },
+  "1040876": {
+    "ID": 1040876,
+    "CardCode": "vZcKNAqUfytkIQznxSPOoapmDVijCJFdWGTsbrERlYMhBXLweuHg",
+    "Layer": 8,
+    "WinRate": 0.8649,
+    "score25": 4285,
+    "score50": 4540,
+    "score75": 4790
+  },
+  "1040903": {
+    "ID": 1040903,
+    "CardCode": "szxQHuIgMoalpEAdrCJcPwDSjyUnYFkRVOvKZNfiXBWLbemGhqTt",
+    "Layer": 8,
+    "WinRate": 0.8661,
+    "score25": 4090,
+    "score50": 4220,
+    "score75": 4345
+  },
+  "1040965": {
+    "ID": 1040965,
+    "CardCode": "lkpmMexBHvrGuaKhIisSjWCwOXNcDZqfUAnEVbyzPFtLgYTJodRQ",
+    "Layer": 8,
+    "WinRate": 0.866,
+    "score25": 4180,
+    "score50": 4440,
+    "score75": 4640
+  },
+  "1040972": {
+    "ID": 1040972,
+    "CardCode": "YxXkIfANFVvolDLjpwcrBdZQhWqbCMGmUnEuPyHzOKTsJetRSaig",
+    "Layer": 8,
+    "WinRate": 0.8644,
+    "score25": 4460,
+    "score50": 4925,
+    "score75": 5140
+  },
+  "1041003": {
+    "ID": 1041003,
+    "CardCode": "GiUyQEHSAPTFbupCtrOXLdqowxmfnlKYRceIgvWjzDBhksMaNZJV",
+    "Layer": 8,
+    "WinRate": 0.8667,
+    "score25": 4505,
+    "score50": 4690,
+    "score75": 4900
+  },
+  "1041005": {
+    "ID": 1041005,
+    "CardCode": "AWewLHMctUkpiPEORjyagorBVhFDdnxzTmsXlqJSfGZYQbvuNCKI",
+    "Layer": 8,
+    "WinRate": 0.8679,
+    "score25": 4480,
+    "score50": 4735,
+    "score75": 4965
+  },
+  "1041031": {
+    "ID": 1041031,
+    "CardCode": "CDYLWwIxMuFZQoVBJjkKshHqizTRgSeptfXvbElmOnGdyPNarUcA",
+    "Layer": 8,
+    "WinRate": 0.8667,
+    "score25": 4150,
+    "score50": 4285,
+    "score75": 4435
+  },
+  "1041258": {
+    "ID": 1041258,
+    "CardCode": "ACUdnqWPzSKJbGmevILxTkQDtOZVraosHMgjyNuBpcXhRFYfwEil",
+    "Layer": 8,
+    "WinRate": 0.8667,
+    "score25": 4205,
+    "score50": 4570,
+    "score75": 5080
+  },
+  "1050018": {
+    "ID": 1050018,
+    "CardCode": "RuaZJlejrPkVFpczdXntNQCybSsMAOWLvgiTmfIhwYHqxUKDEGoB",
+    "Layer": 8,
+    "WinRate": 0.8678,
+    "score25": 4110,
+    "score50": 4390,
+    "score75": 4675
+  },
+  "1050107": {
+    "ID": 1050107,
+    "CardCode": "WfMItlUwceqzXDsugYVrvQGRNnLbBodmCFJxApETiaZOSPyjKkHh",
+    "Layer": 8,
+    "WinRate": 0.8661,
+    "score25": 4000,
+    "score50": 4235,
+    "score75": 4480
+  },
+  "1050122": {
+    "ID": 1050122,
+    "CardCode": "bFPkWaHzLrXJqwTgDyhCImtRNGcAjneOSEZfYMBvQipdlxusUoVK",
+    "Layer": 8,
+    "WinRate": 0.8667,
+    "score25": 3615,
+    "score50": 3890,
+    "score75": 4145
+  },
+  "1050123": {
+    "ID": 1050123,
+    "CardCode": "WOZAIaEokQvumDTcJKCVLbgXhtpeBzNsfMPwyGHRirlqYjdnSUFx",
+    "Layer": 8,
+    "WinRate": 0.8644,
+    "score25": 4310,
+    "score50": 4535,
+    "score75": 4750
+  },
+  "1050193": {
+    "ID": 1050193,
+    "CardCode": "dzvWXPFoySOQYxtVBkIHbcLpfwDZAeKsJigarRGMjmTlEqNUChun",
+    "Layer": 8,
+    "WinRate": 0.8636,
+    "score25": 4685,
+    "score50": 5005,
+    "score75": 5095
+  },
+  "1050364": {
+    "ID": 1050364,
+    "CardCode": "cDyuqxfvESXRszPBibnrJVKHNCalwFAegdWZGoMtYOhkQUTpLjmI",
+    "Layer": 8,
+    "WinRate": 0.8632,
+    "score25": 3955,
+    "score50": 4285,
+    "score75": 4605
+  },
+  "1050369": {
+    "ID": 1050369,
+    "CardCode": "sjbSfuPRGWzYLTDgldhInHFEmkpCJZOAXVvNwBxtMeoyiqrKaUcQ",
+    "Layer": 8,
+    "WinRate": 0.8661,
+    "score25": 3710,
+    "score50": 4360,
+    "score75": 4730
+  },
+  "1050484": {
+    "ID": 1050484,
+    "CardCode": "srZHIVbvAFDYSqRgjhaWCBeJcztufpxdoPTKEGXmwQlinNLkyOMU",
+    "Layer": 8,
+    "WinRate": 0.8655,
+    "score25": 4190,
+    "score50": 4375,
+    "score75": 4555
+  },
+  "1050573": {
+    "ID": 1050573,
+    "CardCode": "ruJqzalodXRPMjngAHVDWEOSpGCvtFxiwKhIymTQfNYUbBZkseLc",
+    "Layer": 8,
+    "WinRate": 0.8692,
+    "score25": 4650,
+    "score50": 4795,
+    "score75": 4915
+  },
+  "1050579": {
+    "ID": 1050579,
+    "CardCode": "AndlxLJBKREjevsUMyuWkcSpqDwNYXHbiOVChmFzPgotIQaTZGfr",
+    "Layer": 8,
+    "WinRate": 0.8651,
+    "score25": 3510,
+    "score50": 4080,
+    "score75": 4505
+  },
+  "1050581": {
+    "ID": 1050581,
+    "CardCode": "iEmVSgjCZbfuwqLaoIpPBdGFszJXRYOlhyHWvTKceUkrNxMQtADn",
+    "Layer": 8,
+    "WinRate": 0.8672,
+    "score25": 4235,
+    "score50": 4475,
+    "score75": 4725
+  },
+  "1050588": {
+    "ID": 1050588,
+    "CardCode": "zLxMnEhrFZiHtoysJeYIlAPOXCgwNWuaSDqKdTQvcBRGjUbpmkVf",
+    "Layer": 8,
+    "WinRate": 0.8672,
+    "score25": 3850,
+    "score50": 4055,
+    "score75": 4285
+  },
+  "1050643": {
+    "ID": 1050643,
+    "CardCode": "cFKtEsYNzZCoegyMfqDXibkRhUJHPjxSAavBrdVmQuTnOpwLGlIW",
+    "Layer": 8,
+    "WinRate": 0.864,
+    "score25": 4445,
+    "score50": 4605,
+    "score75": 4765
+  },
+  "1050697": {
+    "ID": 1050697,
+    "CardCode": "kQyEsizohGDWTcJZxnuMblIpSevaVBAYPUFXRdNgKfrHOwCqLtjm",
+    "Layer": 8,
+    "WinRate": 0.8689,
+    "score25": 3515,
+    "score50": 3885,
+    "score75": 4235
+  },
+  "1050721": {
+    "ID": 1050721,
+    "CardCode": "xqXmzCaAuTVDOZiJfRKwpesLHWNFnkodYvgGSPbjltMUEIhcQyrB",
+    "Layer": 8,
+    "WinRate": 0.8661,
+    "score25": 4410,
+    "score50": 4715,
+    "score75": 4985
+  },
+  "1050741": {
+    "ID": 1050741,
+    "CardCode": "EcHiLjrGIMbRgtnQVxDBohAdZmkKzYqpOFUWuSvPTyJsNaeXCfwl",
+    "Layer": 8,
+    "WinRate": 0.8678,
+    "score25": 4095,
+    "score50": 4305,
+    "score75": 4475
+  },
+  "1050777": {
+    "ID": 1050777,
+    "CardCode": "cLndzfOulsRDMXxHJVTpEvhUIqoCbYiGQFayZkBtWrgmKjNAewPS",
+    "Layer": 8,
+    "WinRate": 0.8651,
+    "score25": 3890,
+    "score50": 4150,
+    "score75": 4380
+  },
+  "1050797": {
+    "ID": 1050797,
+    "CardCode": "suYFtpbRQLDmTPrXoHSNnGBiUKjZVqJMdkvAEchlwzxeOagIyWCf",
+    "Layer": 8,
+    "WinRate": 0.8667,
+    "score25": 4360,
+    "score50": 4555,
+    "score75": 4730
+  },
+  "1050830": {
+    "ID": 1050830,
+    "CardCode": "SJnFkuGXTdtzZfpbvomEaywxRYOCUMQcVlIPDjKeHNsLWhrqgiAB",
+    "Layer": 8,
+    "WinRate": 0.8636,
+    "score25": 3285,
+    "score50": 3585,
+    "score75": 4000
+  },
+  "1050870": {
+    "ID": 1050870,
+    "CardCode": "oZNSiEFTxGelrOcdWkjPsznBvmbfICKXaRyHJqDUQthLMgwYVupA",
+    "Layer": 8,
+    "WinRate": 0.8651,
+    "score25": 4520,
+    "score50": 4730,
+    "score75": 4965
+  },
+  "1050901": {
+    "ID": 1050901,
+    "CardCode": "TFuCtkEyQWIOHawPVnYviKJNZDRcjoblpXSqrgBULxzAdhGfsMme",
+    "Layer": 8,
+    "WinRate": 0.8684,
+    "score25": 4340,
+    "score50": 4615,
+    "score75": 4875
+  },
+  "1050902": {
+    "ID": 1050902,
+    "CardCode": "sSQUTWkwVvFGZxdqghnAeEyODNroXutJbRLfjCzmYcPMKlHIBpai",
+    "Layer": 8,
+    "WinRate": 0.8655,
+    "score25": 3615,
+    "score50": 3945,
+    "score75": 4260
+  },
+  "1050907": {
+    "ID": 1050907,
+    "CardCode": "weYxMUPmaKFrVpZzLCqviDGcOlhEoHbWsAguTJkjQNtRfIBySXdn",
+    "Layer": 8,
+    "WinRate": 0.8644,
+    "score25": 4105,
+    "score50": 4325,
+    "score75": 4625
+  },
+  "1050912": {
+    "ID": 1050912,
+    "CardCode": "OrfPyEMLQkcphWNVAKCFJiIsgnYzxqabXStmHelTuGBdjUoRwvDZ",
+    "Layer": 8,
+    "WinRate": 0.8651,
+    "score25": 3920,
+    "score50": 4345,
+    "score75": 4570
+  },
+  "1050983": {
+    "ID": 1050983,
+    "CardCode": "lvcUwDJIONTijfgdZunPphHytEFazLVkrAbseBWoCGqxQYMRSXmK",
+    "Layer": 8,
+    "WinRate": 0.8661,
+    "score25": 3830,
+    "score50": 4225,
+    "score75": 4810
+  },
+  "1050989": {
+    "ID": 1050989,
+    "CardCode": "ByjLnxXmgYHqrFVINflbJTecUtwpCRDksAZvOiSWGMhaEodPuKQz",
+    "Layer": 8,
+    "WinRate": 0.8678,
+    "score25": 4065,
+    "score50": 4405,
+    "score75": 4800
+  },
+  "1051036": {
+    "ID": 1051036,
+    "CardCode": "WQhUMepizjfLTItHYymlVSdgCbkBncPqxEXOJNKoZFurRAGsvaDw",
+    "Layer": 8,
+    "WinRate": 0.8673,
+    "score25": 3980,
+    "score50": 4170,
+    "score75": 4395
+  },
+  "1051072": {
+    "ID": 1051072,
+    "CardCode": "fzjJEmXWNxOdghQTRPnbBHLSCUIcvtGYZaKDleFAiqkMpowrVyus",
+    "Layer": 8,
+    "WinRate": 0.8644,
+    "score25": 3755,
+    "score50": 4020,
+    "score75": 4355
+  },
+  "1051073": {
+    "ID": 1051073,
+    "CardCode": "pFtAvSkZlNxOUMuiqanrgHTcWCeLXmEfzGPdRbIQwjKYhoVyDJsB",
+    "Layer": 8,
+    "WinRate": 0.8636,
+    "score25": 4070,
+    "score50": 4310,
+    "score75": 4515
+  },
+  "1051086": {
+    "ID": 1051086,
+    "CardCode": "xrBEhuRJeXwOypAkisoavzTLNYgqfGCjPSbVdMnDFcQUmlItZKHW",
+    "Layer": 8,
+    "WinRate": 0.8632,
+    "score25": 3730,
+    "score50": 3955,
+    "score75": 4275
+  },
+  "1051095": {
+    "ID": 1051095,
+    "CardCode": "gMxGZbuIsHzmJVEiLtqoWBcyDRlaSvfjkQpNFOTPYrCwXheKndUA",
+    "Layer": 8,
+    "WinRate": 0.8676,
+    "score25": 3760,
+    "score50": 4030,
+    "score75": 4300
+  },
+  "1051139": {
+    "ID": 1051139,
+    "CardCode": "FmkSNUusPvRJzVfXQDYplByqEGnAojiZIWteTcHdrgwOaxLhMKbC",
+    "Layer": 8,
+    "WinRate": 0.8692,
+    "score25": 3990,
+    "score50": 4375,
+    "score75": 4650
+  },
+  "1051170": {
+    "ID": 1051170,
+    "CardCode": "NGtrYvzJHwUQgEMdeKxnLhFbTalPBSIOqXCZypioVfjWuRDscAkm",
+    "Layer": 8,
+    "WinRate": 0.8672,
+    "score25": 3975,
+    "score50": 4230,
+    "score75": 4550
+  },
+  "1051219": {
+    "ID": 1051219,
+    "CardCode": "ThoctzgLrPAlIYiFyqpQGREnasfHXBMWKvbeSCNduVkDUZwJjmOx",
+    "Layer": 8,
+    "WinRate": 0.8636,
+    "score25": 4505,
+    "score50": 4750,
+    "score75": 4930
+  },
+  "1051312": {
+    "ID": 1051312,
+    "CardCode": "PqhODSVkRCZbsgmupleyafMoNwQAUGLjJirHtnXxBdEvTKIWFczY",
+    "Layer": 8,
+    "WinRate": 0.8633,
+    "score25": 4185,
+    "score50": 4505,
+    "score75": 4830
+  },
+  "1051322": {
+    "ID": 1051322,
+    "CardCode": "WxiRMLFoeBJCPDYvmArjKqSEIZtXhczGgQTsUnfwpkbyulaNHdOV",
+    "Layer": 8,
+    "WinRate": 0.8689,
+    "score25": 4385,
+    "score50": 4615,
+    "score75": 4890
+  },
+  "1051364": {
+    "ID": 1051364,
+    "CardCode": "XKTwchtHMRxVFyDACJYvlWQzNqbBnLsjSZOEukaGUdPIgmpriefo",
+    "Layer": 8,
+    "WinRate": 0.8661,
+    "score25": 4515,
+    "score50": 4790,
+    "score75": 5140
+  },
+  "1051366": {
+    "ID": 1051366,
+    "CardCode": "YQHXSfctuOgpJLRvwPanjoUqkCrKlezFdxbIZDGBhVmNTWiAyMsE",
+    "Layer": 8,
+    "WinRate": 0.8689,
+    "score25": 4180,
+    "score50": 4295,
+    "score75": 4430
+  },
+  "1051375": {
+    "ID": 1051375,
+    "CardCode": "pPtKMZFQLlHobOWuYvdsETCirhIcVekgNjyJwnBAmRDSzqGfaXUx",
+    "Layer": 8,
+    "WinRate": 0.8647,
+    "score25": 4175,
+    "score50": 4360,
+    "score75": 4555
+  },
+  "1051533": {
+    "ID": 1051533,
+    "CardCode": "FILJNBVsDKPXOazMebrURGhEoTfjYWZkuqyildtvQHcxnwSmCpgA",
+    "Layer": 8,
+    "WinRate": 0.8667,
+    "score25": 4155,
+    "score50": 4415,
+    "score75": 4740
+  },
+  "1051576": {
+    "ID": 1051576,
+    "CardCode": "ElBQCFWHSufDrJYLRtbcgPpndmjKvMAhOyixaTwqeoGsIZzNkXVU",
+    "Layer": 8,
+    "WinRate": 0.8641,
+    "score25": 4255,
+    "score50": 4540,
+    "score75": 4805
+  },
+  "1051586": {
+    "ID": 1051586,
+    "CardCode": "GkCZOHftLwDmsBFecXTSKdIlJaYPzoVpQMrUxEnRyqWjNAugbhvi",
+    "Layer": 8,
+    "WinRate": 0.8686,
+    "score25": 3920,
+    "score50": 4140,
+    "score75": 4365
+  },
+  "1051601": {
+    "ID": 1051601,
+    "CardCode": "lqsCOarugwmKfRZIShLjpFxyPdNzMkWvAEDXGUbBioneVYTtHQcJ",
+    "Layer": 8,
+    "WinRate": 0.8658,
+    "score25": 3675,
+    "score50": 3865,
+    "score75": 4110
+  },
+  "1051612": {
+    "ID": 1051612,
+    "CardCode": "IFsdLwzpnWerqByvXKimUhGNHoZYjJRSVAMCOTuPxklDtfbgEaQc",
+    "Layer": 8,
+    "WinRate": 0.8644,
+    "score25": 4180,
+    "score50": 4455,
+    "score75": 4695
+  },
+  "1051620": {
+    "ID": 1051620,
+    "CardCode": "WfYdXAmMUwIzKtaJgQNEPbukvrVqlDOZTLsScFoRBeyHCGjpxnhi",
+    "Layer": 8,
+    "WinRate": 0.8661,
+    "score25": 4110,
+    "score50": 4285,
+    "score75": 4460
+  },
+  "1051669": {
+    "ID": 1051669,
+    "CardCode": "UxyVuIdbmRHYkGthsOnNCgjcDoPLvzeWQZiTJaqKFpfSMlArwXBE",
+    "Layer": 8,
+    "WinRate": 0.8632,
+    "score25": 4100,
+    "score50": 4530,
+    "score75": 4925
+  },
+  "1051750": {
+    "ID": 1051750,
+    "CardCode": "OwXdIamEFbotUqrHgjxuZJLQSWKlYTNGDARvkVBCfPcMnhziyspe",
+    "Layer": 8,
+    "WinRate": 0.8682,
+    "score25": 4175,
+    "score50": 4480,
+    "score75": 4755
+  },
+  "1051850": {
+    "ID": 1051850,
+    "CardCode": "FHbfkvEJdrgaAYhmzGyZpCtsLPKjWVlcDMBoqxOTXRuINwieQSnU",
+    "Layer": 8,
+    "WinRate": 0.8636,
+    "score25": 4200,
+    "score50": 4505,
+    "score75": 4800
+  },
+  "1051889": {
+    "ID": 1051889,
+    "CardCode": "ZCziVDYOBSswexnJIjoLWtXgGqARdUmQphaHrPkbTycNKMulfEvF",
+    "Layer": 8,
+    "WinRate": 0.8684,
+    "score25": 4075,
+    "score50": 4335,
+    "score75": 4550
+  },
+  "1051916": {
+    "ID": 1051916,
+    "CardCode": "KGJfnFtkIPsAOhoCRxMQXUbliHNjvBwVLTcEuyaqgmeDSdWYrpZz",
+    "Layer": 8,
+    "WinRate": 0.8682,
+    "score25": 4385,
+    "score50": 4725,
+    "score75": 5035
+  },
+  "1051959": {
+    "ID": 1051959,
+    "CardCode": "NAilyOnuHPmXEMRKqwSJeWLBxTQgIVjkoUzvthCbpadsDZfcYGFr",
+    "Layer": 8,
+    "WinRate": 0.8657,
+    "score25": 4455,
+    "score50": 4715,
+    "score75": 4890
+  },
+  "1060128": {
+    "ID": 1060128,
+    "CardCode": "EaZdRIhTwDbskPuVXUQeFHtfrONiqoWmySCMpzKcxnGYvJBAlLgj",
+    "Layer": 8,
+    "WinRate": 0.8684,
+    "score25": 4140,
+    "score50": 4405,
+    "score75": 4635
+  },
+  "1060255": {
+    "ID": 1060255,
+    "CardCode": "nZaiKVxzIbrFqeWmlokvcPyfQgAupBJGDdjXCTSUNOtswhREMLYH",
+    "Layer": 8,
+    "WinRate": 0.8689,
+    "score25": 4170,
+    "score50": 4520,
+    "score75": 4790
+  },
+  "1060354": {
+    "ID": 1060354,
+    "CardCode": "YLfymXjpeiQNqhnBPTGArFbSxlHkVuEIZsKoOaDUtCRMgJcvdzWw",
+    "Layer": 8,
+    "WinRate": 0.8672,
+    "score25": 4395,
+    "score50": 4735,
+    "score75": 4890
+  },
+  "1060578": {
+    "ID": 1060578,
+    "CardCode": "atRJmXFqoNhSxGbOzvsgDeVLCZQrkUTpWwHMcPEydAYKInjlfiuB",
+    "Layer": 8,
+    "WinRate": 0.8651,
+    "score25": 4230,
+    "score50": 4590,
+    "score75": 4855
+  },
+  "1060732": {
+    "ID": 1060732,
+    "CardCode": "JsgmHVkftQZyiTKYvEzAPcChqXeOrRbuIMjaoUNlpdSGxwFBWDnL",
+    "Layer": 8,
+    "WinRate": 0.8667,
+    "score25": 2885,
+    "score50": 3185,
+    "score75": 3555
+  },
+  "1060815": {
+    "ID": 1060815,
+    "CardCode": "zvhCAarlIuoTLbxetgZJUWpXVOnfPFwyYBjkQmRGsiqMDHcNKdSE",
+    "Layer": 8,
+    "WinRate": 0.8667,
+    "score25": 4055,
+    "score50": 4335,
+    "score75": 4550
+  },
+  "1061287": {
+    "ID": 1061287,
+    "CardCode": "hdpAKztwFyrZkambvqcTPBLQufnYjGSoVEIUDOWlMxHXJeCRigNs",
+    "Layer": 8,
+    "WinRate": 0.8689,
+    "score25": 4550,
+    "score50": 4680,
+    "score75": 4815
+  },
+  "1061320": {
+    "ID": 1061320,
+    "CardCode": "ayhkDsUYbEZlvpfWznewLijrRQtgNXdFOSqGcoATMHCxJImPKBVu",
+    "Layer": 8,
+    "WinRate": 0.8696,
+    "score25": 4200,
+    "score50": 4370,
+    "score75": 4645
+  },
+  "1061428": {
+    "ID": 1061428,
+    "CardCode": "CYPBrkGqFgltpAhdEVONJjIoLzQnsSDmHbcUwvxKWeiZuaXfRMyT",
+    "Layer": 8,
+    "WinRate": 0.8647,
+    "score25": 3960,
+    "score50": 4480,
+    "score75": 5030
+  },
+  "1061671": {
+    "ID": 1061671,
+    "CardCode": "qYsdCbjFzJEiXWmDZOpHoRQnLBfKPtaINgyhVSexvlrkwuGAMUcT",
+    "Layer": 8,
+    "WinRate": 0.8636,
+    "score25": 4635,
+    "score50": 4905,
+    "score75": 5105
+  },
+  "1061753": {
+    "ID": 1061753,
+    "CardCode": "KoxrPsDJhbwvINlCTzZSeLqgBHWAcufVXypjnOaidQFkGmRMtEYU",
+    "Layer": 8,
+    "WinRate": 0.8672,
+    "score25": 4260,
+    "score50": 4505,
+    "score75": 4745
+  },
+  "1070064": {
+    "ID": 1070064,
+    "CardCode": "DlXzNmdtUvqIEygKAFkuZbWnjOsLTVwRhocfaiQMSHYxJrBePCGp",
+    "Layer": 8,
+    "WinRate": 0.8632,
+    "score25": 4620,
+    "score50": 4815,
+    "score75": 5075
+  },
+  "1070731": {
+    "ID": 1070731,
+    "CardCode": "viDdfxGbZHUMCgNptAuFXsTSeonLlPahYWjwyIErOmqzcRBQkKJV",
+    "Layer": 8,
+    "WinRate": 0.8655,
+    "score25": 4605,
+    "score50": 4995,
+    "score75": 5305
+  },
+  "1070863": {
+    "ID": 1070863,
+    "CardCode": "NcgXQdYpaljAnCKHWMkzqVZbuixFOwSGRhUBrmsoeyPLItTDvfEJ",
+    "Layer": 8,
+    "WinRate": 0.8657,
+    "score25": 4115,
+    "score50": 4480,
+    "score75": 4815
+  },
+  "1071435": {
+    "ID": 1071435,
+    "CardCode": "gzMYJXWxuHmbpGZdSTOVRIkiyAQqevFEKwlftUBrsDCcoNjhPLna",
+    "Layer": 8,
+    "WinRate": 0.8662,
+    "score25": 3590,
+    "score50": 3830,
+    "score75": 4075
+  },
+  "1071544": {
+    "ID": 1071544,
+    "CardCode": "MTkaIcJpqEbOtlZNQRoHhXiUGAFYezLVWCjBmwxgDPKfvrnsSudy",
+    "Layer": 8,
+    "WinRate": 0.8636,
+    "score25": 4775,
+    "score50": 4885,
+    "score75": 5050
+  },
+  "1080445": {
+    "ID": 1080445,
+    "CardCode": "XgynGJzvehdkLlqsaZoFVpTrUPDItYxjiNWwMHQCmbBcOKSfAEuR",
+    "Layer": 8,
+    "WinRate": 0.8692,
+    "score25": 4005,
+    "score50": 4370,
+    "score75": 4690
+  },
+  "1080809": {
+    "ID": 1080809,
+    "CardCode": "HiVwbtMJCvQyAURrOmNTSPIYqFzcxfnhZaBGgpjkDeduLlsWEXKo",
+    "Layer": 8,
+    "WinRate": 0.8672,
+    "score25": 4165,
+    "score50": 4325,
+    "score75": 4490
+  },
+  "1080821": {
+    "ID": 1080821,
+    "CardCode": "ZbVkuXGTHpsUKloYavWLniPAqIyhrBgzQetEMxSfFdOJNwRDCjmc",
+    "Layer": 8,
+    "WinRate": 0.8636,
+    "score25": 4965,
+    "score50": 5140,
+    "score75": 5350
+  },
+  "1081264": {
+    "ID": 1081264,
+    "CardCode": "HdXsgzOjRnuFGyAQJCLarbDNETZPhkwYocKBiWpMVflqeUIvtSmx",
+    "Layer": 8,
+    "WinRate": 0.8647,
+    "score25": 4915,
+    "score50": 4985,
+    "score75": 5010
+  },
+  "1081645": {
+    "ID": 1081645,
+    "CardCode": "BkXiWtFvmluweLNpcYrqIdTZUgKzMJbOGVoRQPHCyDaEhsnfSxAj",
+    "Layer": 8,
+    "WinRate": 0.8678,
+    "score25": 4095,
+    "score50": 4290,
+    "score75": 4465
+  },
+  "1090471": {
+    "ID": 1090471,
+    "CardCode": "iXGYtAjFMUgElSZmJTsbqRczQCLxVPIWOKfrDpHyhwauBdkNvnoe",
+    "Layer": 8,
+    "WinRate": 0.8641,
+    "score25": 3495,
+    "score50": 3805,
+    "score75": 4120
+  },
+  "1090488": {
+    "ID": 1090488,
+    "CardCode": "oGLVMkpTaFxeRliSdqnBHYzUJyEKImvgjcXNufrtAWhwsCPbZQOD",
+    "Layer": 8,
+    "WinRate": 0.8696,
+    "score25": 3915,
+    "score50": 4315,
+    "score75": 4765
+  },
+  "1100408": {
+    "ID": 1100408,
+    "CardCode": "UedqrNpSLDowAgJQOcEnWRYaubzsyGtijTlVfMKPvkmxIhHZBXFC",
+    "Layer": 8,
+    "WinRate": 0.8692,
+    "score25": 4640,
+    "score50": 4860,
+    "score75": 5010
+  }
+}
